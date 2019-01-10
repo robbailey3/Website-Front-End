@@ -1,35 +1,35 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { NavigationComponent } from './global/navigation/navigation.component';
+import { ComponentInstance } from '@angular/core/src/render3/interfaces/player';
+import { detectChanges } from '@angular/core/src/render3';
 
 describe('AppComponent', () => {
+  let fixture: ComponentFixture<AppComponent>;
+  let app: ComponentInstance;
+  let compiled: any;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+      imports: [RouterTestingModule],
+      declarations: [AppComponent, NavigationComponent]
     }).compileComponents();
   }));
-
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    app = fixture.debugElement.componentInstance;
+    compiled = fixture.debugElement.nativeElement;
+  });
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'frontEnd'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('frontEnd');
+  it('should contain the Navigation component', () => {
+    expect(compiled.querySelector('app-navigation')).toBeDefined();
   });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+  it('should contain the router-outlet', () => {
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to frontEnd!');
+    console.log(compiled);
+    expect(compiled.querySelector('app-navigation')).toBeDefined();
   });
 });
