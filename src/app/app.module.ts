@@ -9,8 +9,9 @@ import { PhotosModule } from './photos/photos.module';
 import { ProjectsModule } from './projects/projects.module';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ContactComponent } from './contact/contact.component';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ContactComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

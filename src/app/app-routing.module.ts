@@ -3,9 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomepageRootComponent } from './homepage/homepage-root/homepage-root.component';
 import { BlogRootComponent } from './blog/blog-root/blog-root.component';
 import { BlogListComponent } from './blog/blog-list/blog-list.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomepageRootComponent },
+  { path: 'contact', component: ContactComponent },
   {
     path: 'blog',
     component: BlogRootComponent,
