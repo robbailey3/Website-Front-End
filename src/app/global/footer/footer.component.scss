@@ -1,0 +1,28 @@
+@import '../../../styles/components/colours';
+app-grid {
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+#page-footer {
+  background: color(primary);
+  padding: 80px 0;
+  color: #fff;
+  ul {
+    margin: 0;
+  }
+  li {
+    list-style: none;
+    display: inline-block;
+  }
+  a {
+    color: #fff;
+    padding: 16px 22px;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+      color: rgba(#fff, 0.5);
+    }
+  }
+}

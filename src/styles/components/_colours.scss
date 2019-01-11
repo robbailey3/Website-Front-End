@@ -1,0 +1,23 @@
+$color-scheme: (
+  'primary': #292929,
+  'secondary': #e88f1a,
+  'tertiary': #f0f0f0,
+  'font-main': #333,
+  'font-headings': #333,
+  'links': #1a73e8,
+  'top-nav-background': #f0f0f0,
+  'top-nav-link': #333,
+  'top-nav-toggle': #333,
+  'top-nav-toggle-open': #444,
+  'dropdown-link-bg': transparent,
+  'dropdown-link-hover': #fafafa,
+  'error': #b00020
+);
+
+@function color($name) {
+  @if (map-has-key($color-scheme, $name)) {
+    @return map-get($color-scheme, $name);
+  } @else {
+    @error "Incorrect colour name used. Correct colours are #{map-keys($color-scheme)}";
+  }
+}
