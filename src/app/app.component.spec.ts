@@ -3,7 +3,9 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './global/navigation/navigation.component';
 import { ComponentInstance } from '@angular/core/src/render3/interfaces/player';
-import { detectChanges } from '@angular/core/src/render3';
+import { FooterComponent } from './global/footer/footer.component';
+import { GridComponent } from './shared/components/grid/grid.component';
+import { ModalComponent } from './shared/components/modal/modal.component';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -12,7 +14,13 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [AppComponent, NavigationComponent]
+      declarations: [
+        AppComponent,
+        NavigationComponent,
+        FooterComponent,
+        ModalComponent,
+        GridComponent
+      ]
     }).compileComponents();
   }));
   beforeEach(() => {

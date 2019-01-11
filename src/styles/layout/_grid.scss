@@ -1,0 +1,113 @@
+$breakpoints: (
+  'xs': '360px',
+  'sm': '550px',
+  'md': '768px',
+  'lg': '1280px',
+  'xl': '1440px'
+);
+
+@mixin breakpoint($breakpoint) {
+  @media only screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+%grid-base {
+  display: block;
+  width: 99%;
+  margin: 0 0.5%;
+}
+%grid-base-nm {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+
+@mixin breakpoint($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "+"Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin cols {
+  @each $breakpoint, $size in $breakpoints {
+    @for $i from 1 through 12 {
+      .col-#{$breakpoint}-#{$i} {
+        @extend %grid-base;
+      }
+    }
+  }
+}
+@mixin cols-nm {
+  @each $breakpoint, $size in $breakpoints {
+    @for $i from 1 through 12 {
+      .col-#{$breakpoint}-#{$i} {
+        @extend %grid-base-nm;
+      }
+    }
+  }
+}
+@include cols;
+
+@each $breakpoint, $size in $breakpoints {
+  @media only screen and (min-width: $size) {
+    @for $i from 1 through 12 {
+      .col-#{$breakpoint}-#{$i} {
+        width: ((100% / 12) * $i) - 1%;
+        margin: 0 0.5%;
+      }
+    }
+  }
+}
+@each $breakpoint, $size in $breakpoints {
+  @media only screen and (min-width: $size) {
+    @for $i from 1 through 12 {
+      .col-#{$breakpoint}-#{$i}-nm {
+        width: ((100% / 12) * $i);
+      }
+    }
+  }
+}
+
+@each $breakpoint, $size in $breakpoints {
+  @media only screen and (min-width: $size) {
+    @for $i from 1 through 12 {
+      .offset-#{$breakpoint}-#{$i} {
+        margin-left: ((100% / 12) * $i) - 1%;
+      }
+    }
+  }
+}
+
+@each $breakpoint, $size in $breakpoints {
+  @media only screen and (min-width: $size) {
+    @for $i from 1 through 12 {
+      .offset-#{$breakpoint}-#{$i}-nm {
+        margin-left: ((100% / 12) * $i);
+      }
+    }
+  }
+}
+
+@each $breakpoint, $size in $breakpoints {
+  @media only screen and (max-width: $size) {
+    .hide-#{$breakpoint} {
+      display: none;
+    }
+  }
+}
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.hide {
+  display: none !important;
+}
