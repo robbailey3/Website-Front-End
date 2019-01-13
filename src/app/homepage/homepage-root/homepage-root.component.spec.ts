@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomepageRootComponent } from './homepage-root.component';
 import { IntroductionComponent } from '../introduction/introduction.component';
 import { HeroComponent } from '../hero/hero.component';
+import { SkillsComponent } from '../skills/skills.component';
 
 describe('HomepageRootComponent', () => {
   let component: HomepageRootComponent;
@@ -13,7 +14,8 @@ describe('HomepageRootComponent', () => {
       declarations: [
         HomepageRootComponent,
         IntroductionComponent,
-        HeroComponent
+        HeroComponent,
+        SkillsComponent
       ]
     }).compileComponents();
   }));

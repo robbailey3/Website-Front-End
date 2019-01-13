@@ -4,8 +4,8 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './global/navigation/navigation.component';
 import { ComponentInstance } from '@angular/core/src/render3/interfaces/player';
 import { FooterComponent } from './global/footer/footer.component';
-import { GridComponent } from './shared/components/grid/grid.component';
-import { ModalComponent } from './shared/components/modal/modal.component';
+import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -13,7 +13,8 @@ describe('AppComponent', () => {
   let compiled: any;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, SharedModule],
+      providers: [HttpClientModule],
       declarations: [AppComponent, NavigationComponent, FooterComponent]
     }).compileComponents();
   }));

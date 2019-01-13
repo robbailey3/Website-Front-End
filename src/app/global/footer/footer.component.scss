@@ -7,6 +7,9 @@ app-grid {
   background: color(primary);
   padding: 80px 0;
   color: #fff;
+  position: relative;
+  left: 72px;
+  width: calc(100% - 72px);
   ul {
     margin: 0;
   }

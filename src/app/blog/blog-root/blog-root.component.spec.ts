@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BlogRootComponent } from './blog-root.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('BlogRootComponent', () => {
   let component: BlogRootComponent;
@@ -8,9 +10,10 @@ describe('BlogRootComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlogRootComponent ]
-    })
-    .compileComponents();
+      imports: [RouterTestingModule],
+      declarations: [BlogRootComponent],
+      providers: [HttpClientModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

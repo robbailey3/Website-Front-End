@@ -1,9 +1,14 @@
-<div id="top-bar">
-  <nav id="main-navigation">
-    <ul>
-      <li><a [routerLink]="['/']">Home</a></li>
-      <li><a [routerLink]="['blog']">Blog</a></li>
-      <li><a [routerLink]="['contact']">Contact</a></li>
-    </ul>
-  </nav>
+<div id="side-bar" [class.active]="menuActive" class="flex-container">
+  <div id="menu-button-container" (click)="toggleMenu()">
+    <button class="hamburger-btn" [class.menu-open]="menuActive">
+      <span class="sr-only">Menu</span> <span></span> <span></span>
+    </button>
+  </div>
 </div>
+<nav id="main-navigation" [class.active]="menuActive" class="flex-container">
+  <ul>
+    <li><a [routerLink]="['/']" (click)="toggleMenu()">Home</a></li>
+    <li><a [routerLink]="['blog']" (click)="toggleMenu()">Blog</a></li>
+    <li><a [routerLink]="['contact']" (click)="toggleMenu()">Contact</a></li>
+  </ul>
+</nav>

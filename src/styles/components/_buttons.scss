@@ -1,0 +1,36 @@
+.btn {
+  .btn-default {
+  }
+  .btn-primary {
+  }
+}
+.hamburger-btn {
+  border: none;
+  background: transparent;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  span:not(.sr-only) {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    left: 4px;
+    top: 14px;
+    transition: 0.4s;
+    &:nth-of-type(2) {
+      top: 24px;
+    }
+  }
+  &.menu-open {
+    span:not(.sr-only) {
+      transform: rotate(45deg);
+      top: 18px;
+      &:nth-of-type(2) {
+        transform: rotate(135deg);
+        top: 18px;
+      }
+    }
+  }
+}
