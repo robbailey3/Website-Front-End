@@ -4,6 +4,7 @@ import { HomepageRootComponent } from './homepage/homepage-root/homepage-root.co
 import { BlogRootComponent } from './blog/blog-root/blog-root.component';
 import { BlogListComponent } from './blog/blog-list/blog-list.component';
 import { ContactComponent } from './contact/contact.component';
+import { BlogPostComponent } from './blog/blog-post/blog-post.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomepageRootComponent },
@@ -11,7 +12,13 @@ const routes: Routes = [
   {
     path: 'blog',
     component: BlogRootComponent,
-    children: [{ path: '', pathMatch: 'full', component: BlogListComponent }]
+    children: [
+      { path: '', pathMatch: 'full', component: BlogListComponent },
+      {
+        path: ':slug',
+        component: BlogPostComponent
+      }
+    ]
   }
 ];
 

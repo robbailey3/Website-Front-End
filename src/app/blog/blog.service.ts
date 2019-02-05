@@ -13,24 +13,12 @@ export class BlogService {
    * @description GETs all the posts from the Database
    */
   getAllPosts(): Observable<APIResponse> {
-    return this.http.get<APIResponse>(this.URL_BASE);
+    return this.http.get<APIResponse>(this.URL_BASE + '/true');
   }
-  /**
-   * @description POSTs data to the server to create a new post
-   */
-  createPost(data: FormData | JSON): Observable<APIResponse> {
-    return this.http.post<APIResponse>(this.URL_BASE, data);
+  getPostBySlug(slug: string): Observable<APIResponse> {
+    return this.http.get<APIResponse>(`${this.URL_BASE}/${slug}`);
   }
-  /**
-   * @description PUTs an existing resource in the database (used for updating)
-   */
-  updatePost(id: number, data: FormData | JSON): Observable<APIResponse> {
-    return this.http.put<APIResponse>(this.URL_BASE + '/' + id, data);
-  }
-  /**
-   * @description DELETEs a post from the database
-   */
-  deletePost(id: number): Observable<APIResponse> {
-    return this.http.delete<APIResponse>(this.URL_BASE + '/' + id);
+  getNPosts(N: number): Observable<APIResponse> {
+    return this.http.get<APIResponse>(`${this.URL_BASE}?limit=${N}`);
   }
 }

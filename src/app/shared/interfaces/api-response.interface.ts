@@ -2,15 +2,15 @@ export interface APIResponse {
   response: Response;
 }
 
-export interface Response {
+interface Response {
   status: string;
   statusCode: number;
   timestamp: number;
   total: number;
-  results: Result[];
+  results: Result[] | Result;
   errorMessage?: string;
 }
 
-export interface Result {
-  [key: string]: string | number | null | undefined;
+interface Result extends Object {
+  [key: string]: any;
 }

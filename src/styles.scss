@@ -3,9 +3,13 @@
 @import './styles/typography';
 @import './styles/accessibility';
 @import './styles/components/buttons';
+@import './styles/components/colours';
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+body {
+  background: color(background);
 }

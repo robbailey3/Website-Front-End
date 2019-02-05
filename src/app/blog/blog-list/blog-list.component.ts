@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../blog.service';
+import { ErrorHandlerService } from 'src/app/error-handler/error-handler.service';
+import { Post } from '../post';
 
 @Component({
   selector: 'app-blog-list',
@@ -7,15 +9,23 @@ import { BlogService } from '../blog.service';
   styleUrls: ['./blog-list.component.scss']
 })
 export class BlogListComponent implements OnInit {
-  private posts: Object[];
-  constructor(private service: BlogService) {}
+  posts: Post[];
+  constructor(
+    private service: BlogService,
+    private errorHandler: ErrorHandlerService
+  ) {}
 
   ngOnInit() {
     this.getPosts();
   }
   getPosts() {
-    this.service.getAllPosts().subscribe(res => {
-      this.posts = res['response']['results'];
-    });
+    this.service.getAllPosts().subscribe(
+      res => {
+        this.posts = res.response.results as Post[];
+      },
+      err => {
+        this.errorHandler.postError(err);
+      }
+    );
   }
 }

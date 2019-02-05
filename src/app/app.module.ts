@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,9 @@ import { ProjectsModule } from './projects/projects.module';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactComponent } from './contact/contact.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { ErrorHandlerModule } from './error-handler/error-handler.module';
 @NgModule({
   declarations: [AppComponent, ContactComponent],
   imports: [
@@ -21,7 +25,12 @@ import { ContactComponent } from './contact/contact.component';
     BlogModule,
     PhotosModule,
     ProjectsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ErrorHandlerModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

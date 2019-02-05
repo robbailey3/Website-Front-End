@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactService } from '../shared/services/contact/contact.service';
-import { Observable } from 'rxjs';
-import { APIResponse } from '../shared/interfaces/api-response.interface';
 
 @Component({
   selector: 'app-contact',

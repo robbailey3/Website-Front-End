@@ -1,5 +1,6 @@
+@import '../../../styles/components/colours';
 #side-bar {
-  background: #1c1c1c;
+  background: #fffff0;
   position: fixed;
   left: 0;
   top: 0;
@@ -16,7 +17,7 @@
   justify-content: center;
   position: fixed;
   left: 72px;
-  background: rgba(#1c1c1c, 0.98);
+  background: rgba(#fffff0, 0.98);
   height: 100%;
   z-index: 999;
   transition: 1s cubic-bezier(0.8, -0.4, 0, 1.5);
@@ -27,11 +28,17 @@
     list-style: none;
     text-align: center;
     a {
-      color: #fff;
+      color: #1d1d1d;
       font-size: 24px;
       text-decoration: none;
       padding: 20px 0;
       display: block;
+      transition: 0.2s;
+      &:hover,
+      &:focus {
+        color: color(primary);
+        font-weight: bold;
+      }
     }
   }
 }

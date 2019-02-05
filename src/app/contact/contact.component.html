@@ -1,3 +1,62 @@
-<p>
-  contact works!
-</p>
+<div class="flex-container">
+  <div class="col-md-6"></div>
+  <div class="col-md-6" id="contact-form">
+    <form (onChange)="formChange(this)" #contactForm="ngForm">
+      <div class="form-group">
+        <label for="name"></label
+        ><input
+          class="form-control"
+          name="name"
+          required
+          type="text"
+          minlength="2"
+          [(ngModel)]="contactForm.name"
+          #name="ngModel"
+        />
+        <div class="form-item-invalid" [hidden]="name.valid || name.pristine">
+          INVALID
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email"></label
+        ><input
+          class="form-control"
+          name="email"
+          required
+          type="email"
+          email
+          [(ngModel)]="contactForm.email"
+          #email="ngModel"
+        />
+        <div class="form-item-invalid" [hidden]="email.valid || email.pristine">
+          INVALID
+        </div>
+      </div>
+      <div class="form-group">
+        <label for=""></label
+        ><textarea
+          class="form-control"
+          name="message"
+          required
+          minlength="2"
+          [(ngModel)]="contactForm.message"
+          #message="ngModel"
+        ></textarea>
+        <div
+          class="form-item-invalid"
+          [hidden]="message.valid || message.pristine"
+        >
+          INVALID
+        </div>
+      </div>
+      <input
+        class="btn btn-primary"
+        id="contact-form-submit"
+        name="submit"
+        type="submit"
+        [disabled]="!contactForm.form.valid"
+      />
+    </form>
+    {{ contactForm.value | json }}
+  </div>
+</div>
