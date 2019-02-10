@@ -6,10 +6,11 @@ import { RouterModule } from '@angular/router';
 import { BlogPostComponent } from './blog-post/blog-post.component';
 import { BlogService } from './blog.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [BlogRootComponent, BlogListComponent, BlogPostComponent],
-  imports: [CommonModule, RouterModule, HttpClientModule],
+  imports: [CommonModule, RouterModule, HttpClientModule, SharedModule],
   providers: [BlogService]
 })
 export class BlogModule {}

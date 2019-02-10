@@ -5,6 +5,7 @@ import { BlogRootComponent } from './blog/blog-root/blog-root.component';
 import { BlogListComponent } from './blog/blog-list/blog-list.component';
 import { ContactComponent } from './contact/contact.component';
 import { BlogPostComponent } from './blog/blog-post/blog-post.component';
+import { CvRootComponent } from './cv/cv-root/cv-root.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomepageRootComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
         component: BlogPostComponent
       }
     ]
-  }
+  },
+  { path: 'cv', component: CvRootComponent }
 ];
 
 @NgModule({

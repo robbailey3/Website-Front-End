@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-homepage-root',
@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage-root.component.scss']
 })
 export class HomepageRootComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  @HostListener('window:scroll', ['$event']) onScroll($event) {
+    console.log($event);
   }
+  constructor() {}
 
+  ngOnInit() {}
 }

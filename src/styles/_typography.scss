@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Domine:400,700|Montserrat:300,400,500,500i,600');
+@import url('https://fonts.googleapis.com/css?family=Londrina+Solid|Roboto:200,400,500,600,700,900');
 @import './components/colours';
 html,
 body {
   font-size: 18px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.8;
-  color: color(off-white);
 }
 h1,
 h2,
@@ -13,11 +12,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Domine', serif;
-  font-weight: 400;
+  font-family: 'Londrina Solid', serif;
+  letter-spacing: 5px;
+  font-weight: 700;
   line-height: 1.15;
   margin: 2rem 0 1rem;
-  color: color(off-white);
 }
 
 h1 {

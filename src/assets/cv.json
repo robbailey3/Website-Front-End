@@ -1,0 +1,207 @@
+{
+  "basics": {
+    "name": "Robert Bailey",
+    "profile": "Branding Specialist for a world leading software company with skills supplemented by projects and interests outside of the workplace. I am a highly motivated, quick-learning and keen eyed individual with the drive to learn more, further my technical skills and use the skills gained from software testing and branding.",
+    "website": "https://www.robbailey3.co.uk",
+    "jobTitle": "Front-End Engineer",
+    "location": {
+      "city": "South West London"
+    },
+    "contact": {
+      "email": "rob.bailey3@gmail.com",
+      "phone": "07921517093"
+    },
+    "profiles": [
+      {
+        "network": "Twitter",
+        "username": "@rob_bailey3",
+        "url": "https://twitter.com/rob_bailey3",
+        "svg": "<svg width='50px' height='50px' viewBox='0 0 64 64' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' style='fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;'><g id='Twitter-Color'><circle cx='32' cy='32' r='25.5' style='fill:none;'/><path d='M26.064,45.003c12.076,0 18.68,-10.004 18.68,-18.679c0,-0.285 -0.006,-0.568 -0.019,-0.849c1.282,-0.927 2.396,-2.083 3.275,-3.4c-1.176,0.523 -2.442,0.875 -3.77,1.034c1.355,-0.813 2.396,-2.099 2.887,-3.632c-1.269,0.752 -2.674,1.299 -4.169,1.594c-1.198,-1.276 -2.904,-2.074 -4.792,-2.074c-3.626,0 -6.567,2.94 -6.567,6.564c0,0.516 0.058,1.017 0.171,1.497c-5.457,-0.274 -10.295,-2.887 -13.533,-6.859c-0.564,0.97 -0.889,2.097 -0.889,3.3c0,2.278 1.159,4.288 2.922,5.465c-1.077,-0.034 -2.089,-0.329 -2.974,-0.822c-0.001,0.028 -0.001,0.055 -0.001,0.084c0,3.18 2.263,5.834 5.267,6.436c-0.551,0.15 -1.132,0.231 -1.731,0.231c-0.423,0 -0.834,-0.041 -1.234,-0.118c0.836,2.608 3.259,4.506 6.133,4.56c-2.247,1.761 -5.078,2.81 -8.154,2.81c-0.53,0 -1.052,-0.03 -1.566,-0.091c2.906,1.862 6.356,2.949 10.064,2.949Z' style='fill:#333;fill-rule:nonzero;'/></g></svg>"
+      },
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/robert-bailey-82528710b/",
+        "svg": "<svg width='50px' height='50px' viewBox='0 0 64 64' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' style='fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;'><g id='LinkedIn-Transp'><circle cx='32' cy='32' r='25.5' style='fill:none;'/><path d='M43.267,43.268l-4.741,0l0,-7.426c0,-1.771 -0.034,-4.049 -2.467,-4.049c-2.47,0 -2.847,1.929 -2.847,3.921l0,7.554l-4.744,0l0,-15.27l4.553,0l0,2.086l0.065,0c0.634,-1.2 2.182,-2.467 4.491,-2.467c4.803,0 5.69,3.162 5.69,7.275l0,8.376Zm-20.15,-17.358c-1.521,0 -2.751,-1.233 -2.751,-2.753c0,-1.518 1.23,-2.751 2.751,-2.751c1.518,0 2.751,1.233 2.751,2.751c0,1.52 -1.233,2.753 -2.751,2.753Zm2.374,17.358l-4.748,0l0,-15.27l4.748,0l0,15.27Zm20.14,-27.268l-27.269,0c-1.304,0 -2.362,1.034 -2.362,2.306l0,27.385c0,1.274 1.058,2.309 2.362,2.309l27.269,0c1.305,0 2.37,-1.035 2.37,-2.309l0,-27.385c0,-1.272 -1.065,-2.306 -2.37,-2.306Z' style='fill:#333;fill-rule:nonzero;'/></g></svg>",
+        "username": "Robert Bailey"
+      }
+    ]
+  },
+  "workexperience": [
+    {
+      "company": "Oleeo Plc",
+      "position": "Quality Control Branding Specialist",
+      "logo": "https://oleeo.com/img/oleeo_logo.png",
+      "startDate": "January 2018",
+      "endDate": "Present",
+      "summary": "I am responsible for branding our product according to their requirements. Since moving into this role, I have improved the branding process, changing from using standard CSS to using SCSS (a CSS Pre-Processor). I have completed branding work for many clients including the Houses of Parliament, Foreign & Commonwealth Office, Credit Suisse, Rhondda Cynon Taff Council, Allianz Global Investors and our own company rebrand.",
+      "responsibilities": [
+        "Branding our interface according to client requirements.",
+        "Creating SCSS and HTML templates to speed up the branding process",
+        "Creating branding documentation",
+        "Ensuring the systems meet WCAG AA Accessibility criteria",
+        "Training and advising colleagues and clients on web design and accessibility"
+      ],
+      "skills": ["SCSS", "HTML", "Web Accessibility", "Web Design"]
+    },
+    {
+      "company": "World Careers Network PLC",
+      "position": "Quality Control Executive",
+      "logo": "data:image/png;base64,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",
+      "startDate": "March 2016",
+      "endDate": "January 2018",
+      "summary": "Working as part of a small team testing a complex perl based web application ensuring that the system meets customer requirements and does not contain defects.",
+      "responsibilities": ["Running manual functional and regression tests"],
+      "highlights": [
+        "I was awarded Employee of the Month twice in my first six months of employment"
+      ],
+      "skills": [
+        "Functional and Regression Testing",
+        "Web Accessibility",
+        "Teamwork",
+        "Agile Dev Cycle"
+      ]
+    },
+    {
+      "company": "Battersea Dog's and Cat's Home",
+      "logo": "https://www.battersea.org.uk/sites/all/themes/battersea_theme/images/logo.png",
+      "position": "Kennel Support Volunteer",
+      "startDate": "March 2016",
+      "endDate": "April 2016",
+      "summary": "Assisting with the everyday running of the kennels, including cleaning, feeding and socialising the dogs. I was also responsible for reporting back the behaviour and health of the dogs to staff members."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Keele University",
+      "qualification": "BSc Physics With Philosophy - 2:1",
+      "summary": ""
+    },
+    {
+      "institution": "Ashby School",
+      "qualification": "A-Levels",
+      "details": [
+        {
+          "subject": "Mathematics",
+          "grade": "B"
+        },
+        {
+          "subject": "Physics",
+          "grade": "B"
+        },
+        {
+          "subject": "Music",
+          "grade": "D"
+        }
+      ]
+    },
+    {
+      "institution": "Granville Sports College",
+      "qualification": "GCSEs",
+      "details": [
+        {
+          "grade": "11A* - C Grades"
+        }
+      ]
+    }
+  ],
+  "hobbies": [
+    {
+      "name": "Photography",
+      "summary": "I very much enjoy Photography. I like to specialise in Landscape and Street Photography and I delight in processing the photographs I take using Adobe Photoshop and Lightroom.",
+      "keywords": [
+        "Photography",
+        "Photoshop",
+        "Canon",
+        "DSLR",
+        "Landscape",
+        "Urban"
+      ]
+    },
+    {
+      "name": "Music & Guitar",
+      "summary": "I also play the guitar to a grade 8 standard and have a keen interest in music in general.",
+      "keywords": ["Music", "Guitar", "Grade 8"]
+    },
+    {
+      "name": "Programming",
+      "summary": "I have a passion for programming, web development and web design in which I spend a large amount of my free time. I have created my own website using HTML, SCSS and PHP which I continue to upgrade and maintain (currently working with the latest Angular framework)",
+      "keywords": [
+        "Programming",
+        "Coding",
+        "JavaScript",
+        "Java",
+        "SCSS",
+        "PHP",
+        "mySQL",
+        "Angular6",
+        "TypeScript"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "title": "Programming",
+      "summary": "",
+      "content": [
+        {
+          "name": "JavaScript",
+          "rating": "75%"
+        },
+        {
+          "name": "Java",
+          "rating": "40%"
+        },
+        {
+          "name": "Angular",
+          "rating": "70%"
+        },
+        {
+          "name": "PHP",
+          "rating": "62%"
+        },
+        {
+          "name": "SQL",
+          "rating": "50%"
+        },
+        {
+          "name": "SCSS / CSS",
+          "rating": "75%"
+        },
+        {
+          "name": "Git",
+          "rating": "45%"
+        }
+      ]
+    },
+    {
+      "title": "Programs",
+      "content": [
+        {
+          "name": "Microsoft Office",
+          "rating": "80%"
+        },
+        {
+          "name": "Adobe PhotoShop & Lightroom",
+          "rating": "64%"
+        },
+        {
+          "name": "Affinity Designer",
+          "rating": "55%"
+        }
+      ]
+    },
+    {
+      "title": "Life",
+      "content": [
+        {
+          "name": "Guitar",
+          "rating": "85%"
+        },
+        {
+          "name": "Photography",
+          "rating": "70%"
+        }
+      ]
+    }
+  ]
+}

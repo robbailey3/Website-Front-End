@@ -1,3 +1,5 @@
-<p>
-  blog works!
-</p>
+<section id="blog-container" *ngIf="posts" class="flex-container">
+  <app-card class="blog-post" *ngFor="let post of posts" class="col-md-6">
+    {{ post | json }}
+  </app-card>
+</section>

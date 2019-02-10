@@ -13,12 +13,14 @@
   cursor: pointer;
   span:not(.sr-only) {
     width: 32px;
-    height: 2px;
+    height: 3px;
+    border-radius: 6px;
     background: #1d1d1d;
     position: absolute;
     left: 4px;
     top: 14px;
     transition: 0.4s;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
     &:nth-of-type(2) {
       top: 24px;
     }

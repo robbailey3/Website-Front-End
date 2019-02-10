@@ -22,6 +22,9 @@ export class BlogListComponent implements OnInit {
     this.service.getAllPosts().subscribe(
       res => {
         this.posts = res.response.results as Post[];
+        this.posts.map(
+          post => (post.categories = (<string>post.categories).split(','))
+        );
       },
       err => {
         this.errorHandler.postError(err);

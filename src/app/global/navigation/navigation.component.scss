@@ -1,6 +1,6 @@
 @import '../../../styles/components/colours';
 #side-bar {
-  background: #fffff0;
+  background: #fffffd;
   position: fixed;
   left: 0;
   top: 0;
@@ -17,7 +17,7 @@
   justify-content: center;
   position: fixed;
   left: 72px;
-  background: rgba(#fffff0, 0.98);
+  background: #fffffdfc;
   height: 100%;
   z-index: 999;
   transition: 1s cubic-bezier(0.8, -0.4, 0, 1.5);
@@ -29,15 +29,17 @@
     text-align: center;
     a {
       color: #1d1d1d;
-      font-size: 24px;
+      font-family: 'Londrina Solid', serif !important;
+      font-size: 28px;
       text-decoration: none;
-      padding: 20px 0;
+      padding: 6px 0;
       display: block;
       transition: 0.2s;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
       &:hover,
       &:focus {
         color: color(primary);
-        font-weight: bold;
+        text-decoration: underline;
       }
     }
   }
