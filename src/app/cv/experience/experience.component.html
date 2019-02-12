@@ -1,3 +1,40 @@
-<div id="experience">
-  <div *ngFor="let experience of cv.workexperience"></div>
-</div>
+<section id="experience">
+  <h2>Experience</h2>
+  <div
+    *ngFor="let experience of cv.workexperience"
+    class="flex-container experience-item"
+  >
+    <div class="experience-logo" *ngIf="experience.company">
+      <img src="{{ experience.logo }}" alt="{{ experience.company }} logo" />
+    </div>
+    <p class="experience-date">
+      {{ experience.startDate }} to {{ experience.endDate }}
+    </p>
+    <p>
+      <span class="experience-position">{{ experience.position }}</span>
+      <span class="experience-company"> at {{ experience.company }}</span>
+    </p>
+    <div class="experience-summary" *ngIf="experience.summary">
+      <h3>Summary</h3>
+      <p>{{ experience.summary }}</p>
+    </div>
+    <div
+      class="experience-responsibilities"
+      *ngIf="experience.responsibilities"
+    >
+      <h3>Responsibilities</h3>
+      <ul>
+        <li *ngFor="let item of experience.responsibilities">
+          <span>{{ item }}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="experience-skills" *ngIf="experience.skills">
+      <h3>Skills</h3>
+      <span *ngFor="let skill of experience.skills" class="chip">{{
+        skill
+      }}</span>
+    </div>
+    <!-- <pre>{{ experience | json }}</pre> -->
+  </div>
+</section>
