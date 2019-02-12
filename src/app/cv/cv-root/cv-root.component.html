@@ -5,7 +5,7 @@
 <div class="flex-container">
   <div *ngIf="cv" id="cv-container" class="col-md-8 offset-md-2">
     <app-profile [cv]="cv"></app-profile>
-    <app-experience [cv]="cv"></app-experience>
+    <app-experience [experience]="cv.experience"></app-experience>
     <app-education></app-education>
     <app-skills></app-skills>
     <app-hobbies></app-hobbies>

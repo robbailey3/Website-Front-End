@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./experience.component.scss']
 })
 export class ExperienceComponent {
-  @Input() cv: JSON;
+  @Input() experience: Object;
   constructor() {}
 }
