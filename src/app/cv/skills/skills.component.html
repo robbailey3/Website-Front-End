@@ -1,3 +1,19 @@
-<section id="skills">
+<section id="skills" *ngIf="skills">
   <h2>Skills</h2>
+  <div class="skill-category" *ngFor="let category of skills">
+    <h3>{{ category.title }}</h3>
+    <div class="flex-container">
+      <div
+        class="skill-container col-md-4 col-sm-6"
+        *ngFor="let skill of category.content"
+      >
+        <p class="skill-name">{{ skill.name }}</p>
+        <div class="skill-bar-container">
+          <div class="skill-bar">
+            <div class="skill-bar-content" [style.width]="skill.rating"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

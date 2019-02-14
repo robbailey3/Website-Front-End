@@ -1,3 +1,24 @@
-<section id="education">
+<section id="education" *ngIf="education">
   <h2>Education</h2>
+  <div class="education-item" *ngFor="let item of education">
+    <div class="education-date" *ngIf="item.date">
+      <p>{{ item.date }}</p>
+    </div>
+    <div class="education-institution" *ngIf="item.institution">
+      <p>
+        {{ item.institution }}
+      </p>
+    </div>
+    <div class="education-qualification" *ngIf="item.qualification">
+      <p>{{ item.qualification }}</p>
+    </div>
+    <div class="education-details" *ngIf="item.details">
+      <div class="education-detail" *ngFor="let detail of item.details">
+        <p>
+          <span *ngIf="detail.subject">{{ detail.subject }}:</span>
+          {{ detail.grade }}
+        </p>
+      </div>
+    </div>
+  </div>
 </section>

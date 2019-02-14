@@ -1,4 +1,7 @@
 @import '../../../styles/components/colours';
+:host {
+  text-align: center;
+}
 .subtitle {
   color: #555;
   font-size: 24px;

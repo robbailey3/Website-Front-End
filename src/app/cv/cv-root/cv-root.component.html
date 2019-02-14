@@ -1,13 +1,9 @@
-<nav id="cv-navigation">
-  <a [routerLink]="['/cv']" fragment="profile">Profile</a>
-  <a [routerLink]="['/cv']" fragment="experience">Experience</a>
-</nav>
 <div class="flex-container">
-  <div *ngIf="cv" id="cv-container" class="col-md-8 offset-md-2">
+  <div *ngIf="cv" id="cv-container" class="col-lg-8 offset-lg-2">
     <app-profile [cv]="cv"></app-profile>
-    <app-experience [experience]="cv.experience"></app-experience>
-    <app-education></app-education>
-    <app-skills></app-skills>
+    <app-experience [experience]="cv['workexperience']"></app-experience>
+    <app-education [education]="cv['education']"></app-education>
+    <app-skills [skills]="cv['skills']"></app-skills>
     <app-hobbies></app-hobbies>
   </div>
 </div>
