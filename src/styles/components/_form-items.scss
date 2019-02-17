@@ -1,0 +1,20 @@
+@import './colours';
+.form-group {
+  margin: 8px 0;
+  label {
+    display: block;
+  }
+  .form-control {
+    width: 100%;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    border-bottom: 1px solid #cfcfcf;
+    padding: 8px 10px;
+    font-family: inherit;
+    font-size: 20px;
+    &:focus {
+      border: 1px solid color(primary);
+      outline: none;
+    }
+  }
+}

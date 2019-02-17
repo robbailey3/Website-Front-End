@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class CvService {
   private url = '/assets/cv.json';
   constructor(private http: HttpClient) {}
-  getCV(): Observable<JSON> {
-    return this.http.get<JSON>(this.url);
+  getCV(): Observable<object> {
+    return this.http.get<object>(this.url);
   }
 }

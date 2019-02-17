@@ -11,4 +11,7 @@ export class ContactComponent {
   sendMail(data: JSON | FormData) {
     this.service.sendMail(data).subscribe();
   }
+  formChange(foo: any) {
+    console.log(foo);
+  }
 }

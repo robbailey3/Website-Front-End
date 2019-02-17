@@ -2,8 +2,6 @@
   position: relative;
   margin-bottom: 32px;
   padding: 16px;
-  border: 1px solid #404040;
-  border-radius: 2px;
   p {
     width: 100%;
   }
@@ -19,15 +17,14 @@
   .experience-date {
     color: #afafaf;
     font-variant: small-caps;
-    font-size: 0.95em;
+    font-size: 1.1em;
     letter-spacing: 1px;
   }
   .experience-position {
     font-size: 1.1em;
   }
   .experience-company {
-    color: #1f1f1f;
-    font-variant: small-caps;
+    color: #2f2f2f;
   }
   h3 {
     margin-top: 0.4em;

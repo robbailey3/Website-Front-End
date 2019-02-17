@@ -1,5 +1,5 @@
 @import '../../../styles/components/colours';
 #page-footer {
-  background: color(primary);
+  background: linear-gradient(30deg, color(primary), color(accent));
   margin-top: 25px;
 }

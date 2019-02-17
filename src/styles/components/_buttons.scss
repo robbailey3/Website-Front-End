@@ -1,7 +1,33 @@
+@import './colours';
 .btn {
-  .btn-default {
+  padding: 10px 18px;
+  font-size: 20px;
+  font-family: inherit;
+  border: none;
+  background: color(accent);
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.5s;
+  &.btn-default {
+    background: color(accent);
+    color: #fff;
   }
-  .btn-primary {
+  &.btn-primary {
+    background: linear-gradient(30deg, color(primary), color(accent));
+    &:hover,
+    &:focus {
+      background: linear-gradient(
+        30deg,
+        lighten(color(primary), 10%),
+        lighten(color(accent), 10%)
+      );
+    }
+  }
+  &:disabled {
+    background: #bfbfbf;
+    color: #7f7f7f;
+    cursor: not-allowed;
   }
 }
 .hamburger-btn {
