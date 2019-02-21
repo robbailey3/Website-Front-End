@@ -1,1 +1,1 @@
-export const bounceIn = new Animation();
+export let bounceIn;

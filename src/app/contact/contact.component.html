@@ -1,7 +1,7 @@
 <div class="flex-container">
   <div class="col-md-6"></div>
   <div class="col-md-6" id="contact-form">
-    <form (onChange)="formChange(this)" #contactForm="ngForm">
+    <form #contactForm="ngForm" (submit)="formSubmit(contactForm.value)">
       <div class="form-group">
         <label for="name">Name</label
         ><input
@@ -13,8 +13,12 @@
           [(ngModel)]="contactForm.name"
           #name="ngModel"
         />
-        <div class="form-item-invalid" [hidden]="name.valid || name.pristine">
-          INVALID
+        <div
+          class="form-item-invalid"
+          *ngIf="name.invalid && name.touched"
+          [@fadeInLeft]
+        >
+          <p>Please enter your name</p>
         </div>
       </div>
       <div class="form-group">
@@ -28,8 +32,12 @@
           [(ngModel)]="contactForm.email"
           #email="ngModel"
         />
-        <div class="form-item-invalid" [hidden]="email.valid || email.pristine">
-          INVALID
+        <div
+          class="form-item-invalid"
+          *ngIf="email.invalid && email.touched"
+          [@fadeInLeft]
+        >
+          <p>Please enter a valid email address.</p>
         </div>
       </div>
       <div class="form-group">
@@ -40,13 +48,15 @@
           required
           minlength="2"
           [(ngModel)]="contactForm.message"
+          rows="4"
           #message="ngModel"
         ></textarea>
         <div
           class="form-item-invalid"
-          [hidden]="message.valid || message.pristine"
+          *ngIf="message.invalid && message.touched"
+          [@fadeInLeft]
         >
-          INVALID
+          <p>Don't be shy</p>
         </div>
       </div>
       <input
@@ -57,6 +67,5 @@
         [disabled]="!contactForm.form.valid"
       />
     </form>
-    {{ contactForm.value | json }}
   </div>
 </div>

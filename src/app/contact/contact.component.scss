@@ -1,0 +1,7 @@
+@import '../../styles/layout/grid';
+#contact-form {
+  overflow: hidden;
+  @include breakpoint(md) {
+    padding: 32px;
+  }
+}

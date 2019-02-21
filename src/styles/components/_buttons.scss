@@ -28,6 +28,12 @@
     background: #bfbfbf;
     color: #7f7f7f;
     cursor: not-allowed;
+    &:hover,
+    &:focus {
+      background: darken(#bfbfbf, 3%);
+      color: #7f7f7f;
+      cursor: not-allowed;
+    }
   }
 }
 .hamburger-btn {
