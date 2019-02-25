@@ -6,6 +6,7 @@
     margin-bottom: 16px;
     border-radius: 8px;
     overflow: hidden;
+    border: 1px solid rgba(#000, 0.1);
     .post-main {
       padding: 16px;
     }
@@ -15,12 +16,26 @@
       }
     }
     h2 {
-      margin: 8px 0 16px;
+      margin: 0 0 8px;
     }
     h2 a {
       font-size: 1.8rem;
       color: color(primary);
       text-decoration: none;
+      line-height: 1;
+      display: block;
+      &:hover,
+      &:focus {
+        color: lighten(color(primary), 10%);
+        text-decoration: underline;
+      }
+    }
+    .btn-container {
+      .read-more {
+        background: transparent;
+        color: color(primary);
+        padding: 0;
+      }
     }
   }
 }
