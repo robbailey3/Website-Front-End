@@ -12,6 +12,6 @@ export class ContactService {
   constructor(private http: HttpClient) {}
 
   sendMail(data: JSON | FormData): Observable<APIResponse> {
-    return this.http.post<APIResponse>(this.URL_BASE + 'contact', data);
+    return this.http.post<APIResponse>(this.URL_BASE, data);
   }
 }

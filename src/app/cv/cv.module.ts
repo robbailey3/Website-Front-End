@@ -7,6 +7,7 @@ import { EducationComponent } from './education/education.component';
 import { SkillsComponent } from './skills/skills.component';
 import { HobbiesComponent } from './hobbies/hobbies.component';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,6 @@ import { RouterModule } from '@angular/router';
     HobbiesComponent
   ],
   exports: [CvRootComponent],
-  imports: [CommonModule, RouterModule]
+  imports: [CommonModule, RouterModule, SharedModule]
 })
 export class CVModule {}

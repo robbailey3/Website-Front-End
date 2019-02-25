@@ -16,3 +16,23 @@
     }
   }
 }
+.social {
+  ul {
+    padding: 0;
+  }
+  li {
+    list-style: none;
+    display: inline-block;
+  }
+  a {
+    svg path {
+      fill: #404040;
+    }
+  }
+  a:hover,
+  a:focus {
+    svg path {
+      fill: #777;
+    }
+  }
+}

@@ -1,11 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  styleUrls: ['./profile.component.scss'],
+  encapsulation: ViewEncapsulation.Native
 })
 export class ProfileComponent {
-  @Input() cv: JSON;
+  @Input() cv: object;
   constructor() {}
 }

@@ -5,6 +5,7 @@ import { BarChartComponent } from './components/data-visualisation/bar-chart/bar
 import { LineGraphComponent } from './components/data-visualisation/line-graph/line-graph.component';
 import { GridComponent } from './components/grid/grid.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -12,9 +13,10 @@ import { ModalComponent } from './components/modal/modal.component';
     BarChartComponent,
     LineGraphComponent,
     GridComponent,
-    ModalComponent
+    ModalComponent,
+    SafePipe
   ],
-  exports: [CardComponent, GridComponent, ModalComponent],
+  exports: [CardComponent, GridComponent, ModalComponent, SafePipe],
   imports: [CommonModule]
 })
 export class SharedModule {}

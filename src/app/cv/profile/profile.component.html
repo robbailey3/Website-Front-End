@@ -1,23 +1,28 @@
 <div id="profile">
   <div class="name">
-    <h2>{{ cv.basics.name }}</h2>
+    <h2>{{ cv.name }}</h2>
   </div>
   <div class="cv-tagline">
-    <span class="subtitle">{{ cv.basics.jobTitle }}</span>
+    <span class="subtitle">{{ cv.jobTitle }}</span>
   </div>
   <div class="contact">
     <span
-      ><a href="mailto:{{ cv.basics.contact.email }}">{{
-        cv.basics.contact.email
-      }}</a></span
+      ><a href="mailto:{{ cv.contact.email }}">{{ cv.contact.email }}</a></span
     >|
     <span
-      ><a href="tel: +44{{ cv.basics.contact.phone.slice(1) }}">{{
-        cv.basics.contact.phone
+      ><a href="tel: +44{{ cv.contact.phone.slice(1) }}">{{
+        cv.contact.phone
       }}</a></span
     >
   </div>
+  <div class="social">
+    <ul>
+      <li *ngFor="let social of cv.profiles">
+        <a href="{{ social.url }}" [innerHTML]="social.svg | safe"></a>
+      </li>
+    </ul>
+  </div>
   <div class="summary">
-    <p>{{ cv.basics.profile }}</p>
+    <p>{{ cv.profile }}</p>
   </div>
 </div>
