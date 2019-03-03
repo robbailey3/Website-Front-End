@@ -1,6 +1,7 @@
 @import '../../../styles/components/colours';
 #side-bar {
-  background: #fffffd;
+  background: #fff;
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
   position: fixed;
   left: 0;
   top: 0;
@@ -17,7 +18,7 @@
   justify-content: center;
   position: fixed;
   left: 72px;
-  background: #fffffdfc;
+  background: #ffffffee;
   height: 100%;
   z-index: 999;
   transition: 1s cubic-bezier(0.8, -0.4, 0, 1.5);
