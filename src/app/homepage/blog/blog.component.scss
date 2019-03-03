@@ -1,0 +1,39 @@
+@import '../../../styles/components/colours';
+
+.post {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(#000, 0.1);
+  .post-main {
+    padding: 16px;
+  }
+  .post-image {
+    img {
+      width: 100%;
+    }
+  }
+  h2 {
+    margin: 0 0 8px;
+  }
+  h2 a {
+    display: block;
+    font-size: 1.8rem;
+    color: color(primary);
+    text-decoration: none;
+    line-height: 1;
+    &:hover,
+    &:focus {
+      color: lighten(color(primary), 10%);
+      text-decoration: underline;
+    }
+  }
+  .btn-container {
+    .read-more {
+      background: transparent;
+      color: color(primary);
+      padding: 0;
+    }
+  }
+}

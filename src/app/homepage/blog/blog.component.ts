@@ -16,7 +16,11 @@ export class BlogComponent implements OnInit {
   }
   getBlogPosts() {
     this.service.getNPosts(2).subscribe(response => {
-      this.posts = response.response.results as Post[];
+      this.posts = response.response.results.map(post => {
+        post.tags = post.categories.split(',');
+        return post;
+      }) as Post[];
+      console.log(this.posts);
     });
   }
 }

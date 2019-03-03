@@ -9,10 +9,8 @@
           <a [routerLink]="[post.slug]">{{ post.title }}</a>
         </h2>
         <div class="post-date">{{ post.date }}</div>
-        <div class="post-tags">
-          <span class="post-tag" *ngFor="let tag of post.categories">{{
-            tag
-          }}</span>
+        <div class="post-tags" *ngIf="post.tags">
+          <span class="post-tag" *ngFor="let tag of post.tags">{{ tag }}</span>
         </div>
       </div>
       <div class="post-description">
@@ -23,4 +21,7 @@
       </div>
     </div>
   </div>
+</div>
+<div id="no-posts" *ngIf="!posts || posts.length == 0">
+  <p>Sorry, there are currently no posts.</p>
 </div>

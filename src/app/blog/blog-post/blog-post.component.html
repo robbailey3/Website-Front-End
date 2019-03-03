@@ -1,1 +1,3 @@
-<pre>{{ post | json }}</pre>
+<div id="blog-post" *ngIf="post">
+  <div class="post-content" [innerHTML]="post.content"></div>
+</div>
