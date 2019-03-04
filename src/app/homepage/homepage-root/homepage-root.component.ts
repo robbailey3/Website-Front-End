@@ -6,9 +6,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
   styleUrls: ['./homepage-root.component.scss']
 })
 export class HomepageRootComponent implements OnInit {
-  @HostListener('window:scroll', ['$event']) onScroll($event) {
-    console.log($event);
-  }
+  @HostListener('window:mousewheel', ['$event']) onScroll($event) {}
   constructor() {}
 
   ngOnInit() {}
