@@ -1,3 +1,4 @@
+import { MetaService } from './services/meta/meta.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from './components/card/card.component';
@@ -17,6 +18,7 @@ import { SafePipe } from './pipes/safe.pipe';
     SafePipe
   ],
   exports: [CardComponent, GridComponent, ModalComponent, SafePipe],
-  imports: [CommonModule]
+  imports: [CommonModule],
+  providers: [MetaService]
 })
 export class SharedModule {}

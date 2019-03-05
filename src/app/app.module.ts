@@ -1,3 +1,4 @@
+import { AboutMeModule } from './about-me/about-me.module';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,6 +33,7 @@ import { CVModule } from './cv/cv.module';
     FormsModule,
     ErrorHandlerModule,
     CVModule,
+    AboutMeModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production
     })

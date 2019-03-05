@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { MetaService } from 'src/app/shared/services/meta/meta.service';
 
 @Component({
   selector: 'app-homepage-root',
@@ -6,8 +7,13 @@ import { Component, OnInit, HostListener } from '@angular/core';
   styleUrls: ['./homepage-root.component.scss']
 })
 export class HomepageRootComponent implements OnInit {
-  @HostListener('window:mousewheel', ['$event']) onScroll($event) {}
-  constructor() {}
+  // @HostListener('window:mousewheel', ['$event']) onScroll($event) {}
+  constructor(private meta: MetaService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.setMeta();
+  }
+  setMeta() {
+    this.meta.setDescription('foo--baer');
+  }
 }

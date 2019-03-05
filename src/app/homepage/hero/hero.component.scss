@@ -36,4 +36,13 @@ app-grid {
       box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.4);
     }
   }
+  .btn-group-item {
+    .btn {
+      margin: auto;
+      width: 80%;
+      @include breakpoint(md) {
+        width: 50%;
+      }
+    }
+  }
 }

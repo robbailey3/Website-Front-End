@@ -24,6 +24,16 @@
       );
     }
   }
+  &.btn-ghost {
+    color: #fff;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      border-color: #fff;
+    }
+  }
   &:disabled {
     background: #bfbfbf;
     color: #7f7f7f;
@@ -71,6 +81,15 @@
     outline: none;
     span:not(.sr-only) {
       background: color(primary);
+    }
+  }
+}
+.btn-group {
+  .btn-group-item {
+    display: block;
+    margin: 16px 0;
+    .btn {
+      display: block;
     }
   }
 }
