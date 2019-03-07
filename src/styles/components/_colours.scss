@@ -1,15 +1,9 @@
-$color1: rgba(17, 17, 17, 1);
-$color2: rgba(243, 243, 243, 1);
-$color3: rgba(11, 57, 84, 1);
-$color4: rgba(191, 215, 234, 1);
-$color5: rgba(4, 71, 28, 1);
-
 $color-scheme: (
-  'primary': rgb(11, 57, 84),
-  'accent': rgb(4, 71, 28),
-  'bright-accent': #9e0031,
-  'background': rgb(243, 243, 243),
-  'nearly-black': rgb(17, 17, 17)
+  'primary': rgba(67, 146, 241, 1),
+  'secondary': rgba(39, 70, 144, 1),
+  'accent': rgba(219, 84, 97, 1),
+  'background': rgba(251, 255, 254, 1),
+  'nearly-black': rgba(27, 27, 30, 1)
 );
 
 @function color($name) {

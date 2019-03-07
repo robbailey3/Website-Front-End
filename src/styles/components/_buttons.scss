@@ -8,20 +8,17 @@
   border-radius: 4px;
   color: #fff;
   cursor: pointer;
-  transition: 0.5s;
+  transition: 0.3s;
+  text-decoration: none;
   &.btn-default {
     background: color(accent);
     color: #fff;
   }
   &.btn-primary {
-    background: linear-gradient(30deg, color(primary), color(accent));
+    background: color(primary);
     &:hover,
     &:focus {
-      background: linear-gradient(
-        30deg,
-        lighten(color(primary), 10%),
-        lighten(color(accent), 10%)
-      );
+      background: darken(color(primary), 10%);
     }
   }
   &.btn-ghost {
@@ -57,7 +54,7 @@
     width: 32px;
     height: 3px;
     border-radius: 6px;
-    background: #fafafa;
+    background: color(nearly-black);
     position: absolute;
     left: 4px;
     top: 14px;
@@ -67,20 +64,20 @@
       top: 24px;
     }
   }
-  &.menu-open {
-    span:not(.sr-only) {
-      transform: rotate(45deg);
-      top: 18px;
-      &:nth-of-type(2) {
-        transform: rotate(135deg);
-        top: 18px;
-      }
-    }
-  }
   &:focus {
     outline: none;
     span:not(.sr-only) {
-      background: color(primary);
+      background: color(secondary);
+    }
+  }
+  &.hamburger-close {
+    span:not(.sr-only) {
+      top: 18px;
+      transform: rotate(45deg);
+      &:nth-of-type(2) {
+        top: 18px;
+        transform: rotate(135deg);
+      }
     }
   }
 }

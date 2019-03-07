@@ -1,4 +1,4 @@
-<div id="side-bar" [class.active]="menuActive" class="flex-container">
+<div id="top-bar" [class.active]="menuActive" class="flex-container">
   <div id="menu-button-container" (click)="toggleMenu()">
     <button class="hamburger-btn" [class.menu-open]="menuActive">
       <span class="sr-only">Menu</span> <span></span> <span></span>
@@ -6,6 +6,14 @@
   </div>
 </div>
 <nav id="main-navigation" [class.active]="menuActive" class="flex-container">
+  <div id="menu-button-container" (click)="toggleMenu()">
+    <button
+      class="hamburger-btn hamburger-close"
+      [class.menu-open]="menuActive"
+    >
+      <span class="sr-only">Menu</span> <span></span> <span></span>
+    </button>
+  </div>
   <ul>
     <li><a [routerLink]="['/']" (click)="toggleMenu()">Home</a></li>
     <li><a [routerLink]="['blog']" (click)="toggleMenu()">Blog</a></li>
