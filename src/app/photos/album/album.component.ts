@@ -8,9 +8,11 @@ import { PhotosService } from '../photos.service';
   styleUrls: ['./album.component.scss']
 })
 export class AlbumComponent implements OnInit {
-  photos: any;
-  constructor(private route: ActivatedRoute, private service: PhotosService) { }
 
+  constructor(private route: ActivatedRoute, private service: PhotosService) { }
+  data: any;
+  photos: HTMLImageElement[] = [];
+  thumbnails: HTMLImageElement[];
   ngOnInit() {
     this.getIDFromRoute();
   }
@@ -24,8 +26,14 @@ export class AlbumComponent implements OnInit {
   }
   getData(id: number) {
     this.service.getAlbumByID(id).subscribe((data) => {
-      this.photos = data.response.results;
+      this.data = data.response.results;
+      this.loadThumbnails();
+      this.loadImages();
     });
   }
+  loadImages() {
+
+  }
+  loadThumbnails() { }
 
 }
