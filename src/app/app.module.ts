@@ -17,6 +17,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ErrorHandlerModule } from './error-handler/error-handler.module';
 import { CVModule } from './cv/cv.module';
+
 @NgModule({
   declarations: [AppComponent, ContactComponent],
   imports: [
@@ -41,4 +42,4 @@ import { CVModule } from './cv/cv.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

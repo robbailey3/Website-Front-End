@@ -4,7 +4,6 @@ import { ContactService } from '../shared/services/contact/contact.service';
 import { ErrorHandlerService } from '../error-handler/error-handler.service';
 
 @Component({
-  selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
   animations: [fadeInLeft]
@@ -17,13 +16,13 @@ export class ContactComponent {
   ) { }
   private sendMail(data: JSON | FormData) {
     this.service.sendMail(data).subscribe(
-      res => { },
-      err => {
+      (res) => { },
+      (err) => {
         this.handleError(err);
       }
     );
   }
-  formSubmit(data) {
+  formSubmit(data: JSON) {
     console.log(data);
     this.formSubmitted = true;
     // this.sendMail(data);

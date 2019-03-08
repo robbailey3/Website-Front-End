@@ -1,9 +1,9 @@
-$breakpoints: (
-  'xs': '360px',
-  'sm': '550px',
-  'md': '768px',
-  'lg': '1280px',
-  'xl': '1440px'
+$breakpoints: ('xs': '360px',
+'sm': '550px',
+'md': '768px',
+'lg': '990px',
+'xl': '1280px',
+'xxl': '1440px'
 );
 
 @mixin breakpoint($breakpoint) {
@@ -17,6 +17,7 @@ $breakpoints: (
   width: 99%;
   margin: 0 0.5%;
 }
+
 %grid-base-nm {
   display: block;
   width: 100%;
@@ -28,13 +29,17 @@ $breakpoints: (
     @media (min-width: map-get($breakpoints, $breakpoint)) {
       @content;
     }
-  } @else {
+  }
+
+  @else {
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "+"Available breakpoints are: #{map-keys($breakpoints)}.";
   }
 }
 
 @mixin cols {
-  @each $breakpoint, $size in $breakpoints {
+
+  @each $breakpoint,
+  $size in $breakpoints {
     @for $i from 1 through 12 {
       .col-#{$breakpoint}-#{$i} {
         @extend %grid-base;
@@ -42,8 +47,11 @@ $breakpoints: (
     }
   }
 }
+
 @mixin cols-nm {
-  @each $breakpoint, $size in $breakpoints {
+
+  @each $breakpoint,
+  $size in $breakpoints {
     @for $i from 1 through 12 {
       .col-#{$breakpoint}-#{$i} {
         @extend %grid-base-nm;
@@ -51,9 +59,11 @@ $breakpoints: (
     }
   }
 }
+
 @include cols;
 
-@each $breakpoint, $size in $breakpoints {
+@each $breakpoint,
+$size in $breakpoints {
   @media only screen and (min-width: $size) {
     @for $i from 1 through 12 {
       .col-#{$breakpoint}-#{$i} {
@@ -63,7 +73,9 @@ $breakpoints: (
     }
   }
 }
-@each $breakpoint, $size in $breakpoints {
+
+@each $breakpoint,
+$size in $breakpoints {
   @media only screen and (min-width: $size) {
     @for $i from 1 through 12 {
       .col-#{$breakpoint}-#{$i}-nm {
@@ -73,7 +85,8 @@ $breakpoints: (
   }
 }
 
-@each $breakpoint, $size in $breakpoints {
+@each $breakpoint,
+$size in $breakpoints {
   @media only screen and (min-width: $size) {
     @for $i from 1 through 12 {
       .offset-#{$breakpoint}-#{$i} {
@@ -83,7 +96,8 @@ $breakpoints: (
   }
 }
 
-@each $breakpoint, $size in $breakpoints {
+@each $breakpoint,
+$size in $breakpoints {
   @media only screen and (min-width: $size) {
     @for $i from 1 through 12 {
       .offset-#{$breakpoint}-#{$i}-nm {
@@ -93,7 +107,8 @@ $breakpoints: (
   }
 }
 
-@each $breakpoint, $size in $breakpoints {
+@each $breakpoint,
+$size in $breakpoints {
   @media only screen and (max-width: $size) {
     .hide-#{$breakpoint} {
       display: none;
@@ -106,8 +121,9 @@ $breakpoints: (
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
+
 .hide {
   display: none !important;
 }

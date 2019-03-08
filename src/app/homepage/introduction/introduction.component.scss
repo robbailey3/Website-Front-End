@@ -7,6 +7,10 @@
 }
 
 .homepage-introduction {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+
   .introduction-item {
     padding: 16px;
     text-align: center;
@@ -19,4 +23,5 @@
 #cv-link-container {
   text-align: center;
   font-size: 22px;
+  margin: 32px 0;
 }

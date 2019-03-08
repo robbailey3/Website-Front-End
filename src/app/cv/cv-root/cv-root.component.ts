@@ -2,6 +2,7 @@ import { environment } from 'src/environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { CvService } from '../cv.service';
 import { ErrorHandlerService } from 'src/app/error-handler/error-handler.service';
+import { CV } from '../cv.interface';
 
 @Component({
   selector: 'app-cv-root',
@@ -9,24 +10,24 @@ import { ErrorHandlerService } from 'src/app/error-handler/error-handler.service
   styleUrls: ['./cv-root.component.scss']
 })
 export class CvRootComponent implements OnInit {
-  cv: object;
+  cv: CV;
   constructor(
     private service: CvService,
     private errorService: ErrorHandlerService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.getData();
   }
   getData() {
     this.service.getCV().subscribe(
-      data => {
-        this.cv = data;
+      (data) => {
+        this.cv = data as CV;
         if (environment.debug) {
           console.log(this.cv);
         }
       },
-      err => {
+      (err) => {
         this.reportError(err);
       }
     );

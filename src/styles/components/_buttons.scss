@@ -7,6 +7,7 @@
   border: none;
   background: color(accent);
   border-radius: 4px;
+  font-weight: bold;
   color: #fff;
   cursor: pointer;
   -webkit-transition: 0.3s;
@@ -28,8 +29,8 @@
     &:hover,
     &:focus {
       text-decoration: underline;
-      -webkit-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.6);
-      box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.6);
+      -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.7);
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.7);
     }
 
   }
@@ -83,6 +84,12 @@
 
     &:nth-of-type(2) {
       top: 24px;
+    }
+  }
+
+  &:hover {
+    span:not(.sr-only) {
+      background: color(primary);
     }
   }
 
