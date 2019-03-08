@@ -2,36 +2,48 @@
   position: relative;
   margin-bottom: 32px;
   padding: 16px;
+
   p {
     width: 100%;
   }
+
   .experience-logo {
     width: 100px;
     position: absolute;
     top: 16px;
     right: 16px;
+
     img {
       max-width: 100%;
     }
   }
+
   .experience-date {
     color: #afafaf;
     font-variant: small-caps;
     font-size: 1.1em;
     letter-spacing: 1px;
   }
+
   .experience-position {
     font-size: 1.1em;
   }
+
   .experience-company {
     color: #2f2f2f;
   }
+
   h3 {
     margin-top: 0.4em;
   }
+
   .experience-responsibilities {
     ul {
       padding-left: 40px;
     }
+  }
+
+  .experience-skills {
+    width: 100%;
   }
 }

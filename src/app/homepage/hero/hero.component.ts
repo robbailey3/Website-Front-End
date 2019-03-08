@@ -1,9 +1,8 @@
 import {
   Component,
   OnInit,
-  HostListener,
   ViewChild,
-  ElementRef
+  ElementRef,
 } from '@angular/core';
 
 @Component({
@@ -13,7 +12,7 @@ import {
 })
 export class HeroComponent implements OnInit {
   age: number;
-  constructor() {}
+  constructor() { }
   ngOnInit() {
     this.calculateAge();
   }
@@ -25,5 +24,11 @@ export class HeroComponent implements OnInit {
     if (m < 0 || (m === 0 && today.getDate() < birthday.getDate())) {
       this.age--;
     }
+  }
+  scrollDown() {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
   }
 }

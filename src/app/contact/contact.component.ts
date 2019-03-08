@@ -10,13 +10,14 @@ import { ErrorHandlerService } from '../error-handler/error-handler.service';
   animations: [fadeInLeft]
 })
 export class ContactComponent {
+  public formSubmitted = false;
   constructor(
     private service: ContactService,
     private errorService: ErrorHandlerService
-  ) {}
+  ) { }
   private sendMail(data: JSON | FormData) {
     this.service.sendMail(data).subscribe(
-      res => {},
+      res => { },
       err => {
         this.handleError(err);
       }
@@ -24,7 +25,8 @@ export class ContactComponent {
   }
   formSubmit(data) {
     console.log(data);
-    this.sendMail(data);
+    this.formSubmitted = true;
+    // this.sendMail(data);
   }
   handleError($e) {
     this.errorService.postError($e);

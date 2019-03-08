@@ -1,9 +1,11 @@
 @import '../../../styles/components/colours';
 @import '../../../styles/layout/grid';
+
 :host {
   display: block;
   width: 100%;
 }
+
 .homepage-introduction {
   .introduction-item {
     padding: 16px;
@@ -12,4 +14,9 @@
     border-radius: 5px;
     margin-bottom: 10px;
   }
+}
+
+#cv-link-container {
+  text-align: center;
+  font-size: 22px;
 }

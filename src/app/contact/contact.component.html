@@ -1,73 +1,39 @@
 <div class="flex-container">
   <div class="col-md-6" id="contact-message">
     <h1>Contact Me</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda eligendi quis odio, saepe aperiam cupiditate
+      accusantium incidunt rerum repudiandae tempore, sed consequatur aspernatur ipsa harum voluptatem, quisquam
+      voluptates sunt recusandae?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet ducimus repellat consequuntur explicabo
+      corporis unde totam possimus porro labore! Corrupti tenetur delectus dolor quaerat ipsum unde illum officiis eius
+      quos?</p>
   </div>
   <div class="col-md-6" id="contact-form">
-    <form #contactForm="ngForm" (submit)="formSubmit(contactForm.value)">
-      <div class="form-group">
-        <label for="name">Name</label
-        ><input
-          class="form-control"
-          name="name"
-          required
-          type="text"
-          minlength="2"
-          [(ngModel)]="contactForm.name"
-          #name="ngModel"
-        />
-        <div
-          class="form-item-invalid"
-          *ngIf="name.invalid && name.touched"
-          [@fadeInLeft]
-        >
-          <p>Please enter your name</p>
+    <div class="form-container" *ngIf="!formSubmitted">
+      <form #contactForm="ngForm" (submit)="formSubmit(contactForm.value)">
+        <div class="form-group">
+          <label for="name">Name</label><input class="form-control" name="name" required type="text" minlength="2"
+            [(ngModel)]="contactForm.name" #name="ngModel" />
+          <div class="form-item-invalid" *ngIf="name.invalid && name.touched" [@fadeInLeft]>
+            <p>Please enter your name</p>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label
-        ><input
-          class="form-control"
-          name="email"
-          required
-          type="email"
-          email
-          [(ngModel)]="contactForm.email"
-          #email="ngModel"
-        />
-        <div
-          class="form-item-invalid"
-          *ngIf="email.invalid && email.touched"
-          [@fadeInLeft]
-        >
-          <p>Please enter a valid email address.</p>
+        <div class="form-group">
+          <label for="email">Email</label><input class="form-control" name="email" required type="email" email
+            [(ngModel)]="contactForm.email" #email="ngModel" />
+          <div class="form-item-invalid" *ngIf="email.invalid && email.touched" [@fadeInLeft]>
+            <p>Please enter a valid email address.</p>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="message">Message</label
-        ><textarea
-          class="form-control"
-          name="message"
-          required
-          minlength="2"
-          [(ngModel)]="contactForm.message"
-          rows="4"
-          #message="ngModel"
-        ></textarea>
-        <div
-          class="form-item-invalid"
-          *ngIf="message.invalid && message.touched"
-          [@fadeInLeft]
-        >
-          <p>Don't be shy</p>
+        <div class="form-group">
+          <label for="message">Message</label><textarea class="form-control" name="message" required minlength="2"
+            [(ngModel)]="contactForm.message" rows="4" #message="ngModel"></textarea>
+          <div class="form-item-invalid" *ngIf="message.invalid && message.touched" [@fadeInLeft]>
+            <p>Don't be shy</p>
+          </div>
         </div>
-      </div>
-      <input
-        class="btn btn-primary"
-        id="contact-form-submit"
-        name="submit"
-        type="submit"
-        [disabled]="!contactForm.form.valid"
-      />
-    </form>
+        <input class="btn btn-primary" id="contact-form-submit" name="submit" type="submit" [disabled]="!contactForm.form.valid" />
+      </form>
+    </div>
   </div>
 </div>
