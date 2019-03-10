@@ -1,0 +1,37 @@
+.album {
+  position: relative;
+  height: 400px;
+  text-align: center;
+  margin-bottom: 16px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  h2 a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 26px;
+  }
+  .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background: #000;
+    transition: 0.4s;
+  }
+  &:hover {
+    .overlay {
+      opacity: 0.8;
+    }
+  }
+}

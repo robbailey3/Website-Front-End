@@ -1,3 +1,11 @@
-<p>
-  album works!
-</p>
+<div id="images-container" class="flex-container">
+  <div *ngFor="let img of data" class="col-md-3">
+    <img
+      #lazyLoad
+      src="{{ img.thumbnail_path }}"
+      alt="{{ img.caption }}"
+      class="lazyLoad"
+      [attr.data-src]="img.path"
+    />
+  </div>
+</div>

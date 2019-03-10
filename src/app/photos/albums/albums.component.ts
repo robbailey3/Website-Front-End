@@ -18,6 +18,7 @@ export class AlbumsComponent implements OnInit {
     this.service.getAlbums()
       .subscribe((data) => {
         this.albums = data.response.results;
+        console.log(this.albums);
       });
   }
 

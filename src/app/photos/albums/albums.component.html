@@ -1,1 +1,10 @@
-<a [routerLink]="['2']">2</a>
+<div id="albums-container" *ngIf="albums" class="flex-container">
+  <div class="album col-md-4" *ngFor="let album of albums">
+    <img src="{{ album.path }}" alt="{{ album.caption }}" class="album-image" />
+    <div class="overlay"></div>
+
+    <h2>
+      <a [routerLink]="[album.albumID]">{{ album.name }}</a>
+    </h2>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+#images-container {
+  div {
+    height: 300px;
+  }
+  img {
+    // animation: fadeIn 1s linear 1;
+    width: 100%;
+    transition: 3s;
+  }
+  .lazyLoad {
+    // filter: blur(10px);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
