@@ -111,7 +111,7 @@ export class AlbumComponent implements OnInit, AfterViewInit {
       }
       this.photos = [];
       this.rows.forEach((el: any) => {
-        el.forEach((photo) => {
+        el.forEach((photo: Photo) => {
           photo['height'] = Math.min(el['height'] - (2 * this.config.imageMargins), 500);
           photo['width'] = photo['height'] * photo['aspectRatio'];
           this.photos.push(photo);

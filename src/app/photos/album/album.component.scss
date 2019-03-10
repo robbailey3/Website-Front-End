@@ -1,6 +1,9 @@
 #images-container {
+  align-items: center;
+  justify-content: center;
   div {
-    height: 300px;
+    margin-bottom: 8px;
+    overflow: hidden;
   }
   img {
     width: 100%;
