@@ -17,7 +17,9 @@
         <p>{{ post.description }}</p>
       </div>
       <div class="btn-container">
-        <a [routerLink]="[post.slug]" class="btn read-more">Read more</a>
+        <a [routerLink]="['blog', post.slug]" class="btn read-more"
+          >Read more</a
+        >
       </div>
     </div>
   </div>

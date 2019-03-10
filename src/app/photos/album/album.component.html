@@ -1,11 +1,16 @@
 <div id="images-container" class="flex-container">
-  <div *ngFor="let img of data" class="col-md-3">
+  <div
+    *ngFor="let img of photos"
+    [style.width]="img.width + 'px'"
+    [style.height]="img.height + 'px'"
+    [style.margin]="config.imageMargins + 'px'"
+  >
     <img
-      #lazyLoad
       src="{{ img.thumbnail_path }}"
       alt="{{ img.caption }}"
-      class="lazyLoad"
       [attr.data-src]="img.path"
+      class="lazy-load"
+      #lazyLoad
     />
   </div>
 </div>

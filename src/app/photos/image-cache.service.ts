@@ -12,13 +12,12 @@ export class ImageCacheService {
   }
   load(photo: Photo): void {
     if (this.imageCache[photo.path]) {
-      photo.thumbnail_path = photo.path;
+      // Image has already been downloaded, no need to do anything.
       return;
     }
     const img = new Image();
     img.onload = () => {
       this.addImgToCache(img);
-      photo.thumbnail_path = photo.path;
     }
     this.imageCache[photo.path] = false;
     img.src = photo.path;
