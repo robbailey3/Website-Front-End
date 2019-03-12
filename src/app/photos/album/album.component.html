@@ -1,24 +1,36 @@
 <div id="images-container" class="flex-container">
-  <div *ngFor="let img of photos" [style.width]="img.width + 'px'" [style.height]="img.height + 'px'" [style.margin]="config.imageMargins + 'px'">
-    <a (click)="setActivePhoto(photo);">
-      <img src="{{ img.thumbnail_path }}" alt="{{ img.caption }}" [attr.data-src]="img.path" class="lazy-load"
-        #lazyLoad />
+  <div
+    *ngFor="let img of photos; index as i"
+    [style.width]="img.width + 'px'"
+    [style.height]="img.height + 'px'"
+    [style.margin]="config.imageMargins + 'px'"
+  >
+    <a (click)="setActivePhoto(i)">
+      <img
+        src="{{ img.thumbnail_path }}"
+        alt="{{ img.caption }}"
+        [attr.data-src]="img.path"
+        class="lazy-load"
+        #lazyLoad
+      />
     </a>
   </div>
 </div>
-<div class="active-photo-container" *ngIf="activePhoto">
-  <div class="controls-container">
-    <a id="previous-photo"><i class="material-icons">
+<div class="active-photo-container flex-container" *ngIf="activePhoto">
+  <div class="image-container">
+    <a id="previous-photo" (click)="prevPhoto()"
+      ><i class="material-icons">
         arrow_back
-      </i></a>
-    <a id="next-photo"><i class="material-icons">
+      </i></a
+    >
+    <a id="next-photo" (click)="nextPhoto()"
+      ><i class="material-icons">
         arrow_forward
-      </i></a>
+      </i></a
+    >
+    <div class="active-photo">
+      <img src="{{ activePhoto.path }}" alt="{{ activePhoto.caption }}" />
+    </div>
   </div>
-  <div class="active-photo">
-    <img src="{{activePhoto.path}}" alt="{{activePhoto.caption}}">
-  </div>
-  <div class="exif-container">
-
-  </div>
+  <div class="exif-container"></div>
 </div>

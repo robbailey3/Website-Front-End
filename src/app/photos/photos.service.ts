@@ -15,8 +15,7 @@ export class PhotosService {
    * @param id - the ID of the photo album
    */
   getAlbumByID(id: number): Observable<APIResponse> {
-    // return this.http.get<APIResponse>(`${this.URL_BASE}album/${id}`);
-    return this.http.get<APIResponse>('../../assets/mockResponse.json');
+    return this.http.get<APIResponse>(`${this.URL_BASE}album/${id}`);
   }
   /**
    * @description

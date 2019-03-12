@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChildren, QueryList, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList, ElementRef, AfterViewInit, HostListener, Renderer2 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PhotosService } from '../photos.service';
 import { Photo } from '../photo.interface';
@@ -25,12 +25,23 @@ export class AlbumComponent implements OnInit, AfterViewInit {
   constructor(
     private route: ActivatedRoute,
     private service: PhotosService,
-    private cache: ImageCacheService) { }
+    private cache: ImageCacheService,
+    private renderer: Renderer2) { }
   /**
    * @description Method which is called when the component is initiated.
    */
   ngOnInit() {
     this.getIDFromRoute();
+    this.renderer.listen('document', 'keydown', ($event) => {
+      if (this.activePhoto) {
+        if ($event.key === 'ArrowRight') {
+          this.nextPhoto();
+        }
+        if ($event.key === 'ArrowLeft') {
+          this.prevPhoto();
+        }
+      }
+    });
   }
   /**
    * @description Method which is called after the view has initialised.
@@ -80,8 +91,23 @@ export class AlbumComponent implements OnInit, AfterViewInit {
   preLoadImages() {
     this.cache.loadAll(this.data);
   }
-  setActivePhoto(photo: Photo) {
-    this.activePhoto = photo;
+  setActivePhoto(i: number) {
+    this.activePhoto = this.data[i];
+    console.log(this.activePhoto);
+  }
+  nextPhoto(): void{
+    let index = this.data.indexOf(this.activePhoto) + 1;
+    index > this.data.length - 1 ? index = 0 : index;
+    console.log(index);
+    console.log("NEXT");
+    this.activePhoto = this.data[index];
+  }
+  prevPhoto(): void{
+    let index = this.data.indexOf(this.activePhoto) - 1;
+    index < 0 ? index = this.data.length - 1 : index;
+    console.log(index);
+    console.log("PREV");
+    this.activePhoto = this.data[index];
   }
   private lazyLoad() {
     const lazyImages = this.renderedImages;
