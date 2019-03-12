@@ -1,15 +1,24 @@
 #images-container {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+
   div {
     margin-bottom: 8px;
     overflow: hidden;
   }
+
   img {
     width: 100%;
-    transition: 3s;
+    -webkit-transition: 1s;
+    transition: 1s;
   }
-  .lazyLoad {
-    filter: blur(3px);
+
+  .lazy-load {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
   }
 }

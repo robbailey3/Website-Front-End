@@ -1,4 +1,4 @@
-export interface Photo{
+export interface Photo {
   photoID: string;
   path: string;
   thumbnail_path?: any;
@@ -6,4 +6,5 @@ export interface Photo{
   albumID: string;
   exif: object | any;
   aspectRatio: number;
+  loaded?: boolean;
 }

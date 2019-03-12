@@ -32,7 +32,6 @@ describe('AppComponent', () => {
   });
   it('should contain the router-outlet', () => {
     fixture.detectChanges();
-    console.log(compiled);
     expect(compiled.querySelector('app-navigation')).toBeDefined();
   });
 });

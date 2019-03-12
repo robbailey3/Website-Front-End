@@ -10,16 +10,24 @@ export class ImageCacheService {
   private addImgToCache(img: HTMLImageElement) {
     this.imageCache[img.src] = img;
   }
-  load(photo: Photo): void {
-    if (this.imageCache[photo.path]) {
-      // Image has already been downloaded, no need to do anything.
-      return;
-    }
-    const img = new Image();
-    img.onload = () => {
-      this.addImgToCache(img);
-    }
-    this.imageCache[photo.path] = false;
-    img.src = photo.path;
+  load(path: string): Promise<null> {
+    return new Promise((resolve) => {
+      if (this.imageCache[path]) {
+        resolve();
+      }
+      const img = new Image();
+      img.onload = () => {
+        this.addImgToCache(img);
+        resolve();
+      };
+      img.src = path;
+    });
+  }
+  loadAll(photos: Photo[]) {
+    const promises = [];
+    photos.forEach((photo) => {
+      promises.push(this.load(photo.path));
+    });
+    return Promise.all(promises);
   }
 }

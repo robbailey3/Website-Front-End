@@ -10,25 +10,38 @@ import { ImageCacheService } from '../image-cache.service';
   styleUrls: ['./album.component.scss']
 })
 export class AlbumComponent implements OnInit, AfterViewInit {
+  @ViewChildren('lazyLoad') renderedImages: QueryList<ElementRef>;
 
-  constructor(private route: ActivatedRoute, private service: PhotosService, private cache: ImageCacheService) { }
   data: Photo[];
   aspectRatio: number;
   config = {
-    desktopRowHeight: 300,
-    mobileRowHeight: 200,
+    desktopRowHeight: 600,
+    mobileRowHeight: 300,
     imageMargins: 2
   };
   rows: object[];
   photos = [];
-  @ViewChildren('lazyLoad') images: QueryList<ElementRef>;
+  activePhoto: Photo;
+  constructor(
+    private route: ActivatedRoute,
+    private service: PhotosService,
+    private cache: ImageCacheService) { }
+  /**
+   * @description Method which is called when the component is initiated.
+   */
   ngOnInit() {
     this.getIDFromRoute();
   }
+  /**
+   * @description Method which is called after the view has initialised.
+   */
   ngAfterViewInit(): void {
-    this.images.changes
+    this.renderedImages.changes
       .subscribe(() => this.lazyLoad());
   }
+  /**
+   * @description Get the route parameters and use the ID to get data from the server.
+   */
   getIDFromRoute(): void {
     this.route.paramMap.subscribe((route) => {
       const id = +route['params']['id'];
@@ -37,38 +50,52 @@ export class AlbumComponent implements OnInit, AfterViewInit {
       }
     });
   }
+  /**
+   * @description Get the data from the database and fiddle with the data a bit.
+   * @param id The ID of the photo album
+   */
   getData(id: number) {
-    this.service.getAlbumByID(id).subscribe((data) => {
-      this.data = data.response.results as Photo[];
-      this.data.map((photo) => {
-        if (photo.exif !== '') {
-          photo.exif = JSON.parse(photo.exif);
-          photo.aspectRatio = photo.exif.COMPUTED['Width'] / photo.exif.COMPUTED['Height'];
-        }
-        return photo;
-      })
-      this.loadImages();
-      this.setAspectRatio();
-      this.setPhotoLayout();
-    });
+    this.service.getAlbumByID(id).subscribe(
+      (data) => {
+        this.data = data.response.results as Photo[];
+        this.data.map((photo) => {
+          if (photo.exif !== '') {
+            // If the exif data for the file exists (which it should), parse it and work out the aspect ratio.
+            photo.exif = JSON.parse(photo.exif);
+            photo.aspectRatio = photo.exif.COMPUTED['Width'] / photo.exif.COMPUTED['Height'];
+          }
+          return photo;
+        });
+        this.preLoadImages();
+        this.setAspectRatio();
+        this.setPhotoLayout();
+      },
+      (err) => {
+        this.handleError(err);
+      });
   }
-  loadImages() {
-    this.data.forEach((photo) => {
-      this._loadImage(photo);
-    });
+  /**
+   * @description Start loading the images
+   */
+  preLoadImages() {
+    this.cache.loadAll(this.data);
   }
-  private _loadImage(photo: Photo): void {
-    this.cache.load(photo);
+  setActivePhoto(photo: Photo) {
+    this.activePhoto = photo;
   }
   private lazyLoad() {
-    const lazyImages = this.images;
-    if ('IntersectionObserver' in window) {
+    const lazyImages = this.renderedImages;
+    if ('IntersectionObserver' in window) { // If the browser supports this
       const lazyImageObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
+          // TODO: Come up with a way to only change to the big source if it has been pre-loaded.
           if (entry.isIntersecting) {
-            entry.target['src'] = entry.target['dataset']['src'];
-            entry.target.classList.remove('lazy-load');
-            lazyImageObserver.unobserve(entry.target);
+            this.cache.load(entry.target['dataset']['src']).then(() => {
+              // !ISSUE: This could lead to things being loaded twice (i.e. if a request is already underway).
+              entry.target['src'] = entry.target['dataset']['src'];
+              entry.target.classList.remove('lazy-load');
+              lazyImageObserver.unobserve(entry.target);
+            });
           }
         });
       });
@@ -76,7 +103,8 @@ export class AlbumComponent implements OnInit, AfterViewInit {
         lazyImageObserver.observe(lazyImage.nativeElement);
       });
     } else {
-      this.images.forEach((img) => {
+      // If the browser doesn't support it, let them deal with slower loading times.
+      this.renderedImages.forEach((img) => {
         img.nativeElement.src = img.nativeElement['dataset']['src'];
         img.nativeElement.classList.remove('lazy-load');
       });
@@ -95,7 +123,7 @@ export class AlbumComponent implements OnInit, AfterViewInit {
     let row = [];
     let photoIndex = 0;
     this.data.forEach((photo) => {
-      photoIndex++;
+      photoIndex += 1;
       rowAspectRatio += photo.aspectRatio;
       row.push(photo);
       if (rowAspectRatio >= this.aspectRatio) {
@@ -120,12 +148,15 @@ export class AlbumComponent implements OnInit, AfterViewInit {
     });
   }
   private calculateAverageAspect() {
-    let i = 0,
-      sum = 0;
-    this.rows.forEach(row => {
+    let i = 0;
+    let sum = 0;
+    this.rows.forEach((row) => {
       sum += row['height'];
-      i++;
+      i += 1;
     });
     return sum / i;
+  }
+  private handleError(err: Error) {
+
   }
 }
