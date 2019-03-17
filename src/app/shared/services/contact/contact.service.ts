@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ContactService {
-  private readonly URL_BASE = environment.URL + 'contact';
+  private readonly URL_BASE = `${environment.URL}contact`;
   constructor(private http: HttpClient) {}
 
   sendMail(data: JSON | FormData): Observable<APIResponse> {

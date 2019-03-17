@@ -1,0 +1,17 @@
+<div id="cookie-consent" *ngIf="showConsole">
+  <div #cookieConsole id="cookie-console">
+    <pre>{{ DEFAULT_CONSOLE_TEXT }}</pre>
+  </div>
+  <div id="console-input">
+    <label for="cookie-input" class="sr-only"
+      >Enter some text into the console.</label
+    >
+    <pre>$</pre>
+    <input
+      type="text"
+      name="cookie-input"
+      [(ngModel)]="cookieInput"
+      (keyup.enter)="consoleEnter()"
+    />
+  </div>
+</div>

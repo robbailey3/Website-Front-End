@@ -1,0 +1,49 @@
+@import '../../../styles/typography';
+@import '../../../styles/components/colours';
+#cookie-consent {
+  position: fixed;
+  bottom: 0;
+  right: 32px;
+  background: #030303;
+  padding: 16px;
+  max-height: 500px;
+  width: 300px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 1);
+  #cookie-console {
+    max-height: 300px;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #2f2f2f;
+      border-radius: 10px;
+    }
+  }
+  pre {
+    color: #fff;
+    font-size: 14px;
+    white-space: pre-line;
+  }
+  #console-input {
+    pre {
+      display: inline-block;
+    }
+    input {
+      border: none;
+      border-top: 1px solid #1f1f1f;
+      background: transparent;
+      caret-color: color(primary);
+      font-family: $monospace-font;
+      color: #fff;
+      width: 95%;
+      padding: 8px 12px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

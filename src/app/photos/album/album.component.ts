@@ -15,8 +15,8 @@ export class AlbumComponent implements OnInit, AfterViewInit {
   data: Photo[];
   aspectRatio: number;
   config = {
-    desktopRowHeight: 600,
-    mobileRowHeight: 300,
+    desktopRowHeight: 400,
+    mobileRowHeight: 200,
     imageMargins: 2
   };
   rows: object[];
@@ -108,6 +108,9 @@ export class AlbumComponent implements OnInit, AfterViewInit {
     console.log(index);
     console.log("PREV");
     this.activePhoto = this.data[index];
+  }
+  closeFullscreen() {
+    this.activePhoto = undefined;
   }
   private lazyLoad() {
     const lazyImages = this.renderedImages;

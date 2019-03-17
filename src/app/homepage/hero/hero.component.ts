@@ -1,14 +1,14 @@
 import {
   Component,
-  OnInit,
-  ViewChild,
-  ElementRef,
+  OnInit
 } from '@angular/core';
+import { fallIn } from 'src/app/shared/animations';
 
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.scss']
+  styleUrls: ['./hero.component.scss'],
+  animations: [fallIn]
 })
 export class HeroComponent implements OnInit {
   age: number;

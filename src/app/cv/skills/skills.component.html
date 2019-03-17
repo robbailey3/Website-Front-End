@@ -9,7 +9,8 @@
       >
         <p class="skill-name">{{ skill.name }}</p>
         <div class="skill-bar-container">
-          <div class="skill-bar">
+          <div class="skill-bar" #skillBar>
+            <div class="tooltip">{{ skill.rating }}</div>
             <div class="skill-bar-content" [style.width]="skill.rating"></div>
           </div>
         </div>

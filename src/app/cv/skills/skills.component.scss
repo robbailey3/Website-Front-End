@@ -8,6 +8,7 @@
 
 .skill-bar-container {
   width: 100%;
+  position: relative;
 
   .skill-bar {
     width: 95%;
@@ -18,9 +19,31 @@
     -webkit-box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
     box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
     overflow: hidden;
-
+    .tooltip {
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      background: #fff;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.6);
+      padding: 8px;
+      border-radius: 8px;
+      opacity: 0;
+      transform: scale(0);
+      transition: 0.2s;
+      font-size: 12px;
+    }
+    &:hover {
+      .tooltip {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
     .skill-bar-content {
-      background: linear-gradient(30deg, color(primary), darken(color(primary), 35%));
+      background: linear-gradient(
+        30deg,
+        color(primary),
+        darken(color(primary), 35%)
+      );
       height: 100%;
       -webkit-box-shadow: inset 0 5px 12px rgba(255, 255, 255, 0.37);
       box-shadow: inset 0 5px 12px rgba(255, 255, 255, 0.37);

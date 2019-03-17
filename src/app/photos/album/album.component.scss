@@ -30,23 +30,33 @@
   top: 0;
   left: 0;
   padding-top: 54px;
+  i.material-icons {
+    color: #fff;
+    font-size: 32px;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 8px;
+    user-select: none;
+    &:hover,
+    &:focus {
+      background: rgba(0, 0, 0, 0.3);
+    }
+  }
   #previous-photo {
     position: absolute;
     left: 15px;
     top: 50%;
-    i.material-icons {
-      color: #fff;
-      font-size: 32px;
-    }
   }
   #next-photo {
     position: absolute;
     top: 50%;
     right: 15px;
-    i.material-icons {
-      color: #fff;
-      font-size: 32px;
-    }
+  }
+  #close-fullscreen {
+    position: absolute;
+    top: 15 + 54px;
+    right: 15px;
+    z-index: 999;
   }
   .image-container {
     position: relative;
@@ -63,5 +73,10 @@
         box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.5);
       }
     }
+  }
+  .exif-container {
+    position: relative;
+    width: 25%;
+    padding: 64px 8px 32px;
   }
 }

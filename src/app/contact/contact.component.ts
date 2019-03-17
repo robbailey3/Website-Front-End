@@ -13,11 +13,11 @@ export class ContactComponent {
   constructor(
     private service: ContactService,
     private errorService: ErrorHandlerService
-  ) { }
+  ) {}
   private sendMail(data: JSON | FormData) {
     this.service.sendMail(data).subscribe(
-      (res) => { },
-      (err) => {
+      res => {},
+      err => {
         this.handleError(err);
       }
     );
@@ -25,7 +25,7 @@ export class ContactComponent {
   formSubmit(data: JSON) {
     console.log(data);
     this.formSubmitted = true;
-    // this.sendMail(data);
+    this.sendMail(data);
   }
   handleError($e) {
     this.errorService.postError($e);
