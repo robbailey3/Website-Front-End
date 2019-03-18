@@ -1,4 +1,5 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Basics } from '../cv.interface';
 
 @Component({
   selector: 'app-profile',
@@ -6,6 +7,6 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent {
-  @Input() cv: object;
-  constructor() { }
+  @Input() cv: Basics;
+  constructor() {}
 }

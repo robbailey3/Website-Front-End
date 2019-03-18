@@ -11,6 +11,7 @@
   color: #fff;
   cursor: pointer;
   -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   text-decoration: none;
 
@@ -24,6 +25,7 @@
   }
 
   &.btn-primary {
+    background: -o-linear-gradient(60deg, color(primary), darken(color(primary), 20%));
     background: linear-gradient(30deg, color(primary), darken(color(primary), 20%));
 
     &:hover,
@@ -32,7 +34,6 @@
       -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.7);
       box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.7);
     }
-
   }
 
   &.btn-ghost {
@@ -68,6 +69,7 @@
   width: 40px;
   height: 40px;
   cursor: pointer;
+  display: block;
 
   span:not(.sr-only) {
     width: 32px;
@@ -78,6 +80,7 @@
     left: 4px;
     top: 14px;
     -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
     transition: 0.4s;
     -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
@@ -105,12 +108,14 @@
     span:not(.sr-only) {
       top: 18px;
       -webkit-transform: rotate(45deg);
-      transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
 
       &:nth-of-type(2) {
         top: 18px;
         -webkit-transform: rotate(135deg);
-        transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+            transform: rotate(135deg);
       }
     }
   }

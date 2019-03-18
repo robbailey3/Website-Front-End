@@ -5,12 +5,14 @@ import {
   ElementRef,
   ViewEncapsulation
 } from '@angular/core';
+import { fadeInLeft } from 'src/app/shared/animations';
 
 @Component({
   selector: 'rb-cookie',
   templateUrl: './cookie.component.html',
   styleUrls: ['./cookie.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  animations: [fadeInLeft]
 })
 export class CookieComponent implements OnInit {
   cookieInput: string;

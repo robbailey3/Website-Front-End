@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ErrorHandlerService {
-  readonly URL_BASE = environment.URL + 'errors';
+  readonly URL_BASE = `${environment.URL}errors`;
   constructor(private http: HttpClient) {}
 
   postError(error: JSON): Observable<APIResponse> {

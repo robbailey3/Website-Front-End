@@ -1,3 +1,25 @@
-<p>
-  about-me works!
-</p>
+<app-grid>
+  <div class="col-md-6" id="text">
+    <h1>About Me</h1>
+    <h2>Personal Details</h2>
+    <p>I am a...</p>
+    <h2>Technical Skills</h2>
+    <h2>Hobbies & Interests</h2>
+    <h2>Fun Facts</h2>
+    <p><strong>Favourite Colour: </strong>Blue</p>
+    <p><strong>Blood Type: </strong>O+</p>
+    <p><strong>Dominant Hand: </strong>Right</p>
+    <p><strong>Favourite Animal: </strong>Wolf</p>
+  </div>
+  <div class="col-md-6" id="image">
+    <div class="img-container">
+      <img
+        data-src="../../assets/me_round.png"
+        src="./../../assets/me_round_thumbnail.png"
+        alt="An image of myself"
+        #image
+        class="lazyload"
+      />
+    </div>
+  </div>
+</app-grid>
