@@ -1,5 +1,8 @@
 <div class="homepage-introduction">
-  <p>After working in the Software Industry as a Tester and, more recently, a brander, I am now looking for a transition into Front End Web Development</p>
+  <p>
+    After working in the Software Industry as a Tester and, more recently, a
+    brander, I am now looking for a transition into Front End Web Development
+  </p>
 </div>
 <div id="homepage-timeline">
   <h2 class="sr-only">My Timeline</h2>
@@ -17,6 +20,12 @@
   </ul>
   <div id="then">2012</div>
 </div>
-<div id="cv-link-container">
-  <a [routerLink]="['cv']" class="btn">View My CV</a>
+<div id="cv-link-container" class="flex-container">
+  <div class="col-md-6" id="cv-link-text">
+    <h2>Are you looking for a developer?</h2>
+    <p>Great news! You're in the right place. Take a look at my CV.</p>
+  </div>
+  <div class="col-md-6" id="cv-link-button">
+    <a [routerLink]="['cv']" class="btn">View My CV</a>
+  </div>
 </div>

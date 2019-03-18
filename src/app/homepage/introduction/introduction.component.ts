@@ -11,7 +11,8 @@ export class IntroductionComponent implements OnInit {
     {
       title: 'Quality Control Branding Specialist',
       date: 'January 2018 - Present',
-      description: 'lorem ipsum ...'
+      description: `In this role, I am fully responsible for the entire branding process.
+        From communicating with the client to gather requirements to implementing the brand using HTML and SCSS.`
     },
     {
       title: 'Quality Control Executive',
@@ -21,7 +22,7 @@ export class IntroductionComponent implements OnInit {
     {
       title: 'Keele University',
       date: 'September 2012 - June 2015',
-      description: ''
+      description: `BSc Physics with Philosophy.`
     }
   ];
   constructor() {}

@@ -15,7 +15,7 @@ app-grid {
   align-items: center;
 
   @include breakpoint(md) {
-    height: 76vh;
+    min-height: 600px;
   }
 }
 
