@@ -24,24 +24,22 @@
     <div class="form-container" *ngIf="!formSubmitted">
       <form #contactForm="ngForm" (submit)="formSubmit(contactForm.value)">
         <div class="form-group">
-          <label for="name">Name</label><input class="form-control" name="name" required type="text" minlength="2"
-            [(ngModel)]="contactForm.name" #name="ngModel" />
+          <label for="name">Name</label>
+          <input class="form-control" name="name" required type="text" minlength="2" [(ngModel)]="contactForm.name" #name="ngModel" placeholder="{{ randomName }}" />
           <div class="form-item-invalid" *ngIf="name.invalid && name.touched" [@fadeInLeft]>
             <p>Please enter your name</p>
           </div>
         </div>
         <div class="form-group">
-          <label for="email">Email</label><input class="form-control" name="email" required type="email" email
-            [(ngModel)]="contactForm.email" #email="ngModel" />
+          <label for="email">Email</label><input class="form-control" name="email" required type="email" email placeholder="example@example.com" [(ngModel)]="contactForm.email" #email="ngModel" />
           <div class="form-item-invalid" *ngIf="email.invalid && email.touched" [@fadeInLeft]>
             <p>Please enter a valid email address.</p>
           </div>
         </div>
         <div class="form-group">
-          <label for="message">Message</label><textarea class="form-control" name="message" required minlength="2"
-            [(ngModel)]="contactForm.message" rows="4" #message="ngModel"></textarea>
+          <label for="message">Message</label><textarea class="form-control" name="message" required minlength="2" [(ngModel)]="contactForm.message" rows="4" #message="ngModel" placeholder="Hello world..."></textarea>
           <div class="form-item-invalid" *ngIf="message.invalid && message.touched" [@fadeInLeft]>
-            <p>Don't be shy</p>
+            <p>Please enter your message</p>
           </div>
         </div>
         <input class="btn btn-primary" id="contact-form-submit" name="submit" type="submit" [disabled]="!contactForm.form.valid" />

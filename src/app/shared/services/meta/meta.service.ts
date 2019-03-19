@@ -5,9 +5,7 @@ import { Meta, Title, MetaDefinition } from '@angular/platform-browser';
   providedIn: 'root'
 })
 export class MetaService {
-  constructor(private meta: Meta, private title: Title) {
-    console.log(this);
-  }
+  constructor(private meta: Meta, private title: Title) {}
   public setTitle(title: string): void {
     this.title.setTitle(title);
   }

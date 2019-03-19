@@ -10,6 +10,15 @@ import { ErrorHandlerService } from '../error-handler/error-handler.service';
 })
 export class ContactComponent {
   public formSubmitted = false;
+  public names = [
+    'Marie Curie',
+    'Nikola Tesla',
+    'Albert Einstein',
+    'Yoshi McIntyre',
+    'Batman',
+    'Margaret Hamilton'
+  ];
+  public randomName = this.names[Math.floor(Math.random() * this.names.length)];
   constructor(
     private service: ContactService,
     private errorService: ErrorHandlerService

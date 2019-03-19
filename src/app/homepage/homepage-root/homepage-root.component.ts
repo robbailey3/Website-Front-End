@@ -7,13 +7,15 @@ import { MetaService } from 'src/app/shared/services/meta/meta.service';
   styleUrls: ['./homepage-root.component.scss']
 })
 export class HomepageRootComponent implements OnInit {
-  // @HostListener('window:mousewheel', ['$event']) onScroll($event) {}
   constructor(private meta: MetaService) {}
 
   ngOnInit() {
     this.setMeta();
   }
   setMeta() {
-    this.meta.setDescription('foo--baer');
+    this.meta.setDescription(
+      'This is the homepage of the London based Front End Developer Rob Bailey'
+    );
+    this.meta.setTitle('Rob Bailey: Front End Developer');
   }
 }

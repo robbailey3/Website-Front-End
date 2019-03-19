@@ -6,7 +6,7 @@ declare global {
   }
 }
 @Component({
-  selector: 'app-root',
+  selector: 'rb-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
