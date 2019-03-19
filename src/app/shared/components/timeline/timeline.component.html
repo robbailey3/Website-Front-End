@@ -1,0 +1,16 @@
+<div class="timeline" *ngIf="items">
+  <h2 *ngIf="title">{{ title }}</h2>
+  <span class="timeline-end-year">{{ timelineEndYear }}</span>
+  <ul>
+    <div class="timeline-line"></div>
+    <li *ngFor="let item of items">
+      <div class="timeline-point"></div>
+      <app-card class="timeline-item">
+        <p class="timeline-item-title">{{ item.title}}</p>
+        <p class="timeline-item-date">{{ item.date}}</p>
+        <p class="timeline-item-desc" [innerHTML]="item.content"></p>
+      </app-card>
+    </li>
+  </ul>
+  <span class="timeline-start-year">{{ timelineStartYear }}</span>
+</div>

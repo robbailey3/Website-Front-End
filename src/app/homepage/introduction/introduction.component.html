@@ -4,22 +4,7 @@
     brander, I am now looking for a transition into Front End Web Development
   </p>
 </div>
-<div id="homepage-timeline">
-  <h2 class="sr-only">My Timeline</h2>
-  <div id="now">{{ now }}</div>
-  <ul class="flex-container">
-    <div class="timeline-line"></div>
-    <li *ngFor="let item of history">
-      <div class="timeline-point"></div>
-      <app-card class="timeline-item">
-        <p class="timeline-item-title">{{ item.title }}</p>
-        <p class="timeline-item-date">{{ item.date }}</p>
-        <p class="timeline-item-desc">{{ item.description }}</p>
-      </app-card>
-    </li>
-  </ul>
-  <div id="then">2012</div>
-</div>
+<rb-timeline [items]="history" [title]="'My Timeline'"></rb-timeline>
 <div id="cv-link-container" class="flex-container">
   <div class="col-md-6" id="cv-link-text">
     <h2>Are you looking for a developer?</h2>

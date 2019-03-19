@@ -7,6 +7,7 @@ import { LineGraphComponent } from './components/data-visualisation/line-graph/l
 import { GridComponent } from './components/grid/grid.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { SafePipe } from './pipes/safe.pipe';
+import { TimelineComponent } from './components/timeline/timeline.component';
 
 @NgModule({
   declarations: [
@@ -15,9 +16,16 @@ import { SafePipe } from './pipes/safe.pipe';
     LineGraphComponent,
     GridComponent,
     ModalComponent,
-    SafePipe
+    SafePipe,
+    TimelineComponent
   ],
-  exports: [CardComponent, GridComponent, ModalComponent, SafePipe],
+  exports: [
+    CardComponent,
+    GridComponent,
+    ModalComponent,
+    SafePipe,
+    TimelineComponent
+  ],
   imports: [CommonModule],
   providers: [MetaService]
 })

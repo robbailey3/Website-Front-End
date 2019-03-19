@@ -1,0 +1,124 @@
+@import '../../../../styles/components/colours';
+@import '../../../../styles/layout/grid';
+
+.timeline {
+  position: relative;
+  padding: 16px 32px;
+
+  @include breakpoint(lg) {
+    max-width: 80%;
+    margin: auto;
+  }
+
+  h2 {
+    display: block;
+    text-align: center;
+    font-size: 28px;
+  }
+
+  ul {
+    position: relative;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .timeline-start-year,
+  .timeline-end-year {
+    position: relative;
+    left: -8px;
+    display: block;
+    font-weight: bold;
+
+    @include breakpoint(md) {
+      left: auto;
+      text-align: center;
+    }
+  }
+}
+
+.timeline-line {
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  top: 0;
+  background: color(primary);
+
+  @include breakpoint(md) {
+    left: 50%;
+  }
+}
+
+li {
+  position: relative;
+
+  .timeline-point {
+    position: absolute;
+    top: 35px;
+    left: -8px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 4px solid #4392f1;
+    border-radius: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .timeline-item {
+    margin: 16px 16px 16px 32px;
+    padding: 16px;
+    box-shadow: none;
+    position: relative;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.225));
+
+    &::after {
+      position: absolute;
+      top: 25px;
+      left: -20px;
+      width: 0;
+      height: 0;
+      border: 10px solid rgba(255, 255, 255, 0);
+      border-right-color: #fff;
+      content: '';
+      pointer-events: none;
+    }
+  }
+
+  @include breakpoint(md) {
+    &:nth-of-type(odd) {
+      margin-right: 50%;
+
+      .timeline-item {
+        margin: 16px 32px 16px 16px;
+
+        &::after {
+          right: -20px;
+          left: auto;
+          border-right-color: transparent;
+          border-left-color: #fff;
+        }
+      }
+
+      .timeline-point {
+        right: -12px;
+        left: auto;
+      }
+    }
+
+    &:nth-of-type(even) {
+      margin-left: 50%;
+    }
+  }
+
+  .timeline-item-title {
+    font-weight: bold;
+  }
+
+  .timeline-item-date {
+    color: lighten(#333, 15%);
+    font-size: 0.9em;
+  }
+}
