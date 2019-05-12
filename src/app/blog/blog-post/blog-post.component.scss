@@ -1,0 +1,47 @@
+@import '../../../styles/layout/grid';
+#post-info {
+  @include breakpoint(md) {
+    max-width: (100 / 16) * 10%;
+    margin: auto;
+  }
+}
+.post-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr 10fr 2fr 1fr;
+  line-height: 1.85;
+  p,
+  div,
+  pre,
+  code,
+  ul,
+  ol,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hr {
+    grid-column: 2;
+    grid-column-end: 5;
+    @include breakpoint(md) {
+      grid-column: 3;
+    }
+  }
+  ul,
+  ol {
+    margin-left: 40px;
+  }
+  img,
+  table,
+  figure,
+  picture {
+    grid-column: 2;
+    grid-column-end: 5;
+    max-width: 100%;
+  }
+  pre,
+  code {
+    white-space: pre-line;
+  }
+}

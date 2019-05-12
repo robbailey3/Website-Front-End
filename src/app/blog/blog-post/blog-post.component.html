@@ -1,3 +1,13 @@
 <div id="blog-post" *ngIf="post">
+  <div id="header-image" *ngIf="post.image">
+    <img [src]="post.image" />
+  </div>
+  <div id="post-info">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.date }}</p>
+    <div class="post-tags" *ngIf="post.tags">
+      <span class="post-tag" *ngFor="let tag of post.tags">{{ tag }}</span>
+    </div>
+  </div>
   <div class="post-content" [innerHTML]="post.content"></div>
 </div>

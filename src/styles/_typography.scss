@@ -1,5 +1,6 @@
 @import url('https://use.typekit.net/aoi7ikg.css');
 @import './components/colours';
+@import './layout/grid';
 $monospace-font: t26-carbon, monospace;
 html,
 body {
@@ -20,32 +21,32 @@ h6 {
   margin: 2rem 0 1rem;
   color: color(nearly-black);
 }
+@include breakpoint(lg) {
+  h1 {
+    font-size: 4.209em;
+    margin-top: 0;
+  }
 
-h1 {
-  font-size: 4.209em;
-  margin-top: 0;
-}
+  h2 {
+    font-size: 2.8em;
+  }
 
-h2 {
-  font-size: 2.8em;
-}
+  h3 {
+    font-size: 1.8em;
+  }
 
-h3 {
-  font-size: 1.8em;
-}
+  h4 {
+    font-size: 1.2em;
+  }
 
-h4 {
-  font-size: 1.2em;
-}
-
-h5 {
-  font-size: 1em;
+  h5 {
+    font-size: 1em;
+  }
 }
 
 a {
   color: color(accent);
 }
-
 pre,
 code {
   font-family: $monospace-font;
