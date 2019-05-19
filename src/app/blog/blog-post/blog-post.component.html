@@ -4,10 +4,15 @@
   </div>
   <div id="post-info">
     <h1>{{ post.title }}</h1>
-    <p>{{ post.date }}</p>
+    <p class="post-date">{{ post.date | date: 'dd MMMM yyyy' }}</p>
     <div class="post-tags" *ngIf="post.tags">
-      <span class="post-tag" *ngFor="let tag of post.tags">{{ tag }}</span>
+      <span class="post-tag chip" *ngFor="let tag of post.tags">{{ tag }}</span>
     </div>
   </div>
-  <div class="post-content" [innerHTML]="post.content"></div>
+  <div
+    highlightChildren="pre.prettyprint"
+    [innerHTML]="post.content"
+    class="post-content"
+  ></div>
+  <disqus [identifier]="post.slug"></disqus>
 </div>

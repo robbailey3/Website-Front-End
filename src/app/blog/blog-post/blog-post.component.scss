@@ -1,8 +1,20 @@
 @import '../../../styles/layout/grid';
+#header-image {
+  width: 100%;
+  max-height: 60vh;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+}
 #post-info {
   @include breakpoint(md) {
     max-width: (100 / 16) * 10%;
     margin: auto;
+  }
+  .post-date {
+    color: #6f6f6f;
+    letter-spacing: 4px;
   }
 }
 .post-content {
@@ -44,4 +56,16 @@
   code {
     white-space: pre-line;
   }
+  pre.prettyprint {
+    padding: 16px;
+    border-radius: 3px;
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid #333;
+    margin: 8px 0;
+  }
+}
+#disqus_thread {
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px;
 }
