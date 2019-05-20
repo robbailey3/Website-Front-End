@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:dev": "ng serve --configuration=dev-live",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -24,7 +25,7 @@
     "core-js": "^2.6.5",
     "highlight.js": "^9.15.6",
     "ngx-disqus": "^2.4.3",
-    "ngx-highlightjs": "^3.0.3",
+    "prismjs": "^1.16.0",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "^0.8.29"

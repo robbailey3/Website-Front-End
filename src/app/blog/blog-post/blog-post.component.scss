@@ -54,14 +54,8 @@
   }
   pre,
   code {
-    white-space: pre-line;
-  }
-  pre.prettyprint {
-    padding: 16px;
-    border-radius: 3px;
-    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);
-    border: 1px solid #333;
-    margin: 8px 0;
+    white-space: pre-wrap;
+    position: relative;
   }
 }
 #disqus_thread {

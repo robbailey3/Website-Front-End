@@ -8,6 +8,7 @@ import { GridComponent } from './components/grid/grid.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { SafePipe } from './pipes/safe.pipe';
 import { TimelineComponent } from './components/timeline/timeline.component';
+import { HighlightService } from './services/highlight/highlight.service';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,6 @@ import { TimelineComponent } from './components/timeline/timeline.component';
     TimelineComponent
   ],
   imports: [CommonModule],
-  providers: [MetaService]
+  providers: [MetaService, HighlightService]
 })
 export class SharedModule {}

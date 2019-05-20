@@ -9,10 +9,6 @@
       <span class="post-tag chip" *ngFor="let tag of post.tags">{{ tag }}</span>
     </div>
   </div>
-  <div
-    highlightChildren="pre.prettyprint"
-    [innerHTML]="post.content"
-    class="post-content"
-  ></div>
+  <div [innerHTML]="post.content" class="post-content"></div>
   <disqus [identifier]="post.slug"></disqus>
 </div>

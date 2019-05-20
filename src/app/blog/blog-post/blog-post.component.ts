@@ -1,10 +1,15 @@
 import { MetaService } from './../../shared/services/meta/meta.service';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewEncapsulation,
+  AfterViewChecked
+} from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { APIResponse } from './../../shared/interfaces/api-response.interface';
 import { BlogService } from '../blog.service';
 import { Post } from '../post';
-import { HighlightResult } from 'ngx-highlightjs';
+import { HighlightService } from 'src/app/shared/services/highlight/highlight.service';
 
 @Component({
   selector: 'app-blog-post',
@@ -12,23 +17,15 @@ import { HighlightResult } from 'ngx-highlightjs';
   styleUrls: ['./blog-post.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class BlogPostComponent implements OnInit {
+export class BlogPostComponent implements OnInit, AfterViewChecked {
   slug: string;
   post: Post;
-  description = `
-<p>this is an example</p>
-<pre class="prettyprint">
-function myFunction() {
-  document.getElementById("demo1").innerHTML = "Hello there!";
-  document.getElementById("demo2").innerHTML = "How are you?";
-}
-</pre>
-`;
-  response: HighlightResult;
+  highlighted = false;
   constructor(
     private route: ActivatedRoute,
     private service: BlogService,
-    private meta: MetaService
+    private meta: MetaService,
+    private highlightService: HighlightService
   ) {}
 
   ngOnInit(): void {
@@ -51,5 +48,11 @@ function myFunction() {
   setMeta() {
     this.meta.setTitle(`${this.post.title}`);
     this.meta.setDescription(`${this.post.description}`);
+  }
+  ngAfterViewChecked() {
+    if (this.post && !this.highlighted) {
+      this.highlightService.highlightAll();
+      this.highlighted = true;
+    }
   }
 }

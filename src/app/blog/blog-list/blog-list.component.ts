@@ -1,8 +1,9 @@
-import { APIResponse } from './../../../../../backend/src/app/shared/interfaces/api-response';
+import { APIResponse } from '../../shared/interfaces/api-response.interface';
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../blog.service';
-import { ErrorHandlerService } from 'src/app/error-handler/error-handler.service';
+import { ErrorHandlerService } from '../../error-handler/error-handler.service';
 import { Post } from '../post';
+import { MetaService } from '../../shared/services/meta/meta.service';
 
 @Component({
   selector: 'app-blog-list',
@@ -13,11 +14,13 @@ export class BlogListComponent implements OnInit {
   posts: Post[];
   constructor(
     private service: BlogService,
+    private meta: MetaService,
     private errorHandler: ErrorHandlerService
   ) {}
 
   ngOnInit() {
     this.getPosts();
+    this.setMeta();
   }
   getPosts() {
     this.service.getAllPosts().subscribe(
@@ -31,5 +34,8 @@ export class BlogListComponent implements OnInit {
         this.errorHandler.postError(err);
       }
     );
+  }
+  setMeta() {
+    this.meta.setTitle('Rob Bailey: Blog Posts');
   }
 }
