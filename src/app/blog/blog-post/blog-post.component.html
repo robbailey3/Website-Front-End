@@ -1,3 +1,18 @@
 <div id="blog-post" *ngIf="post">
-  <div class="post-content" [innerHTML]="post.content"></div>
+  <div id="header-image" *ngIf="post.image">
+    <img [src]="post.image" />
+  </div>
+  <div id="post-info">
+    <h1>{{ post.title }}</h1>
+    <p class="post-date">{{ post.date | date: 'dd MMMM yyyy' }}</p>
+    <div class="post-tags" *ngIf="post.tags">
+      <span class="post-tag chip" *ngFor="let tag of post.tags">{{ tag }}</span>
+    </div>
+  </div>
+  <div
+    highlightChildren="pre.prettyprint"
+    [innerHTML]="post.content"
+    class="post-content"
+  ></div>
+  <disqus [identifier]="post.slug"></disqus>
 </div>
