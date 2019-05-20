@@ -1,4 +1,4 @@
-import { trigger, transition, style, stagger, animate, query } from '@angular/animations';
+import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 
 export const fallIn = trigger('fallIn', [
   transition('* => *', [

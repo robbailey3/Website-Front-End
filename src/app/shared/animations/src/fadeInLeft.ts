@@ -1,10 +1,4 @@
-import {
-  trigger,
-  animate,
-  style,
-  transition,
-  state
-} from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 export const fadeInLeft = trigger('fadeInLeft', [
   state(

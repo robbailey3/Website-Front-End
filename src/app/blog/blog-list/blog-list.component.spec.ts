@@ -1,8 +1,8 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BlogListComponent } from './blog-list.component';
 import { BlogService } from '../blog.service';
-import { HttpClientModule } from '@angular/common/http';
+import { BlogListComponent } from './blog-list.component';
 
 describe('BlogListComponent', () => {
   let component: BlogListComponent;

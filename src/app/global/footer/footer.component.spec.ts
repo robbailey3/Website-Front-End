@@ -1,7 +1,8 @@
+import { GridComponent } from 'src/app/shared/components/grid/grid.component';
+
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FooterComponent } from './footer.component';
-import { GridComponent } from 'src/app/shared/components/grid/grid.component';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;

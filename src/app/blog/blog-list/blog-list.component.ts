@@ -1,9 +1,10 @@
-import { APIResponse } from '../../shared/interfaces/api-response.interface';
 import { Component, OnInit } from '@angular/core';
-import { BlogService } from '../blog.service';
+
 import { ErrorHandlerService } from '../../error-handler/error-handler.service';
-import { Post } from '../post';
+import { APIResponse } from '../../shared/interfaces/api-response.interface';
 import { MetaService } from '../../shared/services/meta/meta.service';
+import { BlogService } from '../blog.service';
+import { Post } from '../post';
 
 @Component({
   selector: 'app-blog-list',

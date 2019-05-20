@@ -1,8 +1,8 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContactComponent } from './contact.component';
-import { HttpClientModule } from '@angular/common/http';
 import { ContactService } from '../shared/services/contact/contact.service';
+import { ContactComponent } from './contact.component';
 
 describe('ContactComponent', () => {
   let component: ContactComponent;

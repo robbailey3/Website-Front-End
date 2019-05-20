@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavigationComponent } from './navigation/navigation.component';
-import { FooterComponent } from './footer/footer.component';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+
 import { SharedModule } from '../shared/shared.module';
 import { CookieComponent } from './cookie/cookie.component';
-import { FormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [NavigationComponent, FooterComponent, CookieComponent],

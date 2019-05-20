@@ -1,13 +1,14 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CvRootComponent } from './cv-root/cv-root.component';
-import { ProfileComponent } from './profile/profile.component';
-import { ExperienceComponent } from './experience/experience.component';
-import { EducationComponent } from './education/education.component';
-import { SkillsComponent } from './skills/skills.component';
-import { HobbiesComponent } from './hobbies/hobbies.component';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+
 import { SharedModule } from '../shared/shared.module';
+import { CvRootComponent } from './cv-root/cv-root.component';
+import { EducationComponent } from './education/education.component';
+import { ExperienceComponent } from './experience/experience.component';
+import { HobbiesComponent } from './hobbies/hobbies.component';
+import { ProfileComponent } from './profile/profile.component';
+import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
   declarations: [

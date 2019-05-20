@@ -1,9 +1,11 @@
-import { environment } from 'src/environments/environment';
-import { Component, OnInit } from '@angular/core';
-import { CvService } from '../cv.service';
 import { ErrorHandlerService } from 'src/app/error-handler/error-handler.service';
-import { CV } from '../cv.interface';
 import { MetaService } from 'src/app/shared/services/meta/meta.service';
+import { environment } from 'src/environments/environment';
+
+import { Component, OnInit } from '@angular/core';
+
+import { CV } from '../cv.interface';
+import { CvService } from '../cv.service';
 
 @Component({
   selector: 'app-cv-root',

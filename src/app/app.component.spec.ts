@@ -1,11 +1,12 @@
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
-import { NavigationComponent } from './global/navigation/navigation.component';
-import { ComponentInstance } from '@angular/core/src/render3/interfaces/player';
-import { FooterComponent } from './global/footer/footer.component';
-import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ComponentInstance } from '@angular/core/src/render3/interfaces/player';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+
+import { AppComponent } from './app.component';
+import { FooterComponent } from './global/footer/footer.component';
+import { NavigationComponent } from './global/navigation/navigation.component';
+import { SharedModule } from './shared/shared.module';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;

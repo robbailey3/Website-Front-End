@@ -1,4 +1,5 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
+
 import { Basics } from '../cv.interface';
 
 @Component({

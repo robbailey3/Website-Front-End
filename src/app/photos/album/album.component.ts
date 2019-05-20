@@ -1,8 +1,11 @@
-import { Component, OnInit, ViewChildren, QueryList, ElementRef, AfterViewInit, HostListener, Renderer2 } from '@angular/core';
+import {
+    AfterViewInit, Component, ElementRef, HostListener, OnInit, QueryList, Renderer2, ViewChildren
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PhotosService } from '../photos.service';
-import { Photo } from '../photo.interface';
+
 import { ImageCacheService } from '../image-cache.service';
+import { Photo } from '../photo.interface';
+import { PhotosService } from '../photos.service';
 
 @Component({
   selector: 'rb-album',

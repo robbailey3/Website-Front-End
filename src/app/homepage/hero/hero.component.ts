@@ -1,8 +1,6 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
 import { fallIn } from 'src/app/shared/animations';
+
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-hero',

@@ -1,7 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 
 import { ContactService } from './contact.service';
-import { HttpClientModule } from '@angular/common/http';
 
 describe('ContactService', () => {
   beforeEach(() =>

@@ -1,5 +1,6 @@
-import { Photo } from './photo.interface';
 import { Injectable } from '@angular/core';
+
+import { Photo } from './photo.interface';
 
 @Injectable({
   providedIn: 'root'

@@ -1,5 +1,6 @@
-import { Component, OnInit, HostListener } from '@angular/core';
 import { MetaService } from 'src/app/shared/services/meta/meta.service';
+
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-homepage-root',

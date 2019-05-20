@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+
 import { ImageCacheService } from '../photos/image-cache.service';
 import { MetaService } from '../shared/services/meta/meta.service';
 

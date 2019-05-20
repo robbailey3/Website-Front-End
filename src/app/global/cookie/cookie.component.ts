@@ -1,11 +1,6 @@
-import {
-  Component,
-  OnInit,
-  ViewChild,
-  ElementRef,
-  ViewEncapsulation
-} from '@angular/core';
 import { fadeInLeft } from 'src/app/shared/animations';
+
+import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'rb-cookie',

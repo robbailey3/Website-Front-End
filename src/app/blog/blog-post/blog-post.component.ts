@@ -1,15 +1,12 @@
-import { MetaService } from './../../shared/services/meta/meta.service';
-import {
-  Component,
-  OnInit,
-  ViewEncapsulation,
-  AfterViewChecked
-} from '@angular/core';
+import { HighlightService } from 'src/app/shared/services/highlight/highlight.service';
+
+import { AfterViewChecked, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { APIResponse } from './../../shared/interfaces/api-response.interface';
+
+import { APIResponse } from '../../shared/interfaces/api-response.interface';
+import { MetaService } from '../../shared/services/meta/meta.service';
 import { BlogService } from '../blog.service';
 import { Post } from '../post';
-import { HighlightService } from 'src/app/shared/services/highlight/highlight.service';
 
 @Component({
   selector: 'app-blog-post',

@@ -1,7 +1,8 @@
-import { fadeInLeft } from './../shared/animations/';
 import { Component, OnInit } from '@angular/core';
-import { ContactService } from '../shared/services/contact/contact.service';
+
 import { ErrorHandlerService } from '../error-handler/error-handler.service';
+import { fadeInLeft } from '../shared/animations/';
+import { ContactService } from '../shared/services/contact/contact.service';
 import { MetaService } from '../shared/services/meta/meta.service';
 
 @Component({

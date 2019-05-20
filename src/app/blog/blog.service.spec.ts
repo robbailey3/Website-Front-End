@@ -1,7 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 
 import { BlogService } from './blog.service';
-import { HttpClientModule } from '@angular/common/http';
 
 describe('BlogService', () => {
   beforeEach(() =>

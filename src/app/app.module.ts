@@ -1,22 +1,23 @@
-import { AboutMeModule } from './about-me/about-me.module';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
+
+import { environment } from '../environments/environment';
+import { AboutMeModule } from './about-me/about-me.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BlogModule } from './blog/blog.module';
+import { ContactComponent } from './contact/contact.component';
+import { CVModule } from './cv/cv.module';
+import { ErrorHandlerModule } from './error-handler/error-handler.module';
 import { GlobalModule } from './global/global.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { PhotosModule } from './photos/photos.module';
 import { ProjectsModule } from './projects/projects.module';
 import { SharedModule } from './shared/shared.module';
-import { HttpClientModule } from '@angular/common/http';
-import { ContactComponent } from './contact/contact.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-import { ErrorHandlerModule } from './error-handler/error-handler.module';
-import { CVModule } from './cv/cv.module';
 
 @NgModule({
   declarations: [AppComponent, ContactComponent],
