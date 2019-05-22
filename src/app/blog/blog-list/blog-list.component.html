@@ -10,11 +10,13 @@
         </h2>
         <div class="post-date">{{ post.date }}</div>
         <div class="post-tags" *ngIf="post.tags">
-          <span class="post-tag" *ngFor="let tag of post.tags">{{ tag }}</span>
+          <span class="post-tag chip" *ngFor="let tag of post.tags">{{
+            tag
+          }}</span>
         </div>
       </div>
       <div class="post-description">
-        <p>{{ post.description }}</p>
+        <p [innerHTML]="post.description"></p>
       </div>
       <div class="btn-container">
         <a [routerLink]="[post.slug]" class="btn read-more">Read more</a>

@@ -10,7 +10,12 @@
 #post-info {
   @include breakpoint(md) {
     max-width: (100 / 16) * 10%;
-    margin: auto;
+    margin: 32px auto;
+  }
+  h1 {
+    @include breakpoint(lg) {
+      font-size: 3em;
+    }
   }
   .post-date {
     color: #6f6f6f;
@@ -59,7 +64,7 @@
   }
 }
 #disqus_thread {
-  max-width: 1200px;
-  margin: auto;
+  max-width: (100 / 16) * 10%;
+  margin: 32px auto;
   padding: 16px;
 }
