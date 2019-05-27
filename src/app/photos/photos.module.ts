@@ -5,10 +5,9 @@ import { RouterModule } from '@angular/router';
 import { AlbumComponent } from './album/album.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { PhotosRootComponent } from './photos-root/photos-root.component';
-import { UploadFormComponent } from './upload-form/upload-form.component';
 
 @NgModule({
-  declarations: [PhotosRootComponent, AlbumsComponent, AlbumComponent, UploadFormComponent],
+  declarations: [PhotosRootComponent, AlbumsComponent, AlbumComponent],
   imports: [
     CommonModule,
     RouterModule

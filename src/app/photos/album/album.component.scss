@@ -26,10 +26,11 @@
   position: fixed;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.8);
   top: 0;
   left: 0;
   padding-top: 54px;
+  color: #fff;
   i.material-icons {
     color: #fff;
     font-size: 32px;
@@ -60,23 +61,46 @@
   }
   .image-container {
     position: relative;
-    width: 75%;
+    width: 80%;
     .active-photo {
       max-width: 100%;
       max-height: 100%;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+      height: 100%;
+      width: 100%;
       img {
-        width: 100%;
+        max-width: 85%;
+        max-height: 85%;
         box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.5);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
       }
     }
   }
   .exif-container {
     position: relative;
-    width: 25%;
+    width: 20%;
     padding: 64px 8px 32px;
+    font-size: 0.9rem;
+    p,
+    h2 {
+      color: #fff;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    svg {
+      height: 32px;
+      width: 32px;
+    }
+    .cls-1,
+    .tw1 {
+      fill: transparent;
+    }
+    .cls-2,
+    .tw2 {
+      fill: #fff;
+    }
   }
 }

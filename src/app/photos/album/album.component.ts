@@ -1,7 +1,14 @@
+import { APIResponse } from './../../../../../backend/src/app/shared/interfaces/api-response';
 import {
-    AfterViewInit, Component, ElementRef, HostListener, OnInit, QueryList, Renderer2, ViewChildren
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  QueryList,
+  Renderer2,
+  ViewChildren
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 import { ImageCacheService } from '../image-cache.service';
 import { Photo } from '../photo.interface';
@@ -29,13 +36,14 @@ export class AlbumComponent implements OnInit, AfterViewInit {
     private route: ActivatedRoute,
     private service: PhotosService,
     private cache: ImageCacheService,
-    private renderer: Renderer2) { }
+    private renderer: Renderer2
+  ) {}
   /**
    * @description Method which is called when the component is initiated.
    */
   ngOnInit() {
     this.getIDFromRoute();
-    this.renderer.listen('document', 'keydown', ($event) => {
+    this.renderer.listen('document', 'keydown', ($event: KeyboardEvent) => {
       if (this.activePhoto) {
         if ($event.key === 'ArrowRight') {
           this.nextPhoto();
@@ -50,14 +58,13 @@ export class AlbumComponent implements OnInit, AfterViewInit {
    * @description Method which is called after the view has initialised.
    */
   ngAfterViewInit(): void {
-    this.renderedImages.changes
-      .subscribe(() => this.lazyLoad());
+    this.renderedImages.changes.subscribe(() => this.lazyLoad());
   }
   /**
    * @description Get the route parameters and use the ID to get data from the server.
    */
   getIDFromRoute(): void {
-    this.route.paramMap.subscribe((route) => {
+    this.route.paramMap.subscribe((route: ParamMap) => {
       const id = +route['params']['id'];
       if (id) {
         this.getData(id);
@@ -70,13 +77,14 @@ export class AlbumComponent implements OnInit, AfterViewInit {
    */
   getData(id: number) {
     this.service.getAlbumByID(id).subscribe(
-      (data) => {
+      (data: APIResponse) => {
         this.data = data.response.results as Photo[];
-        this.data.map((photo) => {
+        this.data.map((photo: Photo) => {
           if (photo.exif !== '') {
             // If the exif data for the file exists (which it should), parse it and work out the aspect ratio.
             photo.exif = JSON.parse(photo.exif);
-            photo.aspectRatio = photo.exif.COMPUTED['Width'] / photo.exif.COMPUTED['Height'];
+            photo.aspectRatio =
+              photo.exif.COMPUTED['Width'] / photo.exif.COMPUTED['Height'];
           }
           return photo;
         });
@@ -84,9 +92,10 @@ export class AlbumComponent implements OnInit, AfterViewInit {
         this.setAspectRatio();
         this.setPhotoLayout();
       },
-      (err) => {
+      (err: any) => {
         this.handleError(err);
-      });
+      }
+    );
   }
   /**
    * @description Start loading the images
@@ -98,18 +107,14 @@ export class AlbumComponent implements OnInit, AfterViewInit {
     this.activePhoto = this.data[i];
     console.log(this.activePhoto);
   }
-  nextPhoto(): void{
+  nextPhoto(): void {
     let index = this.data.indexOf(this.activePhoto) + 1;
-    index > this.data.length - 1 ? index = 0 : index;
-    console.log(index);
-    console.log("NEXT");
+    index = index > this.data.length - 1 ? 0 : index;
     this.activePhoto = this.data[index];
   }
-  prevPhoto(): void{
+  prevPhoto(): void {
     let index = this.data.indexOf(this.activePhoto) - 1;
-    index < 0 ? index = this.data.length - 1 : index;
-    console.log(index);
-    console.log("PREV");
+    index = index < 0 ? this.data.length - 1 : index;
     this.activePhoto = this.data[index];
   }
   closeFullscreen() {
@@ -117,26 +122,34 @@ export class AlbumComponent implements OnInit, AfterViewInit {
   }
   private lazyLoad() {
     const lazyImages = this.renderedImages;
-    if ('IntersectionObserver' in window) { // If the browser supports this
-      const lazyImageObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
+    if ('IntersectionObserver' in window) {
+      // If the browser supports this
+      const lazyImageObserver = new IntersectionObserver((entries: any) => {
+        entries.forEach((entry: any) => {
           // TODO: Come up with a way to only change to the big source if it has been pre-loaded.
           if (entry.isIntersecting) {
-            this.cache.load(entry.target['dataset']['src']).then(() => {
-              // !ISSUE: This could lead to things being loaded twice (i.e. if a request is already underway).
-              entry.target['src'] = entry.target['dataset']['src'];
-              entry.target.classList.remove('lazy-load');
-              lazyImageObserver.unobserve(entry.target);
-            });
+            this.cache
+              .load(entry.target['dataset']['src'])
+              .then(() => {
+                entry.target['src'] = entry.target['dataset']['src'];
+                entry.target.classList.remove('lazy-load');
+                lazyImageObserver.unobserve(entry.target);
+              })
+              .catch((path: string) => {
+                // If the photo failed to load. Just remove it to avoid any dodgy stuff.
+                this.data = this.data.filter((photo: Photo) => {
+                  return photo.path !== path;
+                });
+              });
           }
         });
       });
-      lazyImages.forEach((lazyImage) => {
+      lazyImages.forEach((lazyImage: ElementRef) => {
         lazyImageObserver.observe(lazyImage.nativeElement);
       });
     } else {
       // If the browser doesn't support it, let them deal with slower loading times.
-      this.renderedImages.forEach((img) => {
+      this.renderedImages.forEach((img: any) => {
         img.nativeElement.src = img.nativeElement['dataset']['src'];
         img.nativeElement.classList.remove('lazy-load');
       });
@@ -154,7 +167,7 @@ export class AlbumComponent implements OnInit, AfterViewInit {
     let rowAspectRatio = 0;
     let row = [];
     let photoIndex = 0;
-    this.data.forEach((photo) => {
+    this.data.forEach((photo: Photo) => {
       photoIndex += 1;
       rowAspectRatio += photo.aspectRatio;
       row.push(photo);
@@ -170,25 +183,27 @@ export class AlbumComponent implements OnInit, AfterViewInit {
         rowAspectRatio = 0;
       }
       this.photos = [];
-      this.rows.forEach((el: any) => {
-        el.forEach((photo: Photo) => {
-          photo['height'] = Math.min(el['height'] - (2 * this.config.imageMargins), 500);
-          photo['width'] = photo['height'] * photo['aspectRatio'];
-          this.photos.push(photo);
+      this.rows.forEach((r: any) => {
+        r.forEach((ph: Photo) => {
+          ph['height'] = Math.min(
+            r['height'] - 2 * this.config.imageMargins,
+            500
+          );
+          ph['width'] = ph['height'] * ph['aspectRatio'];
+          this.photos.push(ph);
         });
       });
     });
+    console.log(this.rows);
   }
   private calculateAverageAspect() {
     let i = 0;
     let sum = 0;
-    this.rows.forEach((row) => {
+    this.rows.forEach((row: any) => {
       sum += row['height'];
       i += 1;
     });
     return sum / i;
   }
-  private handleError(err: Error) {
-
-  }
+  private handleError(err: Error) {}
 }

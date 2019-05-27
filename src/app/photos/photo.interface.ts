@@ -6,5 +6,6 @@ export interface Photo {
   albumID: string;
   exif: object | any;
   aspectRatio: number;
-  loaded?: boolean;
+  height?: number;
+  width?: number;
 }
