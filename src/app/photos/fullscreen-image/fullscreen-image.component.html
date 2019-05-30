@@ -1,0 +1,105 @@
+<div class="active-photo-container flex-container" *ngIf="photo" [@fadeInLeft]>
+  <div class="image-container" [class.exif-active]="exifActive && hasExif()">
+    <div id="fullscreen-actions">
+      <ul>
+        <li>
+          <a id="share" (click)="sharePhoto()"
+            ><i class="material-icons">
+              share
+            </i></a
+          >
+        </li>
+        <li>
+          <a id="download" [href]="photo.path" download
+            ><i class="material-icons">
+              cloud_download
+            </i></a
+          >
+        </li>
+        <li>
+          <a id="toggle-exif" (click)="toggleExif()" *ngIf="hasExif()"
+            ><i class="material-icons">
+              info
+            </i></a
+          >
+        </li>
+        <li>
+          <a id="close-fullscreen" (click)="closeFullscreen()"
+            ><i class="material-icons">
+              close
+            </i></a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="active-photo">
+      <img src="{{ photo.path }}" alt="{{ photo.caption }}" />
+      <a id="previous-photo" class="prev-next" (click)="prevPhoto()"
+        ><i class="material-icons">
+          navigate_before
+        </i></a
+      >
+      <a id="next-photo" class="prev-next" (click)="nextPhoto()"
+        ><i class="material-icons">
+          navigate_next
+        </i></a
+      >
+    </div>
+  </div>
+  <div class="exif-container" [class.exif-active]="exifActive && hasExif()">
+    <h2>Details</h2>
+    <p *ngIf="photo.caption" id="photo-caption">{{ photo.caption }}</p>
+    <div *ngIf="photo.exif">
+      <div
+        class="exif-section flex-container"
+        id="exif-date"
+        *ngIf="photo.exif.DateTimeOriginal"
+      >
+        <div class="exif-section-icon">
+          <i class="material-icons">calendar_today</i>
+        </div>
+        <div class="exif-section-data">
+          <p class="section-heading">
+            {{ photo.exif.DateTimeOriginal | date: 'dd MMM' }}
+          </p>
+          <p class="section-sub">
+            {{ photo.exif.DateTimeOriginal | date: 'E, HH:mm' }}
+          </p>
+        </div>
+      </div>
+      <div
+        class="exif-section flex-container"
+        id="exif-camera"
+        *ngIf="photo.exif.Model"
+      >
+        <div class="exif-section-icon">
+          <i class="material-icons">camera</i>
+        </div>
+        <div class="exif-section-data">
+          <p *ngIf="photo.exif.Model" class="section-heading">
+            {{ photo.exif.Model }}
+          </p>
+          <p class="section-sub">
+            <span *ngIf="photo.exif.ExposureTime">{{
+              photo.exif.ExposureTime
+            }}</span>
+            <span *ngIf="photo.exif.COMPUTED.ApertureFNumber">{{
+              photo.exif.COMPUTED.ApertureFNumber
+            }}</span>
+            <span *ngIf="photo.exif.ISOSpeedRatings"
+              >ISO {{ photo.exif.ISOSpeedRatings }}</span
+            >
+            <span *ngIf="photo.exif.FocalLength"
+              >{{ photo.exif.FocalLength }}mm</span
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<rb-image-share
+  [photo]="photo"
+  [active]="sharingActive"
+  (close)="closeSharer()"
+></rb-image-share>

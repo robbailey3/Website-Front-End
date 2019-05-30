@@ -25,13 +25,14 @@ export class AlbumComponent implements OnInit, AfterViewInit {
   data: Photo[];
   aspectRatio: number;
   config = {
-    desktopRowHeight: 400,
-    mobileRowHeight: 200,
-    imageMargins: 2
+    desktopRowHeight: 500,
+    mobileRowHeight: 300,
+    imageMargins: 1
   };
   rows: object[];
   photos = [];
   activePhoto: Photo;
+  exifActive = false;
   constructor(
     private route: ActivatedRoute,
     private service: PhotosService,
@@ -80,9 +81,15 @@ export class AlbumComponent implements OnInit, AfterViewInit {
       (data: APIResponse) => {
         this.data = data.response.results as Photo[];
         this.data.map((photo: Photo) => {
-          if (photo.exif !== '') {
+          if (
+            photo.exif !== '' &&
+            photo.exif !== undefined &&
+            photo.exif !== null &&
+            photo.exif !== '""'
+          ) {
             // If the exif data for the file exists (which it should), parse it and work out the aspect ratio.
             photo.exif = JSON.parse(photo.exif);
+            this.cleanExifData(photo);
             photo.aspectRatio =
               photo.exif.COMPUTED['Width'] / photo.exif.COMPUTED['Height'];
           }
@@ -105,7 +112,6 @@ export class AlbumComponent implements OnInit, AfterViewInit {
   }
   setActivePhoto(i: number) {
     this.activePhoto = this.data[i];
-    console.log(this.activePhoto);
   }
   nextPhoto(): void {
     let index = this.data.indexOf(this.activePhoto) + 1;
@@ -117,8 +123,8 @@ export class AlbumComponent implements OnInit, AfterViewInit {
     index = index < 0 ? this.data.length - 1 : index;
     this.activePhoto = this.data[index];
   }
-  closeFullscreen() {
-    this.activePhoto = undefined;
+  fullScreenClose() {
+    this.activePhoto = null;
   }
   private lazyLoad() {
     const lazyImages = this.renderedImages;
@@ -194,7 +200,6 @@ export class AlbumComponent implements OnInit, AfterViewInit {
         });
       });
     });
-    console.log(this.rows);
   }
   private calculateAverageAspect() {
     let i = 0;
@@ -205,5 +210,48 @@ export class AlbumComponent implements OnInit, AfterViewInit {
     });
     return sum / i;
   }
-  private handleError(err: Error) {}
+  private cleanExifData(photo: Photo) {
+    for (const key in photo.exif) {
+      if (photo.exif.hasOwnProperty(key)) {
+        switch (key) {
+          case 'ExposureTime':
+            photo.exif['ExposureTime'] = this.convertRationalToDecimal(
+              photo.exif['ExposureTime'],
+              true
+            );
+            break;
+          case 'FocalLength':
+            photo.exif['FocalLength'] = this.convertRationalToDecimal(
+              photo.exif['FocalLength']
+            );
+            break;
+          case 'DateTimeOriginal':
+            const str = photo.exif['DateTimeOriginal'].split(' ');
+            const dateStr = str[0].replace(/:/g, '-');
+            photo.exif['DateTimeOriginal'] = new Date(`${dateStr} ${str[1]}`);
+            break;
+          default:
+            break;
+        }
+      }
+    }
+  }
+  handlePrevNext(val: string) {
+    if (val === 'prev') {
+      this.prevPhoto();
+    } else {
+      this.nextPhoto();
+    }
+  }
+  private convertRationalToDecimal(rational: string, oneOver = false) {
+    const numerator = parseInt(rational.split('/')[0], 10);
+    const denominator = parseInt(rational.split('/')[1], 10);
+
+    return oneOver
+      ? `1/${Math.round(1 / (numerator / denominator))}`
+      : numerator / denominator;
+  }
+  private handleError(err: Error) {
+    throw new Error('Method not yet implemented');
+  }
 }

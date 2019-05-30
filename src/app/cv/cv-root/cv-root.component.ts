@@ -28,9 +28,6 @@ export class CvRootComponent implements OnInit {
     this.service.getCV().subscribe(
       data => {
         this.cv = data as CV;
-        if (environment.debug) {
-          console.log(this.cv);
-        }
       },
       err => {
         this.reportError(err);

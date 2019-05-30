@@ -23,7 +23,6 @@ export class PhotosService {
    * @description
    */
   getAlbums(): Observable<APIResponse> {
-    console.log(this.URL_BASE);
     return this.http.get<APIResponse>(`${this.URL_BASE}albums`);
   }
 }

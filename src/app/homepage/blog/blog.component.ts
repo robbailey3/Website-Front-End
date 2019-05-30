@@ -21,7 +21,6 @@ export class BlogComponent implements OnInit {
         post.tags = post.categories.split(',');
         return post;
       }) as Post[];
-      console.log(this.posts);
     });
   }
 }

@@ -38,7 +38,6 @@ export class ContactComponent implements OnInit {
     this.setMeta();
   }
   formSubmit(data: JSON) {
-    console.log(data);
     this.formSubmitted = true;
     this.sendMail(data);
   }
