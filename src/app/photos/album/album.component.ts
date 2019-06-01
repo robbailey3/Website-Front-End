@@ -252,6 +252,6 @@ export class AlbumComponent implements OnInit, AfterViewInit {
       : numerator / denominator;
   }
   private handleError(err: Error) {
-    throw new Error('Method not yet implemented');
+    
   }
 }
