@@ -24,6 +24,7 @@
     color: color(primary);
     text-decoration: none;
     line-height: 1;
+    transition: 0.2s;
     &:hover,
     &:focus {
       color: lighten(color(primary), 10%);
