@@ -251,6 +251,7 @@ export class AlbumComponent implements OnInit, AfterViewInit {
       ? `1/${Math.round(1 / (numerator / denominator))}`
       : numerator / denominator;
   }
+
   private handleError(err: Error) {
     throw new Error('Method not yet implemented');
   }
