@@ -2,9 +2,11 @@
   <div class="album col-md-4" *ngFor="let album of albums">
     <img src="{{ album.path }}" alt="{{ album.caption }}" class="album-image" />
     <div class="overlay"></div>
-
     <h2>
       <a [routerLink]="[album.albumID]">{{ album.name }}</a>
     </h2>
   </div>
+</div>
+<div id="no-albums" *ngIf="!albums || albums.length < 1">
+  <p>Ooops... There's no photos to display here. Try again later.</p>
 </div>

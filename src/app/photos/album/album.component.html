@@ -18,6 +18,6 @@
 </div>
 <rb-fullscreen-image
   [photo]="activePhoto"
-  (prevNext)="handlePrevNext(val)"
+  (prevNext)="handlePrevNext($event)"
   (close)="fullScreenClose()"
 ></rb-fullscreen-image>
