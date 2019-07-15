@@ -1,21 +1,61 @@
 <div id="homepage-skills-container" class="flex-container">
   <h2>I possess skills in the following technologies.</h2>
-  <app-card class="col-md-3 skill-item">
+  <div class="col-md-6 skill-item">
     <p>JavaScript</p>
-  </app-card>
-  <app-card class="col-md-3 skill-item">
+    <pre class="language-typescript"><code class="language-typescript">
+      const hello = () => {{'{'}}
+        console.log('hello world');
+      {{'}'}}
+    </code></pre>
+  </div>
+  <div class="col-md-6 skill-item">
     <p>SCSS</p>
-  </app-card>
-  <app-card class="col-md-3 skill-item">
+    <pre class="language-scss"><code class="language-scss">
+          html, body{{'{'}}
+            background: red;
+          {{'}'}}
+    </code></pre>
+  </div>
+  <div class="col-md-6 skill-item">
     <p>TypeScript</p>
-  </app-card>
-  <app-card class="col-md-3 skill-item">
+    <pre class="language-typescript"><code class="language-typescript">
+      const hello = (message: string) => {{'{'}}
+        console.log(message);
+      {{'}'}}
+    </code></pre>
+  </div>
+  <div class="col-md-6 skill-item">
     <p>Angular</p>
-  </app-card>
-  <app-card class="col-md-3 skill-item">
+    <pre class="language-typescript"><code class="language-typescript">
+    @Component({{'{'}}
+      selector: 'app-main',
+      templateUrl: './main.component.html',
+      styleUrls: ['./main.component.scss'],
+    {{'}'}})
+    export class MainComponent{{'{}'}}
+    </code></pre>
+  </div>
+  <div class="col-md-6 skill-item">
     <p>PHP</p>
-  </app-card>
-  <app-card class="col-md-3 skill-item">
+    <pre class="language-php"><code class="language-php">
+      $message = "Hello World";
+      echo $message;
+    </code></pre>
+  </div>
+  <div class="col-md-6 skill-item">
     <p>SQL</p>
-  </app-card>
+    <pre class="language-sql"><code class="language-sql">
+          SELECT * FROM TABLE WHERE ID=2
+    </code></pre>
+  </div>
+  <div class="col-md-6 skill-item">
+    <p>Java</p>
+    <pre class="language-java"><code class="language-java">
+      public class Main{{'{'}}
+        public static void Main(String[] args){{'{'}}
+          System.out.println('Hello World');
+        {{'}'}}
+      {{'}'}}
+    </code></pre>
+  </div>
 </div>

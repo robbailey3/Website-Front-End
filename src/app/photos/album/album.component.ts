@@ -1,15 +1,9 @@
-import { APIResponse } from './../../../../../backend/src/app/shared/interfaces/api-response';
 import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  OnInit,
-  QueryList,
-  Renderer2,
-  ViewChildren
+    AfterViewInit, Component, ElementRef, OnInit, QueryList, Renderer2, ViewChildren
 } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
+import { APIResponse } from '../../shared/interfaces/api-response.interface';
 import { ImageCacheService } from '../image-cache.service';
 import { Photo } from '../photo.interface';
 import { PhotosService } from '../photos.service';
