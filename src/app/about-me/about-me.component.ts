@@ -9,7 +9,7 @@ import { MetaService } from '../shared/services/meta/meta.service';
   styleUrls: ['./about-me.component.scss']
 })
 export class AboutMeComponent implements OnInit {
-  @ViewChild('image') image: ElementRef;
+  @ViewChild('image', { static: true }) image: ElementRef;
   constructor(private cache: ImageCacheService, private meta: MetaService) {}
 
   ngOnInit() {

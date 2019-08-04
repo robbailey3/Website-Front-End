@@ -38,7 +38,7 @@ export class CookieComponent implements OnInit {
     }
   ];
   showConsole = true;
-  @ViewChild('cookieConsole') cookieConsole: ElementRef;
+  @ViewChild('cookieConsole', { static: false }) cookieConsole: ElementRef;
   constructor() {}
 
   ngOnInit() {

@@ -1,15 +1,16 @@
-$color-scheme: ('primary': #4392f1,
-'secondary': rgba(39, 70, 144, 1),
-'accent': rgb(219, 84, 97),
-'background': rgba(248, 253, 255, 1),
-'nearly-black': rgba(27, 27, 30, 1));
+$color-scheme: (
+  'primary': #4392f1,
+  'secondary': rgba(39, 70, 144, 1),
+  'accent': rgb(219, 84, 97),
+  'background': rgba(248, 253, 255, 1),
+  'nearly-black': rgba(27, 27, 30, 1),
+  'black-blue': rgba(27, 27, 50, 1)
+);
 
 @function color($name) {
   @if (map-has-key($color-scheme, $name)) {
     @return map-get($color-scheme, $name);
-  }
-
-  @else {
+  } @else {
     @error "Incorrect colour name used (#{$name}). Correct colours are #{map-keys($color-scheme)}";
   }
 }
