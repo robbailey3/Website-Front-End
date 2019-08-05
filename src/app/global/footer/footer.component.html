@@ -1,5 +1,64 @@
-<footer id="page-footer" class="flex-container">
-  <div id="in-development">
-    <p>Note: This site is currently still in development. Please take a look at my progress on <a href="https://github.com/robbailey3/front-end" target="_blank">GitHub</a>.</p>
+<footer id="page-footer">
+  <div class="footer-wrapper content-wrapper">
+    <app-grid>
+      <div class="col-md-5" id="footer-bio">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+          perspiciatis dolorum doloremque neque architecto distinctio minus
+          vitae excepturi quas, dolores unde quod exercitationem ea, consectetur
+          quis, nobis voluptatibus vel aut?
+        </p>
+      </div>
+      <div class="col-md-3" id="footer-nav">
+        <nav>
+          <h2>Navigation</h2>
+          <ul>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/blog">Blog</a></li>
+            <li><a routerLink="/photos">Photos</a></li>
+            <li><a routerLink="/about">About</a></li>
+            <li><a routerLink="/cv">CV</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-md-4" id="footer-social">
+        <div class="social-section">
+          <h2>Contact</h2>
+          <p>
+            <a href="mailto: rob.bailey3@gmail.com">rob.bailey3@gmail.com</a>
+          </p>
+          <p><a href="tel: +447921517093">+44(0)7921 517 093</a></p>
+        </div>
+        <div class="social-section">
+          <h2>Find me on:</h2>
+          <ul>
+            <li>
+              <a href="https://github.com/robbailey3" target="_blank"
+                ><img
+                  src="../../../assets/GitHub-Mark-Light-64px.png"
+                  alt="GitHub"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/robbailey3/" target="_blank"
+                ><img
+                  src="../../../assets/linkedin-logo-white.png"
+                  alt="LinkedIn"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/robbailey3/" target="_blank"
+                ><img src="../../../assets/ig-logo.png" alt="Instagram"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </app-grid>
+  </div>
+  <div id="footer-bottom">
+    <div class="content-wrapper">
+      <p id="copyright">&copy; Rob Bailey 2019</p>
+    </div>
   </div>
 </footer>

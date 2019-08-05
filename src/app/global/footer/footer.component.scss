@@ -1,18 +1,57 @@
 @import '../../../styles/components/colours';
+@import '../../../styles/layout/grid';
 
 #page-footer {
-  background: linear-gradient(60deg, darken(color(primary), 40%), color(primary));
-  margin-top: 25px;
-
-  #in-development {
-    padding: 16px;
-    max-width: 450px;
+  background: color(nearly-black);
+  margin-top: 3rem;
+  color: #fff;
+  .footer-wrapper {
+    padding: 2rem 0;
+  }
+  h2 {
+    font-size: 18px;
     color: #fff;
-    font-size: 20px;
-
-    a {
-      font-weight: bold;
+    margin: 0;
+  }
+  #footer-bio {
+    @include breakpoint(md) {
+      padding-right: 2rem;
+    }
+    p {
       color: #fff;
+    }
+  }
+  #footer-nav {
+    ul {
+      list-style: none;
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+      &:hover,
+      &:focus {
+        color: #dfdfdf;
+        text-decoration: underline;
+      }
+    }
+  }
+  #footer-social {
+    .social-section {
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style: none;
+    }
+    li {
+      display: inline-block;
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    img {
+      width: 40px;
+      margin: 1rem 1rem 0 0;
     }
   }
 }

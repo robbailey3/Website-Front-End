@@ -1,5 +1,5 @@
 <div class="flex-container">
-  <div *ngIf="cv" id="cv-container" class="col-lg-8 offset-lg-2">
+  <div *ngIf="cv" id="cv-container" class="content-wrapper">
     <app-profile [cv]="cv['basics']"></app-profile>
     <app-experience [experience]="cv['workexperience']"></app-experience>
     <app-education [education]="cv['education']"></app-education>

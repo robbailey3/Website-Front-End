@@ -1,11 +1,11 @@
-@import url('https://use.typekit.net/aoi7ikg.css');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:400,700|Ubuntu+Mono&display=swap');
 @import './components/colours';
 @import './layout/grid';
-$monospace-font: t26-carbon, monospace;
+$monospace-font: 'Ubuntu Mono', monospace;
 html,
 body {
-  font-size: 21px;
-  font-family: futura-pt, sans-serif;
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
   line-height: 2;
   color: lighten(color(nearly-black), 15%);
 }
@@ -15,7 +15,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: futura-pt-bold;
+  font-family: 'Raleway', sans-serif;
   font-weight: 800;
   line-height: 1.3;
   margin: 2rem 0 1rem;

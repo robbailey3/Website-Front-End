@@ -1,5 +1,5 @@
 <div *ngIf="posts" class="flex-container posts-container">
-  <div *ngFor="let post of posts" class="post col-md-10 offset-md-1">
+  <div *ngFor="let post of posts" class="post content-wrapper">
     <div class="post-image" *ngIf="post.image !== null || post.image">
       <img [src]="post.image" />
     </div>

@@ -17,3 +17,23 @@
 body {
   background: color(background);
 }
+
+.content-wrapper {
+  max-width: 440px;
+  margin: auto;
+  @include breakpoint(sm) {
+    max-width: 500px;
+  }
+  @include breakpoint(md) {
+    max-width: 750px;
+  }
+  @include breakpoint(lg) {
+    max-width: 950px;
+  }
+  @include breakpoint(xl) {
+    max-width: 1200px;
+  }
+  @include breakpoint(xxl) {
+    max-width: 1400px;
+  }
+}

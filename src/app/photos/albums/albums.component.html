@@ -1,4 +1,8 @@
-<div id="albums-container" *ngIf="albums" class="flex-container">
+<div
+  id="albums-container"
+  *ngIf="albums"
+  class="flex-container content-wrapper"
+>
   <div class="album col-md-4" *ngFor="let album of albums">
     <img src="{{ album.path }}" alt="{{ album.caption }}" class="album-image" />
     <div class="overlay"></div>
