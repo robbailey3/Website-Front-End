@@ -58,5 +58,16 @@
     background: color(accent);
     padding: 0.5rem 0;
     font-size: 14px;
+    #angular {
+      max-width: 50%;
+      @include breakpoint(md) {
+        margin-left: auto;
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+        vertical-align: text-bottom;
+      }
+    }
   }
 }

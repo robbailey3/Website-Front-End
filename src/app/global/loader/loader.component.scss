@@ -1,0 +1,30 @@
+@import '../../../styles/components/colours';
+#loader {
+  position: absolute;
+  display: none;
+  top: 0;
+  height: 4px;
+  width: 100%;
+  z-index: 9999;
+  #loader-inner {
+    position: relative;
+    background: color(accent);
+    top: 0;
+    left: 0;
+    height: 100%;
+    animation: loading 1s linear infinite;
+  }
+}
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 50%;
+    left: 15%;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}

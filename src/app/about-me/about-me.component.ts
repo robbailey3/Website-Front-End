@@ -14,10 +14,7 @@ export class AboutMeComponent implements OnInit {
 
   ngOnInit() {
     this.setMeta();
-    this.cache.load('../../assets/me_round.png').then(() => {
-      this.image.nativeElement.src = this.image.nativeElement.dataset['src'];
-      this.image.nativeElement.classList.remove('lazyload');
-    });
+    this.cache.load('../../assets/me_round.png').then(() => {});
   }
   setMeta() {
     this.meta.setTitle('Rob Bailey: About Me');

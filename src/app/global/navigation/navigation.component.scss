@@ -40,8 +40,12 @@
       background: #111;
     }
   }
+  ul {
+    width: 100%;
+  }
   li {
     list-style: none;
+    display: block;
 
     a {
       color: #111;
@@ -49,11 +53,13 @@
       padding: 6px 16px;
       display: block;
       transition: 0.2s;
+      display: block;
 
       &:hover,
       &:focus {
         color: color(primary);
         text-decoration: none;
+        background: rgba(0, 0, 0, 0.05);
       }
     }
   }

@@ -7,10 +7,21 @@ import { SharedModule } from '../shared/shared.module';
 import { CookieComponent } from './cookie/cookie.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
-  declarations: [NavigationComponent, FooterComponent, CookieComponent],
-  exports: [NavigationComponent, FooterComponent, CookieComponent],
+  declarations: [
+    NavigationComponent,
+    FooterComponent,
+    CookieComponent,
+    LoaderComponent
+  ],
+  exports: [
+    NavigationComponent,
+    FooterComponent,
+    CookieComponent,
+    LoaderComponent
+  ],
   imports: [CommonModule, RouterModule, SharedModule, FormsModule]
 })
 export class GlobalModule {}
