@@ -8,14 +8,8 @@ import { HighlightService } from '../../shared/services/highlight/highlight.serv
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent implements OnInit, AfterViewChecked {
-  private highlighted = false;
-  constructor(private highlightService: HighlightService) {}
+  constructor() {}
 
   ngOnInit() {}
-  ngAfterViewChecked() {
-    if (!this.highlighted) {
-      this.highlightService.highlightAll();
-      this.highlighted = true;
-    }
-  }
+  ngAfterViewChecked() {}
 }

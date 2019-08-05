@@ -2,81 +2,9 @@
 @import '../../../styles/layout/grid';
 @import '../../../styles/components/colours';
 
-#homepage {
-  padding: 16px;
-  height: 100vh;
-}
-
-app-grid {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  text-align: center;
-  border-radius: 8px;
-  height: 80%;
-
-  #introduction {
-    h1 {
-      font-size: 3rem;
-      color: #222;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-      font-weight: bold;
-      @include breakpoint(md) {
-        font-size: 6rem;
-      }
-      .letter {
-        position: relative;
-        display: inline-block;
-        &:last-of-type {
-          color: color(accent);
-        }
-      }
-    }
-
-    p {
-      color: #222;
-    }
-  }
-
-  #svg-container {
-    img {
-      max-width: 400px;
-      -webkit-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.4);
-      box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.4);
-    }
-  }
-
-  .btn-group-item {
-    .btn {
-      margin: auto;
-      width: 80%;
-
-      @include breakpoint(md) {
-        width: 50%;
-      }
-    }
-  }
-}
-
-.scroll-hint-container {
+#hero {
+  display: block;
   width: 100%;
-  text-align: center;
-  padding-top: 32px;
-
-  a.scroll-down {
-    cursor: pointer;
-  }
-
-  i.material-icons {
-    font-size: 50px;
-    background: #eee;
-    border-radius: 50%;
-
-    &:hover {
-      background: #ddd;
-    }
-  }
+  height: 90%;
+  height: 90vh;
 }
