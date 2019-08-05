@@ -13,13 +13,20 @@ declare global {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title: string;
+  /**
+   * The current title `<title>` set in the `<head>` of the
+   * document. This is used to store the previous title so that
+   * when the user re-opens the tab, the title goes back to what
+   * it was before.
+   */
+  public title: string;
+
   constructor(private meta: MetaService) {
     this.meta.$title.subscribe((title: string) => {
       this.title = title;
-      console.log(this.title);
     });
   }
+
   ngOnInit() {
     window.dataLayer = window.dataLayer || [];
     const urlParams = new URLSearchParams(window.location.search);
@@ -28,11 +35,13 @@ export class AppComponent implements OnInit {
     }
     this.title = this.meta.getTitle();
   }
+
   @HostListener('window:blur')
   onblur() {
-    const title = 'Rob Bailey: 👋';
+    const title = '👋 👀';
     this.meta.setTitle(title, false);
   }
+
   @HostListener('window:focus')
   onfocus() {
     this.meta.setTitle(this.title);

@@ -1,3 +1,4 @@
+@import '../../../styles/layout/grid';
 .album {
   position: relative;
   height: 400px;
@@ -33,6 +34,21 @@
   &:hover {
     .overlay {
       opacity: 0.8;
+    }
+  }
+}
+.ig-feed {
+  iframe {
+    height: 450px;
+    @include breakpoint(sm) {
+      height: 500px;
+    }
+    @include breakpoint(md) {
+      height: 750px;
+    }
+
+    @include breakpoint(lg) {
+      height: 490px;
     }
   }
 }
