@@ -8,9 +8,10 @@ import { HeroComponent } from './hero/hero.component';
 import { HomepageRootComponent } from './homepage-root/homepage-root.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { SkillsComponent } from './skills/skills.component';
+import { ParticlesComponent } from './particles/particles.component';
 
 @NgModule({
-  declarations: [HomepageRootComponent, IntroductionComponent, HeroComponent, SkillsComponent, BlogComponent],
+  declarations: [HomepageRootComponent, IntroductionComponent, HeroComponent, SkillsComponent, BlogComponent, ParticlesComponent],
   exports: [HomepageRootComponent],
   imports: [CommonModule, SharedModule, RouterModule]
 })

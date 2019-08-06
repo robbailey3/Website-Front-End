@@ -15,12 +15,12 @@ import { CVModule } from './cv/cv.module';
 import { ErrorHandlerModule } from './error-handler/error-handler.module';
 import { GlobalModule } from './global/global.module';
 import { HomepageModule } from './homepage/homepage.module';
-import { PhotosModule } from './photos/photos.module';
 import { ProjectsModule } from './projects/projects.module';
 import { SharedModule } from './shared/shared.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, ContactComponent],
+  declarations: [AppComponent, ContactComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -29,7 +29,6 @@ import { SharedModule } from './shared/shared.module';
     GlobalModule,
     HomepageModule,
     BlogModule,
-    PhotosModule,
     ProjectsModule,
     HttpClientModule,
     FormsModule,
@@ -43,4 +42,4 @@ import { SharedModule } from './shared/shared.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

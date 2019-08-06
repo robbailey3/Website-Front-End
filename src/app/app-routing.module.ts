@@ -11,6 +11,7 @@ import { HomepageRootComponent } from './homepage/homepage-root/homepage-root.co
 import { AlbumComponent } from './photos/album/album.component';
 import { AlbumsComponent } from './photos/albums/albums.component';
 import { PhotosRootComponent } from './photos/photos-root/photos-root.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -35,12 +36,10 @@ const routes: Routes = [
   { path: 'about', component: AboutMeComponent },
   {
     path: 'photos',
-    component: PhotosRootComponent,
-    children: [
-      { path: '', pathMatch: 'full', component: AlbumsComponent },
-      { path: ':id', pathMatch: 'full', component: AlbumComponent }
-    ]
-  }
+    loadChildren: () =>
+      import('./photos/photos.module').then((mod) => mod.PhotosModule)
+  },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
