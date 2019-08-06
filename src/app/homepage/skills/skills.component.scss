@@ -1,19 +1,21 @@
-#homepage-skills-container {
-  margin: 48px 0;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  text-align: center;
-
-  h2 {
-    font-size: 34px;
-    width: 100%;
-  }
-
-  .skill-item {
-    margin-top: 20px;
-    padding: 16px;
+#skills-container {
+  padding: 2rem 1rem;
+  .skill-card {
+    margin-top: 1rem;
+    padding: 1rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    .skill-logo {
+      width: 100%;
+    }
+    p {
+      width: 100%;
+    }
+    img {
+      width: 100%;
+      max-width: 75px;
+    }
   }
 }

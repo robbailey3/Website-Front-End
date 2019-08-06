@@ -31,6 +31,13 @@ export class ParticlesComponent implements OnInit {
   @HostListener('mouseup') onmouseup() {
     this.particleVisualisation.isClicking = false;
   }
+  @HostListener('window:resize') onresize() {
+    console.log(window.innerHeight);
+    this.particleVisualisation.canvas.setCanvasSize({
+      width: document.body.clientWidth,
+      height: window.innerHeight - 54
+    });
+  }
   ngOnInit() {
     this.particleVisualisation = new ParticleVisualisation(
       this.canvasEl.nativeElement,

@@ -1,15 +1,10 @@
-import { AfterViewChecked, Component, OnInit } from '@angular/core';
-
-import { HighlightService } from '../../shared/services/highlight/highlight.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
-export class SkillsComponent implements OnInit, AfterViewChecked {
+export class SkillsComponent {
   constructor() {}
-
-  ngOnInit() {}
-  ngAfterViewChecked() {}
 }

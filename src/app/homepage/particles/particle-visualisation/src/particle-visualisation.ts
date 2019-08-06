@@ -11,13 +11,13 @@ export class ParticleVisualisation {
     particleCount: 300,
     lineTolerance: 80
   };
-  private canvas: Canvas;
+  public canvas: Canvas;
   constructor(
     private hostElement: HTMLCanvasElement,
     private dimensions: CanvasDimensions
   ) {
     this.canvas = new Canvas(this.hostElement);
-    this.canvas.setCanvasSize(dimensions);
+    this.canvas.setCanvasSize(this.dimensions);
     this.canvas.clearBackground();
     this.createParticles();
     this.animate();

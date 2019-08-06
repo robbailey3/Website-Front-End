@@ -12,6 +12,7 @@ import { TimelineComponent } from './components/timeline/timeline.component';
 import { SafePipe } from './pipes/safe.pipe';
 import { HighlightService } from './services/highlight/highlight.service';
 import { MetaService } from './services/meta/meta.service';
+import { SkillBarComponent } from './components/skill-bar/skill-bar.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +22,16 @@ import { MetaService } from './services/meta/meta.service';
     GridComponent,
     ModalComponent,
     SafePipe,
-    TimelineComponent
+    TimelineComponent,
+    SkillBarComponent
   ],
   exports: [
     CardComponent,
     GridComponent,
     ModalComponent,
     SafePipe,
-    TimelineComponent
+    TimelineComponent,
+    SkillBarComponent
   ],
   imports: [CommonModule],
   providers: [MetaService, HighlightService]

@@ -19,6 +19,7 @@ body {
 }
 
 .content-wrapper {
+  width: 100%;
   max-width: 440px;
   margin: auto;
   @include breakpoint(sm) {

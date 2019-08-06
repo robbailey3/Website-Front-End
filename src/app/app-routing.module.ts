@@ -21,19 +21,13 @@ const routes: Routes = [
     data: { state: 'home' }
   },
   { path: 'contact', component: ContactComponent, data: { state: 'contact' } },
-  {
-    path: 'blog',
-    component: BlogRootComponent,
-    children: [
-      { path: '', pathMatch: 'full', component: BlogListComponent },
-      {
-        path: ':slug',
-        component: BlogPostComponent
-      }
-    ]
-  },
   { path: 'cv', component: CvRootComponent },
   { path: 'about', component: AboutMeComponent },
+  {
+    path: 'blog',
+    loadChildren: () =>
+      import('./blog/blog.module').then((mod) => mod.BlogModule)
+  },
   {
     path: 'photos',
     loadChildren: () =>

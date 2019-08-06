@@ -10,6 +10,7 @@ import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogPostComponent } from './blog-post/blog-post.component';
 import { BlogRootComponent } from './blog-root/blog-root.component';
 import { BlogService } from './blog.service';
+import { BlogRoutingModule } from './blog-routing.module';
 
 @NgModule({
   declarations: [BlogRootComponent, BlogListComponent, BlogPostComponent],
@@ -17,6 +18,7 @@ import { BlogService } from './blog.service';
     CommonModule,
     RouterModule,
     HttpClientModule,
+    BlogRoutingModule,
     SharedModule,
     DisqusModule.forRoot('robbailey3')
   ],
