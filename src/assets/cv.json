@@ -27,8 +27,9 @@
   },
   "workExperience": [
     {
+      "role": "",
       "company": {
-        "name": "",
+        "name": "Oleeo",
         "description": "",
         "logoSrc": ""
       },
@@ -39,6 +40,7 @@
       "skills": []
     },
     {
+      "role": "",
       "company": {
         "name": "",
         "description": "",

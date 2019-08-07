@@ -1,6 +1,6 @@
-<section id="cv-experience" class="flex-container" *ngIf="experience">
+<section id="cv-experience" *ngIf="experience">
   <h2>Experience</h2>
   <div class="experience-item" *ngFor="let exp of experience">
-    {{ exp | json }}
+    <span class="exp-company">{{ exp.company.name }}</span>
   </div>
 </section>

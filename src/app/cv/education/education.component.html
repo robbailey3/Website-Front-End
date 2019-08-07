@@ -1,6 +1,7 @@
-<section id="cv-education" class="flex-container" *ngIf="education">
+<section id="cv-education" *ngIf="education">
   <h2>Education</h2>
-  <div class="education-item" *ngFor="let exp of education">
-    {{ exp | json }}
+  <div class="education-item" *ngFor="let edu of education">
+    <span class="edu-institution">{{ edu.institutionName }}</span> /
+    <span class="edu-qualification">{{ edu.qualification }}</span>
   </div>
 </section>

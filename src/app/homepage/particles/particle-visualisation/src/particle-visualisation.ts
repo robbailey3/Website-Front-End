@@ -14,8 +14,8 @@ export class ParticleVisualisation {
   public isClicking = false;
   private config = {
     canvasBackgroundColor: 'rgba(27, 27, 30, 1)',
-    particleCount: 200,
-    lineTolerance: 200
+    particleCount: 750,
+    lineTolerance: 75
   };
   public canvas: Canvas;
   constructor(
@@ -42,7 +42,7 @@ export class ParticleVisualisation {
       const unitVectorBetween = mousePositionVector
         .minus(this.particles[i].position)
         .normalize();
-      let force = unitVectorBetween.times(-3000 / scalarDistanceBetween ** 2);
+      let force = unitVectorBetween.times(-10000 / scalarDistanceBetween ** 2);
       this.particles[i].velocity = this.particles[i].velocity.add(force);
     }
   }
