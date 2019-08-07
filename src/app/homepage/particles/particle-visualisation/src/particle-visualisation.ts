@@ -8,7 +8,7 @@ export class ParticleVisualisation {
   public isClicking = false;
   private config = {
     canvasBackgroundColor: 'rgba(27, 27, 30, 1)',
-    particleCount: 300,
+    particleCount: 150,
     lineTolerance: 80
   };
   public canvas: Canvas;

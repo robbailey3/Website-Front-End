@@ -25,15 +25,14 @@ const routes: Routes = [
   { path: 'about', component: AboutMeComponent },
   {
     path: 'blog',
-    loadChildren: () =>
-      import('./blog/blog.module').then((mod) => mod.BlogModule)
+    loadChildren: () => import('./blog/blog.module').then(mod => mod.BlogModule)
   },
   {
     path: 'photos',
     loadChildren: () =>
-      import('./photos/photos.module').then((mod) => mod.PhotosModule)
-  },
-  { path: '**', component: PageNotFoundComponent }
+      import('./photos/photos.module').then(mod => mod.PhotosModule)
+  }
+  // { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
