@@ -3,13 +3,19 @@ import { Canvas } from './canvas';
 import { Particle } from './particle';
 import { Vector } from './vector';
 
+/**
+ * TODO: Refactor this class to try and reduce the number of loops within the
+ * code
+ * This class controls the Particle Visualisation functionality (e.g. creating
+ * the particles, moving them, handling clicks)
+ */
 export class ParticleVisualisation {
   public particles: Particle[] = [];
   public isClicking = false;
   private config = {
     canvasBackgroundColor: 'rgba(27, 27, 30, 1)',
-    particleCount: 150,
-    lineTolerance: 80
+    particleCount: 200,
+    lineTolerance: 200
   };
   public canvas: Canvas;
   constructor(
@@ -36,7 +42,7 @@ export class ParticleVisualisation {
       const unitVectorBetween = mousePositionVector
         .minus(this.particles[i].position)
         .normalize();
-      let force = unitVectorBetween.times(-1000 / scalarDistanceBetween ** 2);
+      let force = unitVectorBetween.times(-3000 / scalarDistanceBetween ** 2);
       this.particles[i].velocity = this.particles[i].velocity.add(force);
     }
   }
@@ -50,7 +56,6 @@ export class ParticleVisualisation {
       const randomX = Math.random() * 2 - 1;
       const randomY = Math.random() * 2 - 1;
       const velocity = new Vector(randomX, randomY, 0);
-      // const velocity = new Vector(0, 0, 0);
       this.particles.push(new Particle(position, velocity, this.canvas));
     }
   }

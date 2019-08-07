@@ -1,7 +1,7 @@
-<div class="flex-container">
+<div id="cv-wrapper">
   <div *ngIf="cv" id="cv-container" class="content-wrapper">
     <app-profile [cv]="cv['basics']"></app-profile>
-    <app-experience [experience]="cv['workexperience']"></app-experience>
+    <app-experience [experience]="cv['workExperience']"></app-experience>
     <app-education [education]="cv['education']"></app-education>
     <app-skills [skills]="cv['skills']"></app-skills>
     <app-hobbies [hobbies]="cv['hobbies']"></app-hobbies>

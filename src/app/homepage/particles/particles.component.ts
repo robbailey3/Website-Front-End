@@ -5,7 +5,7 @@ import {
   ElementRef,
   HostListener
 } from '@angular/core';
-import { ParticleVisualisation } from './particle-visualisation/src/particle-visualisation';
+import { ParticleVisualisation } from './particle-visualisation';
 
 @Component({
   selector: 'rb-particles',

@@ -1,28 +1,21 @@
-<div id="profile">
-  <div class="name">
-    <h2>{{ cv.name }}</h2>
+<section id="cv-profile" class="flex-container">
+  <div class="col-md-6">
+    <h1>Rob Bailey</h1>
+    <h2>Front-End Developer</h2>
+    <p class="location">{{ cv.location.city }}, {{ cv.location.country }}</p>
+    <p class="contact">
+      <a [href]="'Tel: ' + cv.phone">{{ cv.phone }}</a>
+    </p>
+    <p class="contact">
+      <a [href]="'mailto: ' + cv.email">{{ cv.email }}</a>
+    </p>
+    <p class="profile-summary">{{ cv.summary }}</p>
   </div>
-  <div class="cv-tagline">
-    <span class="subtitle">{{ cv.jobTitle }}</span>
+  <div class="col-md-6" id="profile-info">
+    <div class="social-links">
+      <span class="social" *ngFor="let profile of cv.profiles"
+        ><a [href]="profile.url">{{ profile.name }}</a></span
+      >
+    </div>
   </div>
-  <div class="contact">
-    <span
-      ><a href="mailto:{{ cv.contact.email }}">{{ cv.contact.email }}</a></span
-    >|
-    <span
-      ><a href="tel: +44{{ cv.contact.phone.slice(1) }}">{{
-        cv.contact.phone
-      }}</a></span
-    >
-  </div>
-  <div class="social">
-    <ul>
-      <li *ngFor="let social of cv.profiles">
-        <a href="{{ social.url }}" [innerHTML]="social.svg | safe"></a>
-      </li>
-    </ul>
-  </div>
-  <div class="summary">
-    <p>{{ cv.profile }}</p>
-  </div>
-</div>
+</section>

@@ -1,45 +1,23 @@
-@import '../../../styles/components/colours';
-
-:host {
-  text-align: center;
-}
-
-.subtitle {
-  color: #555;
-  font-size: 24px;
-}
-
-.contact {
-  a {
+#cv-profile {
+  .location,
+  .contact a {
+    color: #bbb;
+    font-size: 0.8rem;
     text-decoration: none;
-    margin-right: 16px;
-
-    &:nth-of-type(1) {
-      margin-left: 16px;
-    }
   }
 }
-
-.social {
-  ul {
-    padding: 0;
-  }
-
-  li {
-    list-style: none;
-    display: inline-block;
-  }
-
-  a {
-    svg path {
-      fill: #404040;
-    }
-  }
-
-  a:hover,
-  a:focus {
-    svg path {
-      fill: #777;
+#profile-info {
+  text-align: right;
+  .social {
+    margin: 0 1rem;
+    a {
+      color: #bbb;
+      text-decoration: none;
+      font-size: 0.8rem;
+      &:hover,
+      &:focus {
+        color: #fff;
+      }
     }
   }
 }

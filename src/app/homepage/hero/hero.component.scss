@@ -20,10 +20,13 @@
   position: relative;
   h1 {
     color: #fff;
-    font-size: 6rem;
     user-select: none;
     text-shadow: 0 4px 0px rgba(0, 0, 0, 1);
     width: 100%;
+    font-size: 5rem;
+    @include breakpoint(lg) {
+      font-size: 7rem;
+    }
     .letter {
       position: relative;
       display: inline-block;
@@ -34,6 +37,7 @@
   }
   p {
     color: #fff;
+    user-select: none;
   }
   .hero-text {
     text-align: center;
@@ -53,4 +57,7 @@
 #btn-column {
   align-items: center;
   justify-content: center;
+  .btn {
+    user-select: none;
+  }
 }

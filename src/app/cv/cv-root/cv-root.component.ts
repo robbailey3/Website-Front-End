@@ -1,8 +1,7 @@
 import { ErrorHandlerService } from 'src/app/error-handler/error-handler.service';
 import { MetaService } from 'src/app/shared/services/meta/meta.service';
-import { environment } from 'src/environments/environment';
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { CV } from '../cv.interface';
 import { CvService } from '../cv.service';
@@ -10,7 +9,8 @@ import { CvService } from '../cv.service';
 @Component({
   selector: 'app-cv-root',
   templateUrl: './cv-root.component.html',
-  styleUrls: ['./cv-root.component.scss']
+  styleUrls: ['./cv-root.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CvRootComponent implements OnInit {
   cv: CV;
@@ -26,10 +26,10 @@ export class CvRootComponent implements OnInit {
   }
   getData() {
     this.service.getCV().subscribe(
-      data => {
+      (data) => {
         this.cv = data as CV;
       },
-      err => {
+      (err) => {
         this.reportError(err);
       }
     );
