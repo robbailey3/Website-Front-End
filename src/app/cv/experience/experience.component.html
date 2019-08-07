@@ -1,6 +1,24 @@
 <section id="cv-experience" *ngIf="experience">
   <h2>Experience</h2>
   <div class="experience-item" *ngFor="let exp of experience">
-    <span class="exp-company">{{ exp.company.name }}</span>
+    <div class="exp-info flex-container">
+      <span class="exp-company">{{ exp.company.name }}</span> /
+      <span class="exp-role">{{ exp.role }}</span>
+      <span class="date">{{ exp.dateFrom }} - {{ exp.dateTo }}</span>
+    </div>
+    <div class="exp-summary">
+      <p>{{ exp.summary }}</p>
+    </div>
+    <div class="exp-keypoints">
+      <ul>
+        <li *ngFor="let keypoint of exp.keyPoints">
+          <p>{{ keypoint }}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="skills">
+      <h3>Skills</h3>
+      <span class="chip" *ngFor="let skill of exp.skills">{{ skill }}</span>
+    </div>
   </div>
 </section>

@@ -1,0 +1,27 @@
+@import '../../../styles/components/colours';
+#cv-experience {
+  .experience-item {
+    margin-bottom: 2rem;
+  }
+  .exp-company {
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+  .exp-role {
+    margin-left: 0.5rem;
+  }
+  .date {
+    margin-left: auto;
+    color: color(primary);
+    font-size: 0.8rem;
+    font-variant: small-caps;
+  }
+  .exp-keypoints {
+    ul {
+      margin-left: 40px;
+      padding: 0;
+    }
+    li {
+    }
+  }
+}

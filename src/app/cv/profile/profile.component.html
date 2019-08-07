@@ -1,5 +1,5 @@
 <section id="cv-profile" class="flex-container">
-  <div class="col-md-6">
+  <div id="profile-intro">
     <h1>Rob Bailey</h1>
     <h2>Front-End Developer</h2>
     <p class="location">{{ cv.location.city }}, {{ cv.location.country }}</p>
@@ -11,7 +11,7 @@
     </p>
     <p class="profile-summary">{{ cv.summary }}</p>
   </div>
-  <div class="col-md-6" id="profile-info">
+  <div id="profile-info">
     <div class="social-links">
       <span class="social" *ngFor="let profile of cv.profiles"
         ><a [href]="profile.url">{{ profile.name }}</a></span

@@ -27,39 +27,27 @@
   },
   "workExperience": [
     {
-      "role": "",
+      "role": "Quality Control Branding Specialist",
       "company": {
         "name": "Oleeo",
         "description": "",
-        "logoSrc": ""
+        "logoSrc": "",
+        "url": "https://oleeo.com"
       },
-      "dateFrom": "",
-      "dateTo": "",
-      "summary": "",
-      "keyPoints": [],
-      "skills": []
-    },
-    {
-      "role": "",
-      "company": {
-        "name": "",
-        "description": "",
-        "logoSrc": ""
-      },
-      "dateFrom": "",
-      "dateTo": "",
-      "summary": "",
-      "keyPoints": [],
-      "skills": []
+      "dateFrom": "January 2018",
+      "dateTo": "Present",
+      "summary": "As a Quality Control Brander...",
+      "keyPoints": ["Branded systems using HTML and SCSS"],
+      "skills": ["Test"]
     }
   ],
   "education": [
     {
       "institutionName": "Keele University",
       "qualification": "BSc Physics with Philosophy",
-      "grade": "",
-      "dateFrom": "",
-      "dateTo": ""
+      "grade": "2:1",
+      "dateFrom": "2012",
+      "dateTo": "2015"
     }
   ],
   "projects": [
