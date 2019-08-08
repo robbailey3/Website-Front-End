@@ -1,5 +1,5 @@
-import { CanvasDimensions } from './canvas-dimensions';
 import { Canvas } from './canvas';
+import { CanvasDimensions } from './canvas-dimensions';
 import { Particle } from './particle';
 import { Vector } from './vector';
 
