@@ -1,0 +1,26 @@
+@import '../../../styles/components/colours';
+
+#cv-education {
+  .education-item {
+    margin-bottom: 2rem;
+  }
+  .edu-institution {
+    margin-right: 0.5rem;
+    font-weight: bold;
+  }
+  .edu-qualification {
+    margin-left: 0.5rem;
+  }
+  .edu-grade {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    color: #444;
+    line-height: 2.4;
+  }
+  .date {
+    margin-left: auto;
+    color: color(primary);
+    font-size: 0.8rem;
+    font-variant: small-caps;
+  }
+}

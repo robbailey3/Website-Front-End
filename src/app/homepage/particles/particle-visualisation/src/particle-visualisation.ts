@@ -25,8 +25,8 @@ export class ParticleVisualisation {
    */
   private config = {
     canvasBackgroundColor: 'rgba(27, 27, 30, 1)',
-    particleCount: 750,
-    lineTolerance: 75
+    particleCount: 250,
+    lineTolerance: 100
   };
 
   /**
