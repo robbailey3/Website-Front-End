@@ -2,8 +2,9 @@
   <app-card *ngIf="cv" id="cv-container" class="content-wrapper">
     <app-profile [cv]="cv['basics']"></app-profile>
     <app-skills [skills]="cv['skills']"></app-skills>
+    <rb-projects [projects]="cv.projects"></rb-projects>
     <app-experience [experience]="cv['workExperience']"></app-experience>
     <app-education [education]="cv['education']"></app-education>
-    <app-hobbies [hobbies]="cv['hobbies']"></app-hobbies>
+    <app-hobbies [interests]="cv.interests"></app-hobbies>
   </app-card>
 </div>

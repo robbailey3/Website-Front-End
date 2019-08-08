@@ -52,12 +52,12 @@ export interface Project {
 
 export interface Skill {
   categoryTitle: string;
-  categorySkills: CategorySkills;
+  categorySkills: CategorySkills[];
 }
 
 export interface CategorySkills {
   skillName: string;
-  skillRating: string;
+  skillRating: number;
 }
 
 export interface WorkExperience {

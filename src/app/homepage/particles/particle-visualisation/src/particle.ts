@@ -2,7 +2,7 @@ import { Vector } from './vector';
 import { Canvas } from './canvas';
 
 export class Particle {
-  private radius = 3;
+  private radius = Math.floor(Math.random() * (5 - 2)) + 2;
   constructor(
     public position: Vector,
     public velocity: Vector,

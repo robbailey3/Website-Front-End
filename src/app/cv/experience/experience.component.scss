@@ -1,4 +1,5 @@
 @import '../../../styles/components/colours';
+@import '../../../styles/layout/grid';
 #cv-experience {
   .experience-item {
     margin-bottom: 2rem;
@@ -11,17 +12,22 @@
     margin-left: 0.5rem;
   }
   .date {
-    margin-left: auto;
     color: color(primary);
     font-size: 0.8rem;
     font-variant: small-caps;
+    @include breakpoint(md) {
+      margin-left: auto;
+    }
   }
   .exp-keypoints {
     ul {
       margin-left: 40px;
       padding: 0;
     }
-    li {
+  }
+  .skills {
+    h3 {
+      font-size: 1.2rem;
     }
   }
 }

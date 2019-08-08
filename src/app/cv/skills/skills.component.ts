@@ -1,10 +1,18 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Skill } from '../cv.interface';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
-export class SkillsComponent {
-  @Input() skills: object;
+export class SkillsComponent implements OnInit {
+  @Input() skills: Skill[];
+  ngOnInit(): void {
+    this.skills.forEach((skillCategory) => {
+      skillCategory.categorySkills.sort(
+        (a, b) => b.skillRating - a.skillRating
+      );
+    });
+  }
 }

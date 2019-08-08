@@ -1,4 +1,5 @@
 @import '../../../styles/components/colours';
+@import '../../../styles/layout/grid';
 
 #cv-education {
   .education-item {
@@ -18,9 +19,11 @@
     line-height: 2.4;
   }
   .date {
-    margin-left: auto;
     color: color(primary);
     font-size: 0.8rem;
     font-variant: small-caps;
+    @include breakpoint(md) {
+      margin-left: auto;
+    }
   }
 }

@@ -1,0 +1,13 @@
+<section id="cv-skills">
+  <h2>Skills</h2>
+  <div class="skill-category flex-container" *ngFor="let category of skills">
+    <h3>{{ category.categoryTitle }}</h3>
+    <div
+      class="skill col-lg-2 col-md-4 col-sm-6"
+      *ngFor="let skill of category.categorySkills"
+    >
+      <p class="skill-name">{{ skill.skillName }}</p>
+      <rb-skill-bar [rating]="skill.skillRating"></rb-skill-bar>
+    </div>
+  </div>
+</section>

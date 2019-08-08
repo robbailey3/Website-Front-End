@@ -5,7 +5,7 @@
     "email": "rob.bailey3@gmail.com",
     "phone": "+44(0)7921 517 093",
     "website": "https://robbailey3.co.uk",
-    "summary": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non alias, totam voluptatum fugit, deserunt eligendi expedita at velit earum vitae quos mollitia qui vero et! Quas id optio temporibus possimus.",
+    "summary": "",
     "location": {
       "city": "London",
       "country": "UK"
@@ -31,7 +31,7 @@
       "company": {
         "name": "Oleeo",
         "description": "",
-        "logoSrc": "",
+        "logoSrc": "/assets/cv-images/oleeo_logo.png",
         "url": "https://oleeo.com"
       },
       "dateFrom": "January 2018",
@@ -43,31 +43,120 @@
   ],
   "education": [
     {
+      "institutionName": "Udacity",
+      "qualification": "Front End Developer NanoDegree",
+      "dateFrom": "October 2018",
+      "dateTo": "January 2019"
+    },
+    {
       "institutionName": "Keele University",
       "qualification": "BSc Physics with Philosophy",
       "grade": "2:1",
-      "dateFrom": "2012",
-      "dateTo": "2015"
+      "dateFrom": "September 2012",
+      "dateTo": "July 2015"
     }
   ],
   "projects": [
     {
-      "title": "",
-      "keyPoints": [],
-      "keyWords": []
+      "title": "Website",
+      "keyPoints": [
+        "Used the latest Angular framework",
+        "Built a responsive photo gallery featuring lazy loaded images",
+        "Created reusable components",
+        "Configured and deployed to an Ubuntu Linux server"
+      ],
+      "keyWords": [
+        "Angular",
+        "TypeScript",
+        "JavaScript",
+        "Angular CLI",
+        "Components",
+        "Ubuntu",
+        "Bash",
+        "HTML",
+        "SCSS"
+      ]
     }
   ],
   "skills": [
     {
-      "categoryTitle": "",
-      "categorySkills": {
-        "skillName": "",
-        "skillRating": ""
-      }
+      "categoryTitle": "Programming",
+      "categorySkills": [
+        {
+          "skillName": "JavaScript",
+          "skillRating": "90"
+        },
+        {
+          "skillName": "TypeScript",
+          "skillRating": "80"
+        },
+        {
+          "skillName": "Angular",
+          "skillRating": "75"
+        },
+        {
+          "skillName": "PHP",
+          "skillRating": "75"
+        },
+        {
+          "skillName": "Webpack",
+          "skillRating": "85"
+        },
+        {
+          "skillName": "NodeJS",
+          "skillRating": "70"
+        },
+        {
+          "skillName": "SCSS/CSS",
+          "skillRating": "90"
+        },
+        {
+          "skillName": "HTML",
+          "skillRating": "95"
+        },
+        {
+          "skillName": "Git",
+          "skillRating": "60"
+        },
+        {
+          "skillName": "MySQL",
+          "skillRating": "65"
+        },
+        {
+          "skillName": "Express",
+          "skillRating": "60"
+        },
+        {
+          "skillName": "Jasmine",
+          "skillRating": "65"
+        },
+        {
+          "skillName": "MongoDB",
+          "skillRating": "50"
+        },
+        {
+          "skillName": "Java",
+          "skillRating": "45"
+        }
+      ]
+    },
+    {
+      "categoryTitle": "Programs",
+      "categorySkills": [
+        { "skillName": "Photoshop", "skillRating": "60" },
+        {
+          "skillName": "Affinity Designer",
+          "skillRating": "55"
+        }
+      ]
     }
   ],
   "interests": [
-    { "interestTitle": "", "interestSummary": "", "interestSkills": [] },
+    {
+      "interestTitle": "Music",
+      "interestSummary": "I play 🎸",
+      "interestSkills": ["Geetar"]
+    },
     { "interestTitle": "", "interestSummary": "", "interestSkills": [] }
   ]
 }

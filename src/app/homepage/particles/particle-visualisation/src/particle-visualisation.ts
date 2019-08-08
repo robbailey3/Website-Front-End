@@ -25,7 +25,7 @@ export class ParticleVisualisation {
    */
   private config = {
     canvasBackgroundColor: 'rgba(27, 27, 30, 1)',
-    particleCount: 250,
+    particleCount: 200,
     lineTolerance: 100
   };
 
@@ -33,6 +33,10 @@ export class ParticleVisualisation {
    * An instance of the Canvas class
    */
   public canvas: Canvas;
+
+  /**
+   *  A variable to store the array to calculate the Frames Per Second
+   */
   private times: number[] = [];
 
   constructor(
@@ -135,7 +139,7 @@ export class ParticleVisualisation {
     fps = this.times.length;
     if (fps < 25) {
       this.particles.pop();
-    } else if (fps > 50) {
+    } else if (fps > 35) {
       this.particles.push(
         new Particle(
           new Vector(

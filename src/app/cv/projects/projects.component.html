@@ -1,0 +1,18 @@
+<section id="cv-projects">
+  <h2>Projects</h2>
+  <div class="project-item" *ngFor="let project of projects">
+    <h3>{{ project.title }}</h3>
+    <div class="project-key-points">
+      <ul>
+        <li *ngFor="let point of project.keyPoints">
+          <p>{{ point }}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="project-key-words">
+      <span class="chip" *ngFor="let keyword of project.keyWords">{{
+        keyword
+      }}</span>
+    </div>
+  </div>
+</section>

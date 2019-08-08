@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./hobbies.component.scss']
 })
 export class HobbiesComponent {
-  @Input() hobbies: object;
+  @Input() interests: object;
 }

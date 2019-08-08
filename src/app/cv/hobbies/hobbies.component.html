@@ -1,0 +1,10 @@
+<section id="cv-hobbies">
+  <h2>Interests</h2>
+  <div class="cv-interest" *ngFor="let interest of interests">
+    <h3>{{ interest.interestTitle }}</h3>
+    <p>{{ interest.interestSummary }}</p>
+    <span class="chip" *ngFor="let skill of interest.interestSkills">{{
+      skill
+    }}</span>
+  </div>
+</section>

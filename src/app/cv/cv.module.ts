@@ -9,6 +9,7 @@ import { ExperienceComponent } from './experience/experience.component';
 import { HobbiesComponent } from './hobbies/hobbies.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SkillsComponent } from './skills/skills.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SkillsComponent } from './skills/skills.component';
     ExperienceComponent,
     EducationComponent,
     SkillsComponent,
-    HobbiesComponent
+    HobbiesComponent,
+    ProjectsComponent
   ],
   exports: [CvRootComponent],
   imports: [CommonModule, RouterModule, SharedModule]
