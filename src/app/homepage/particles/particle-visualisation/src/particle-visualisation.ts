@@ -10,14 +10,31 @@ import { Vector } from './vector';
  * the particles, moving them, handling clicks)
  */
 export class ParticleVisualisation {
+  /**
+   * An array of particle objects
+   */
   public particles: Particle[] = [];
+
+  /**
+   * Whether or not the user is currently clicking
+   */
   public isClicking = false;
+
+  /**
+   * The default configuration (e.g. number of particles)
+   */
   private config = {
     canvasBackgroundColor: 'rgba(27, 27, 30, 1)',
     particleCount: 750,
     lineTolerance: 75
   };
+
+  /**
+   * An instance of the Canvas class
+   */
   public canvas: Canvas;
+  private times: number[] = [];
+
   constructor(
     private hostElement: HTMLCanvasElement,
     private dimensions: CanvasDimensions
@@ -28,12 +45,21 @@ export class ParticleVisualisation {
     this.createParticles();
     this.animate();
   }
+
+  /**
+   * This method is used to move the particles away from
+   * the cursor when the user is clicking
+   * @param mouseX The X Coordinate of the current mouse position
+   * @param mouseY The Y Coordinate of the current mouse position
+   */
   public handleMouseOver(mouseX: number, mouseY: number) {
     if (!this.isClicking) {
+      // If the user is not clicking. Do nothing
       return;
     }
     const mousePositionVector = new Vector(mouseX, mouseY, 0);
     for (let i = 0; i < this.particles.length; i += 1) {
+      // ➰
       const scalarDistanceBetween = Math.sqrt(
         Math.pow(this.particles[i].position.x - mousePositionVector.x, 2) +
           Math.pow(this.particles[i].position.y - mousePositionVector.y, 2)
@@ -42,10 +68,18 @@ export class ParticleVisualisation {
       const unitVectorBetween = mousePositionVector
         .minus(this.particles[i].position)
         .normalize();
-      let force = unitVectorBetween.times(-10000 / scalarDistanceBetween ** 2);
+      const force = unitVectorBetween.times(
+        -10000 / scalarDistanceBetween ** 2
+      );
       this.particles[i].velocity = this.particles[i].velocity.add(force);
     }
   }
+
+  /**
+   * This method populates the array of particles.
+   * Each particles created has a random position and
+   * velocity.
+   */
   private createParticles() {
     for (let i = 0; i < this.config.particleCount; i += 1) {
       const position = new Vector(
@@ -59,9 +93,10 @@ export class ParticleVisualisation {
       this.particles.push(new Particle(position, velocity, this.canvas));
     }
   }
+
   private drawParticleLines() {
-    for (let a of this.particles) {
-      for (let b of this.particles) {
+    for (const a of this.particles) {
+      for (const b of this.particles) {
         if (a === b) {
           continue;
         }
@@ -90,7 +125,32 @@ export class ParticleVisualisation {
       return;
     }
   }
+  private checkFPS() {
+    let fps: number;
+    const now = performance.now();
+    while (this.times.length > 0 && this.times[0] <= now - 1000) {
+      this.times.shift();
+    }
+    this.times.push(now);
+    fps = this.times.length;
+    if (fps < 25) {
+      this.particles.pop();
+    } else if (fps > 50) {
+      this.particles.push(
+        new Particle(
+          new Vector(
+            Math.floor(Math.random() * this.canvas.canvas.width),
+            Math.floor(Math.random() * this.canvas.canvas.height),
+            0
+          ),
+          new Vector(Math.random() * 2 - 1, Math.random() * 2 - 1, 0),
+          this.canvas
+        )
+      );
+    }
+  }
   private animate() {
+    this.checkFPS();
     this.canvas.clearBackground();
     this.particles.forEach((particle: Particle) => {
       particle.move();

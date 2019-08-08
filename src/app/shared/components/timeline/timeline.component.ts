@@ -11,17 +11,17 @@ export class TimelineComponent implements OnInit {
   @Input() items: TimelineItem[];
   @Input() title: string;
   /**
-   * @description The start year of the timeline.
+   * The start year of the timeline.
    */
   private timelineStartYear: number;
   /**
-   * @description The end year of the timeline.
+   * The end year of the timeline.
    */
   private timelineEndYear: number;
   constructor() {}
 
   /**
-   * @description Function which is called when the component initialises.
+   * Function which is called when the component initialises.
    */
   ngOnInit() {
     this.sortItems();
@@ -30,9 +30,12 @@ export class TimelineComponent implements OnInit {
   }
 
   /**
-   * @description Sort the items passed to the component by start date descending.
+   * Sort the items passed to the component by start date descending.
    */
   private sortItems(): void {
+    if (!this.items || this.items.length === 0) {
+      return;
+    }
     this.items.sort((a, b) => {
       return b.startDate.getTime() - a.startDate.getTime();
     });
@@ -42,14 +45,21 @@ export class TimelineComponent implements OnInit {
    * @description Get the start year of the last item (i.e. the oldest item)
    */
   private getTimelineStartYear(): void {
-    this.timelineStartYear = this.items[this.items.length - 1
-].startDate.getFullYear();
+    if (!this.items || this.items.length === 0) {
+      return;
+    }
+    this.timelineStartYear = this.items[
+      this.items.length - 1
+    ].startDate.getFullYear();
   }
 
   /**
-   * @description Get the end year of the last item (i.e. the most recent item)
+   * Get the end year of the last item (i.e. the most recent item)
    */
   private getTimelineEndYear(): void {
+    if (!this.items || this.items.length === 0) {
+      return;
+    }
     this.timelineEndYear = this.items[0].endDate.getFullYear();
   }
 }
