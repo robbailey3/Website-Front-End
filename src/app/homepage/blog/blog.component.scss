@@ -1,5 +1,23 @@
 @import '../../../styles/components/colours';
 
+#blog-container {
+  h2.section-title {
+    position: relative;
+    padding-bottom: 0.8rem;
+    font-size: 1.5rem;
+    width: 100%;
+    &::after {
+      content: '';
+      height: 5px;
+      width: 100px;
+      background: color(primary);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+
 .post {
   margin-top: 16px;
   margin-bottom: 16px;

@@ -3,7 +3,7 @@ import { MetaService } from 'src/app/shared/services/meta/meta.service';
 import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-homepage-root',
+  selector: 'rb-homepage-root',
   templateUrl: './homepage-root.component.html',
   styleUrls: ['./homepage-root.component.scss']
 })

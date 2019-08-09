@@ -1,4 +1,9 @@
-<section id="blog-container" *ngIf="posts" class="flex-container">
+<section
+  id="blog-container"
+  *ngIf="posts"
+  class="flex-container content-wrapper"
+>
+  <h2 class="section-title">Latest posts</h2>
   <div *ngFor="let post of posts" class="post col-md-6">
     <div class="post-image" *ngIf="post.image !== null || post.image">
       <img [src]="post.image" />

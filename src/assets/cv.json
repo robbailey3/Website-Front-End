@@ -37,8 +37,40 @@
       "dateFrom": "January 2018",
       "dateTo": "Present",
       "summary": "As a Quality Control Brander...",
-      "keyPoints": ["Branded systems using HTML and SCSS"],
-      "skills": ["Test"]
+      "keyPoints": [
+        "Branded systems using HTML and SCSS",
+        "Introduced git, SCSS and gulp into the branding process",
+        "Reduced the time taken to brand a system by 50%",
+        "Completed branding projects for clients such as Goldman Sachs, the Foreign & Commonwealth Office, the Houses of Parliament, Ministry of Justice and Evercore ",
+        "Developed SCSS templates to speed up the branding process",
+        "Used JavaScript for DOM manipulation and to implement interactive menus",
+        "Created a command line interface using NodeJS",
+        "Ran training sessions to teach colleagues about HTML, CSS in addition to introducing SCSS and Git",
+        "Worked to improve the accessibility of the product and increased overall awareness of common accessibility issues"
+      ],
+      "skills": ["Branding", "HTML", "CSS", "SCSS", "Gulp"]
+    },
+    {
+      "role": "Quality Control Executive",
+      "company": {
+        "name": "Oleeo",
+        "description": "",
+        "logoSrc": "/assets/cv-images/oleeo_logo.png",
+        "url": "https://oleeo.com"
+      },
+      "dateFrom": "March 2016",
+      "dateTo": "January 2018",
+      "summary": "As a Quality Control Brander...",
+      "keyPoints": [
+        "Conducted manual functional and regression tests",
+        "Produced test scripts and reports"
+      ],
+      "skills": [
+        "Testing",
+        "Functional Testing",
+        "Regression Testing",
+        "Test Scripts"
+      ]
     }
   ],
   "education": [
@@ -59,6 +91,7 @@
   "projects": [
     {
       "title": "Website",
+      "url": "https://github.com/robbailey3/Website-Front-End",
       "keyPoints": [
         "Used the latest Angular framework",
         "Built a responsive photo gallery featuring lazy loaded images",
@@ -75,6 +108,62 @@
         "Bash",
         "HTML",
         "SCSS"
+      ]
+    },
+    {
+      "title": "Website CMS",
+      "url": "https://github.com/robbailey3/Website-CMS",
+      "keyPoints": [
+        "Built a CMS using TinyMCE rich text editor and photo upload interface",
+        "Integrated with third party APIs (e.g. DarkSky Weather, Google geolocation, DigitalOcean)",
+        "Used Route Guards to secure the application"
+      ],
+      "keyWords": [
+        "Angular",
+        "TypeScript",
+        "JavaScript",
+        "Angular CLI",
+        "API Integration",
+        "TinyMCE",
+        "Content Management"
+      ]
+    },
+    {
+      "title": "REST API",
+      "keyPoints": [
+        "Created a RESTful API using Object Oriented PHP",
+        "Created and integrated with a MySQL database",
+        "Implemented a file-upload service with thumbnail generator",
+        "Built an authentication system using JSON Web Tokens (JWT) "
+      ],
+      "keyWords": [
+        "PHP",
+        "Object Oriented",
+        "API",
+        "Security",
+        "JWT",
+        "Server",
+        "Database",
+        "SQL"
+      ]
+    },
+    {
+      "title": "Gravity Simulator",
+      "url": "https://github.com/robbailey3/gravity-simulator",
+      "keyPoints": [
+        "Created a solar system simulator using HTML Canvas",
+        "Used and configured Webpack to bundle code",
+        "Implemented algorithms to calculate simulated force due to gravity "
+      ],
+      "keyWords": [
+        "TypeScript",
+        "Algorithms",
+        "Webpack",
+        "Canvas",
+        "HTML",
+        "JavaScript",
+        "Animation",
+        "Simulation"
       ]
     }
   ],

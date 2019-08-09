@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Skill } from '../cv.interface';
 
 @Component({
-  selector: 'app-skills',
+  selector: 'rb-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })

@@ -1,6 +1,11 @@
 import { HighlightService } from 'src/app/shared/services/highlight/highlight.service';
 
-import { AfterViewChecked, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  AfterViewChecked,
+  Component,
+  OnInit,
+  ViewEncapsulation
+} from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
 import { APIResponse } from '../../shared/interfaces/api-response.interface';
@@ -9,7 +14,7 @@ import { BlogService } from '../blog.service';
 import { Post } from '../post';
 
 @Component({
-  selector: 'app-blog-post',
+  selector: 'rb-blog-post',
   templateUrl: './blog-post.component.html',
   styleUrls: ['./blog-post.component.scss'],
   encapsulation: ViewEncapsulation.None

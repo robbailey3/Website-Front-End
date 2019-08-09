@@ -3,7 +3,7 @@
   <div class="education-item flex-container" *ngFor="let edu of education">
     <span class="edu-institution">{{ edu.institutionName }}</span> /
     <span class="edu-qualification">{{ edu.qualification }}</span
-    ><span class="edu-grade">({{ edu.grade }})</span>
+    ><span class="edu-grade" *ngIf="edu.grade">({{ edu.grade }})</span>
     <span class="date">{{ edu.dateFrom }} - {{ edu.dateTo }}</span>
   </div>
 </section>

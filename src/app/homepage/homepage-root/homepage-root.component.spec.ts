@@ -31,6 +31,6 @@ describe('HomepageRootComponent', () => {
     expect(component).toBeTruthy();
   });
   it('should contain the hero component', () => {
-    expect(compiled.querySelector('app-hero')).toBeDefined();
+    expect(compiled.querySelector('rb-hero')).toBeDefined();
   });
 });

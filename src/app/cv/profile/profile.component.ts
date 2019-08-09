@@ -3,7 +3,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { Basics } from '../cv.interface';
 
 @Component({
-  selector: 'app-profile',
+  selector: 'rb-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })

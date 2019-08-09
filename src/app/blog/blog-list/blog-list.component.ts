@@ -7,7 +7,7 @@ import { BlogService } from '../blog.service';
 import { Post } from '../post';
 
 @Component({
-  selector: 'app-blog-list',
+  selector: 'rb-blog-list',
   templateUrl: './blog-list.component.html',
   styleUrls: ['./blog-list.component.scss']
 })

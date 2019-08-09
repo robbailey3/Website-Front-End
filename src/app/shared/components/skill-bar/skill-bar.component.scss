@@ -19,8 +19,8 @@
     overflow: visible;
   }
   .skill-tooltip {
-    background: color(primary);
-    padding: 0.5rem;
+    background: #fff;
+    padding: 0.3rem;
     font-size: 14px;
     position: absolute;
     right: 0;
@@ -29,7 +29,7 @@
     border-radius: 2px;
     transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
-    color: #fff;
+    color: #111;
     &::before {
       content: '';
       position: absolute;
@@ -37,7 +37,7 @@
       left: 50%;
       border-style: solid;
       border-width: 0 5px 8.7px 5px;
-      border-color: transparent transparent color(primary) transparent;
+      border-color: transparent transparent #fff transparent;
       height: 0;
       width: 0;
       transform: translate(-50%, -100%);

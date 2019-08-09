@@ -1,10 +1,10 @@
 <div id="cv-wrapper">
-  <app-card *ngIf="cv" id="cv-container" class="content-wrapper">
-    <app-profile [cv]="cv['basics']"></app-profile>
-    <app-skills [skills]="cv['skills']"></app-skills>
+  <rb-card *ngIf="cv" id="cv-container" class="content-wrapper">
+    <rb-profile [cv]="cv['basics']"></rb-profile>
+    <rb-skills [skills]="cv['skills']"></rb-skills>
     <rb-projects [projects]="cv.projects"></rb-projects>
-    <app-experience [experience]="cv['workExperience']"></app-experience>
-    <app-education [education]="cv['education']"></app-education>
-    <app-hobbies [interests]="cv.interests"></app-hobbies>
-  </app-card>
+    <rb-experience [experience]="cv['workExperience']"></rb-experience>
+    <rb-education [education]="cv['education']"></rb-education>
+    <rb-hobbies [interests]="cv.interests"></rb-hobbies>
+  </rb-card>
 </div>

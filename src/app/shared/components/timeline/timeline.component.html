@@ -5,11 +5,11 @@
     <div class="timeline-line"></div>
     <li *ngFor="let item of items">
       <div class="timeline-point"></div>
-      <app-card class="timeline-item">
-        <p class="timeline-item-title">{{ item.title}}</p>
-        <p class="timeline-item-date">{{ item.date}}</p>
+      <rb-card class="timeline-item">
+        <p class="timeline-item-title">{{ item.title }}</p>
+        <p class="timeline-item-date">{{ item.date }}</p>
         <p class="timeline-item-desc" [innerHTML]="item.content"></p>
-      </app-card>
+      </rb-card>
     </li>
   </ul>
   <span class="timeline-start-year">{{ timelineStartYear }}</span>

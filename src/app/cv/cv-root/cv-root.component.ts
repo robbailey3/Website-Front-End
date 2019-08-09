@@ -7,7 +7,7 @@ import { CV } from '../cv.interface';
 import { CvService } from '../cv.service';
 
 @Component({
-  selector: 'app-cv-root',
+  selector: 'rb-cv-root',
   templateUrl: './cv-root.component.html',
   styleUrls: ['./cv-root.component.scss'],
   encapsulation: ViewEncapsulation.None

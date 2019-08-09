@@ -23,10 +23,10 @@ describe('AppComponent', () => {
   });
 
   it('should contain the Navigation component', () => {
-    expect(compiled.querySelector('app-navigation')).toBeDefined();
+    expect(compiled.querySelector('rb-navigation')).toBeDefined();
   });
   it('should contain the router-outlet', () => {
     fixture.detectChanges();
-    expect(compiled.querySelector('app-navigation')).toBeDefined();
+    expect(compiled.querySelector('rb-navigation')).toBeDefined();
   });
 });

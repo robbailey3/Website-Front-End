@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-experience',
+  selector: 'rb-experience',
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']
 })

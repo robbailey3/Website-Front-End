@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-hobbies',
+  selector: 'rb-hobbies',
   templateUrl: './hobbies.component.html',
   styleUrls: ['./hobbies.component.scss']
 })

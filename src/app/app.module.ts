@@ -37,7 +37,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AboutMeModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production
-    })
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

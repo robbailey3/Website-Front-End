@@ -1,4 +1,5 @@
 @import '../../../styles/layout/grid';
+@import '../../../styles/components/colours';
 #cv-profile {
   position: relative;
   .location,
@@ -6,6 +7,12 @@
     color: #555;
     font-size: 0.8rem;
     text-decoration: none;
+  }
+  .material-icons {
+    font-size: 1rem;
+    margin: 0.7rem 0.7rem 0 0;
+    vertical-align: sub;
+    color: color(accent);
   }
 }
 #profile-info {

@@ -3,8 +3,13 @@
   background: color(accent);
   border-radius: 10px;
   line-height: 1;
+  font-size: 0.75rem;
   color: #fff;
-  margin-right: 10px;
-  margin-top: 10px;
+  margin: 0.5rem 1rem 0 0;
   display: inline-block;
+  user-select: none;
+  transition: 0.3s;
+  &:hover {
+    background: darken(color(accent), 10%);
+  }
 }

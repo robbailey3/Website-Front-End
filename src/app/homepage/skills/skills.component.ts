@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-skills',
+  selector: 'rb-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })

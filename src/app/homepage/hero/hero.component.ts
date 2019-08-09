@@ -3,14 +3,14 @@ import { fallIn } from 'src/app/shared/animations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-hero',
+  selector: 'rb-hero',
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.scss'],
   animations: [fallIn]
 })
 export class HeroComponent implements OnInit {
   age: number;
-  constructor() { }
+  constructor() {}
   ngOnInit() {
     this.calculateAge();
   }

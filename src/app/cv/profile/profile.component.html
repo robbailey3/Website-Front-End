@@ -2,11 +2,21 @@
   <div id="profile-intro">
     <h1>Rob Bailey</h1>
     <h2>Front-End Developer</h2>
-    <p class="location">{{ cv.location.city }}, {{ cv.location.country }}</p>
+    <p class="location">
+      <i class="material-icons">
+        location_on </i
+      >{{ cv.location.city }}, {{ cv.location.country }}
+    </p>
     <p class="contact">
+      <i class="material-icons">
+        phone
+      </i>
       <a [href]="'Tel: ' + cv.phone">{{ cv.phone }}</a>
     </p>
     <p class="contact">
+      <i class="material-icons">
+        email
+      </i>
       <a [href]="'mailto: ' + cv.email">{{ cv.email }}</a>
     </p>
     <p class="profile-summary">{{ cv.summary }}</p>
