@@ -111,6 +111,7 @@ export class ParticleVisualisation {
       }
     }
   }
+
   private checkBounds(particle: Particle) {
     if (
       particle.position.x < 0 ||
@@ -129,6 +130,7 @@ export class ParticleVisualisation {
       return;
     }
   }
+
   private checkFPS() {
     let fps: number;
     const now = performance.now();
@@ -153,6 +155,7 @@ export class ParticleVisualisation {
       );
     }
   }
+
   private animate() {
     this.checkFPS();
     this.canvas.clearBackground();
