@@ -1,7 +1,7 @@
 @import '../../../styles/components/colours';
 
 #top-bar {
-  background: #fff;
+  background: #333;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(13, 16, 21, 0.1);
   position: fixed;
   left: 0;
@@ -12,7 +12,7 @@
   align-items: center;
   padding: 0 16px;
   overflow: hidden;
-  z-index: 999;
+  z-index: 9999;
   height: 54px;
 }
 
@@ -23,7 +23,7 @@
   padding-top: 100px;
   position: fixed;
   left: -225px;
-  background: #fff;
+  background: #222;
   z-index: 999;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.5);
   transition: 0.3s ease-in-out;
@@ -32,14 +32,6 @@
     left: 0px;
   }
 
-  #menu-button-container {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    span {
-      background: #111;
-    }
-  }
   ul {
     width: 100%;
   }
@@ -48,18 +40,20 @@
     display: block;
 
     a {
-      color: #111;
+      color: #fff;
       text-decoration: none;
       padding: 6px 16px;
-      display: block;
       transition: 0.2s;
       display: block;
-
+      border-left: 3px solid transparent;
       &:hover,
       &:focus {
         color: color(primary);
         text-decoration: none;
-        background: rgba(0, 0, 0, 0.05);
+        background: rgba(#fff, 0.05);
+      }
+      &.active {
+        border-left-color: color(primary);
       }
     }
   }

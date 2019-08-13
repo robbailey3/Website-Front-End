@@ -1,25 +1,53 @@
 <div id="top-bar" [class.active]="menuActive" class="flex-container">
   <div id="menu-button-container" (click)="toggleMenu()">
     <button class="hamburger-btn" [class.menu-open]="menuActive">
-      <span class="sr-only">Menu</span> <span></span> <span></span>
+      <span class="sr-only">Menu</span>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
 </div>
 <nav id="main-navigation" [class.active]="menuActive" class="flex-container">
-  <div id="menu-button-container" (click)="toggleMenu()">
-    <button
-      class="hamburger-btn hamburger-close"
-      [class.menu-open]="menuActive"
-    >
-      <span class="sr-only">Menu</span> <span></span> <span></span>
-    </button>
-  </div>
   <ul>
-    <li><a [routerLink]="['/']" (click)="toggleMenu()">Home</a></li>
+    <li>
+      <a
+        [routerLink]="['/']"
+        (click)="toggleMenu()"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a
+      >
+    </li>
     <!-- <li><a [routerLink]="['about']" (click)="toggleMenu()">About</a></li> -->
-    <li><a [routerLink]="['photos']" (click)="toggleMenu()">Photos</a></li>
-    <li><a [routerLink]="['blog']" (click)="toggleMenu()">Blog</a></li>
-    <li><a [routerLink]="['cv']" (click)="toggleMenu()">CV</a></li>
-    <li><a [routerLink]="['contact']" (click)="toggleMenu()">Contact</a></li>
+    <li>
+      <a
+        [routerLink]="['photos']"
+        (click)="toggleMenu()"
+        routerLinkActive="active"
+        >Photos</a
+      >
+    </li>
+    <li>
+      <a
+        [routerLink]="['blog']"
+        (click)="toggleMenu()"
+        routerLinkActive="active"
+        >Blog</a
+      >
+    </li>
+    <li>
+      <a [routerLink]="['cv']" (click)="toggleMenu()" routerLinkActive="active"
+        >CV</a
+      >
+    </li>
+    <li>
+      <a
+        [routerLink]="['contact']"
+        (click)="toggleMenu()"
+        routerLinkActive="active"
+        >Contact</a
+      >
+    </li>
   </ul>
 </nav>

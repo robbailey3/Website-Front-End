@@ -72,21 +72,24 @@
   display: block;
 
   span:not(.sr-only) {
-    width: 22px;
+    width: 26px;
     height: 2px;
     border-radius: 6px;
-    background: color(nearly-black);
-    position: absolute;
+    background: #fff;
+    position: relative;
+    display: block;
     left: 4px;
-    top: 12px;
+
     -webkit-transition: 0.4s;
     -o-transition: 0.4s;
     transition: 0.4s;
-    -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
 
-    &:nth-of-type(2) {
-      top: 22px;
+    &:nth-of-type(3) {
+      margin-top: 6px;
+    }
+    &:nth-of-type(4) {
+      margin-top: 6px;
     }
   }
 
@@ -100,7 +103,7 @@
     outline: none;
 
     span:not(.sr-only) {
-      background: color(secondary);
+      background: color(primary);
     }
   }
 
