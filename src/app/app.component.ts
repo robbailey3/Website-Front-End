@@ -1,6 +1,5 @@
-import { Component, OnInit, HostListener, Host } from '@angular/core';
+import { Component, Host, HostListener, OnInit } from '@angular/core';
 import { MetaService } from './shared/services/meta/meta.service';
-import { ActivatedRoute, Router, Event, NavigationEnd } from '@angular/router';
 
 declare global {
   interface Window {
@@ -27,7 +26,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     window.dataLayer = window.dataLayer || [];
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has('referrer')) {
@@ -37,13 +36,13 @@ export class AppComponent implements OnInit {
   }
 
   @HostListener('window:blur')
-  onblur() {
+  public onblur() {
     const title = '👋 👀';
     this.meta.setTitle(title, false);
   }
 
   @HostListener('window:focus')
-  onfocus() {
+  public onfocus() {
     this.meta.setTitle(this.title);
   }
 }

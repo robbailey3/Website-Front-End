@@ -1,5 +1,11 @@
 import {
-    AfterViewInit, Component, ElementRef, OnInit, QueryList, Renderer2, ViewChildren
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  QueryList,
+  Renderer2,
+  ViewChildren
 } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
