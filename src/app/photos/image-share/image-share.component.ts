@@ -27,7 +27,11 @@ export class ImageShareComponent implements OnInit {
     if ('navigator' in window) {
       if ('clipboard' in window.navigator) {
         (window.navigator as Navigator).clipboard
-          .writeText(this.photo.path)
+          .writeText(
+            this.isAbsoluteURL(this.photo.path)
+              ? this.photo.path
+              : `https://robbailey3.co.uk/${this.photo.path}`
+          )
           .then((res: any) => {
             this.displayCopiedTooltip();
           })
@@ -40,6 +44,11 @@ export class ImageShareComponent implements OnInit {
     clearTimeout(this.timeout);
     this.timeout = setTimeout(() => {
       this.showCopySuccess = false;
-    },                        2000);
+    }, 2000);
+  }
+
+  public isAbsoluteURL(URL: string) {
+    const regex = new RegExp('^(?:[a-z]+:)?//', 'i');
+    return regex.test(URL);
   }
 }
