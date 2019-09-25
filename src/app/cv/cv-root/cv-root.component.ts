@@ -56,12 +56,20 @@ export class CvRootComponent implements OnInit {
     );
   }
 
+  /**
+   * Set the page metadata.
+   */
   public setMeta() {
     this.meta.setTitle('Rob Bailey: Curriculum Vitae');
     this.meta.setDescription('The CV of the London based developer Rob Bailey');
   }
 
-  public reportError($error) {
+  /**
+   *
+   *
+   * @param $error The error to report
+   */
+  public reportError($error: Error) {
     this.errorService.postError($error);
   }
 }

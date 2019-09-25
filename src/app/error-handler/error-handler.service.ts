@@ -10,10 +10,11 @@ import { APIResponse } from '../shared/interfaces/api-response.interface';
   providedIn: 'root'
 })
 export class ErrorHandlerService {
-  readonly URL_BASE = `${environment.URL}errors`;
+  public readonly URL_BASE = `${environment.URL}errors`;
+
   constructor(private http: HttpClient) {}
 
-  postError(error: JSON): Observable<APIResponse> {
+  public postError(error: Error): Observable<APIResponse> {
     return this.http.post<APIResponse>(this.URL_BASE, error);
   }
 }
