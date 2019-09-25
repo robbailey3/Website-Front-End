@@ -1,11 +1,13 @@
 import { browser, by, element } from 'protractor';
 
 export class AppPage {
+  constructor() {
+    browser.waitForAngularEnabled(false);
+  }
   navigateTo() {
     return browser.get('/');
   }
-
-  getTitleText() {
-    return element(by.css('rb-root h1')).getText();
+  getComponents() {
+    return document.querySelectorAll('rb-*');
   }
 }
